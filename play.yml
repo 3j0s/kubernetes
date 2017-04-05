@@ -1,0 +1,9 @@
+---
+- hosts: masters
+#  name: Build Up Kubernetes Server
+  pre_tasks:
+    - shell: echo "Initializing Kubernetes Support.."
+  roles:
+    - { role: master }
+  post_tasks:
+    - shell: echo "Finalizing Kubernetes Process"

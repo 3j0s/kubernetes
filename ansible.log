@@ -1,0 +1,1229 @@
+2017-03-24 23:10:50,512 p=11322 u=ejos |  192.168.10.60 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2017-04-03 12:25:25,208 p=23880 u=ejos |   [WARNING]: Host file not found: host
+
+2017-04-03 12:25:25,233 p=23880 u=ejos |   [WARNING]: provided hosts list is empty, only localhost is available
+
+2017-04-03 12:25:25,235 p=23880 u=ejos |   [WARNING]: No hosts matched, nothing to do
+
+2017-04-03 12:25:56,027 p=23894 u=ejos |   [WARNING]: Host file not found: /home/ejos/Ansible/kubernetes/host
+
+2017-04-03 12:25:56,031 p=23894 u=ejos |   [WARNING]: provided hosts list is empty, only localhost is available
+
+2017-04-03 12:25:56,031 p=23894 u=ejos |   [WARNING]: No hosts matched, nothing to do
+
+2017-04-03 12:26:10,334 p=23900 u=ejos |  192.168.10.61 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2017-04-03 12:28:00,348 p=23956 u=ejos |  192.168.10.61 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2017-04-03 14:26:38,162 p=27123 u=ejos |  192.168.10.61 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.10.61 port 22: No route to host\r\n", 
+    "unreachable": true
+}
+2017-04-03 14:26:49,143 p=27147 u=ejos |  192.168.10.61 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.10.61 port 22: No route to host\r\n", 
+    "unreachable": true
+}
+2017-04-03 14:27:22,792 p=27261 u=ejos |  192.168.10.61 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.10.61 port 22: No route to host\r\n", 
+    "unreachable": true
+}
+2017-04-05 10:35:37,135 p=24547 u=ejos |   [WARNING]: No hosts matched, nothing to do
+
+2017-04-05 10:35:58,902 p=24556 u=ejos |  192.168.10.61 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2017-04-05 10:47:08,357 p=24955 u=ejos |  192.168.10.61 | FAILED | rc=1 >>
+modprobe: FATAL: Module aufs not found.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 10:49:13,986 p=25000 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+Complementos cargados:fastestmirror, langpacks
+Repodata is over 2 weeks old. Install yum-cron? Or run: yum makecache fast
+Determining fastest mirrors
+ * base: mirror.gtdinternet.com
+ * epel: mirror.globo.com
+ * extras: mirror.gtdinternet.com
+ * updates: mirror.gtdinternet.com
+Aviso: No se ha encontrado ningún resultado para: aufs
+No matches found
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 11:14:47,139 p=25869 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+# UPDATEDEFAULT specifies if new-kernel-pkg should make
+# new kernels the default
+UPDATEDEFAULT=yes
+
+# DEFAULTKERNEL specifies the default kernel package type
+DEFAULTKERNEL=kernel
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 11:28:47,517 p=26436 u=ejos |  ERROR! the role 'masters' was not found in /home/ejos/Ansible/kubernetes/roles:/home/ejos/Ansible/kubernetes/roles:/home/ejos/Ansible/kubernetes
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/play.yml': line 7, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  roles:
+    - { role: masters }
+      ^ here
+
+2017-04-05 11:29:14,769 p=26447 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 11:29:14,812 p=26447 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 11:29:22,956 p=26447 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:29:22,959 p=26447 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 11:29:23,406 p=26447 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:29:23,465 p=26447 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:29:24,439 p=26447 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:29:24,443 p=26447 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:29:25,080 p=26447 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:29:25,083 p=26447 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 11:29:25,805 p=26447 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:29:25,810 p=26447 u=ejos |  TASK [master : Replacing Kernel Value] *****************************************
+2017-04-05 11:29:26,224 p=26447 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "unsupported parameter for module: path"}
+2017-04-05 11:29:26,226 p=26447 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 11:29:26,226 p=26447 u=ejos |  192.168.10.61              : ok=5    changed=4    unreachable=0    failed=1   
+2017-04-05 11:30:12,127 p=26571 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+bnied-kernel-ml-aufs-epel-7.repo  CentOS-fasttrack.repo  epel.repo
+CentOS-Base.repo		  CentOS-Media.repo	 epel-testing.repo
+CentOS-CR.repo			  CentOS-Sources.repo	 kernel-lt-aufs.repo
+CentOS-Debuginfo.repo		  CentOS-Vault.repo	 kernel-ml-aufs.repo
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 11:30:48,736 p=26634 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 11:30:48,777 p=26634 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 11:30:49,492 p=26634 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:30:49,494 p=26634 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 11:30:49,914 p=26634 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:30:49,921 p=26634 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:30:50,805 p=26634 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:30:50,809 p=26634 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:30:51,443 p=26634 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:30:51,448 p=26634 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 11:30:52,344 p=26634 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:30:52,349 p=26634 u=ejos |  TASK [master : replace] ********************************************************
+2017-04-05 11:30:52,777 p=26634 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "unsupported parameter for module: path"}
+2017-04-05 11:30:52,778 p=26634 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 11:30:52,779 p=26634 u=ejos |  192.168.10.61              : ok=5    changed=1    unreachable=0    failed=1   
+2017-04-05 11:31:57,973 p=26711 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 11:31:58,015 p=26711 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 11:31:58,882 p=26711 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:31:58,884 p=26711 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 11:31:59,320 p=26711 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:31:59,324 p=26711 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:32:00,170 p=26711 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:32:00,174 p=26711 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:32:00,770 p=26711 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:32:00,775 p=26711 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 11:32:01,377 p=26711 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:32:01,380 p=26711 u=ejos |  TASK [master : replace] ********************************************************
+2017-04-05 11:32:01,807 p=26711 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "unsupported parameter for module: path"}
+2017-04-05 11:32:01,809 p=26711 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 11:32:01,810 p=26711 u=ejos |  192.168.10.61              : ok=5    changed=1    unreachable=0    failed=1   
+2017-04-05 11:33:29,011 p=26785 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 11:33:29,054 p=26785 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 11:33:30,168 p=26785 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:33:30,171 p=26785 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 11:33:30,758 p=26785 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:33:30,765 p=26785 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:33:31,920 p=26785 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:33:31,924 p=26785 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:33:33,043 p=26785 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:33:33,047 p=26785 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 11:33:33,564 p=26785 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:33:33,568 p=26785 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 11:33:33,992 p=26785 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:33:33,995 p=26785 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 11:33:34,660 p=26785 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "one of the following is required: name,list"}
+2017-04-05 11:33:34,662 p=26785 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 11:33:34,662 p=26785 u=ejos |  192.168.10.61              : ok=6    changed=2    unreachable=0    failed=1   
+2017-04-05 11:33:43,372 p=26868 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+# UPDATEDEFAULT specifies if new-kernel-pkg should make
+# new kernels the default
+UPDATEDEFAULT=yes
+
+# DEFAULTKERNEL specifies the default kernel package type
+DEFAULTKERNEL=kernel-ml-aufs
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 11:37:56,882 p=27038 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 11:37:56,929 p=27038 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 11:37:57,739 p=27038 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:37:57,742 p=27038 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 11:37:58,142 p=27038 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:37:58,149 p=27038 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:37:58,964 p=27038 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:37:58,968 p=27038 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:37:59,526 p=27038 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:37:59,530 p=27038 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 11:38:00,069 p=27038 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:38:00,072 p=27038 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 11:38:00,457 p=27038 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:38:00,462 p=27038 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 11:39:52,537 p=27038 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:39:52,540 p=27038 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 11:40:14,549 p=27038 u=ejos |  failed: [192.168.10.61] (item=[u'arj', u'bzip2', u'cabextract', u'cpio', u'file', u'gzip', u'nomarch', u'pax', u'unrar-free', u'unzip', u'zip', u'zoo', u'tree']) => {"changed": false, "failed": true, "item": ["arj", "bzip2", "cabextract", "cpio", "file", "gzip", "nomarch", "pax", "unrar-free", "unzip", "zip", "zoo", "tree"], "msg": "No package matching 'unrar-free' found available, installed or updated", "rc": 126, "results": ["bzip2-1.0.6-13.el7.x86_64 providing bzip2 is already installed", "cpio-2.11-24.el7.x86_64 providing cpio is already installed", "file-5.11-33.el7.x86_64 providing file is already installed", "gzip-1.5-8.el7.x86_64 providing gzip is already installed", "No package matching 'unrar-free' found available, installed or updated"]}
+2017-04-05 11:40:14,550 p=27038 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 11:40:14,551 p=27038 u=ejos |  192.168.10.61              : ok=7    changed=2    unreachable=0    failed=1   
+2017-04-05 11:40:35,212 p=27492 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 11:40:35,254 p=27492 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 11:40:36,015 p=27492 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:40:36,018 p=27492 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 11:40:36,434 p=27492 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:40:36,439 p=27492 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:40:37,320 p=27492 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:40:37,324 p=27492 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:40:37,894 p=27492 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:40:37,897 p=27492 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 11:40:38,465 p=27492 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:40:38,467 p=27492 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 11:40:38,870 p=27492 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:40:38,875 p=27492 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 11:40:54,178 p=27492 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:40:54,182 p=27492 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 11:40:56,098 p=27492 u=ejos |  failed: [192.168.10.61] (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unrar-free', u'unzip', u'zip', u'tree']) => {"changed": false, "failed": true, "item": ["bzip2", "cpio", "file", "gzip", "unrar-free", "unzip", "zip", "tree"], "msg": "No package matching 'unrar-free' found available, installed or updated", "rc": 126, "results": ["bzip2-1.0.6-13.el7.x86_64 providing bzip2 is already installed", "cpio-2.11-24.el7.x86_64 providing cpio is already installed", "file-5.11-33.el7.x86_64 providing file is already installed", "gzip-1.5-8.el7.x86_64 providing gzip is already installed", "No package matching 'unrar-free' found available, installed or updated"]}
+2017-04-05 11:40:56,099 p=27492 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 11:40:56,099 p=27492 u=ejos |  192.168.10.61              : ok=7    changed=2    unreachable=0    failed=1   
+2017-04-05 11:41:56,617 p=27599 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 11:41:56,665 p=27599 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 11:42:04,790 p=27599 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:42:04,793 p=27599 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 11:42:05,466 p=27599 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:42:05,470 p=27599 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:42:06,339 p=27599 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:42:06,343 p=27599 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 11:42:06,910 p=27599 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:42:06,913 p=27599 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 11:42:07,871 p=27599 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:42:07,874 p=27599 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 11:42:08,326 p=27599 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:42:08,330 p=27599 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 11:42:23,566 p=27599 u=ejos |  ok: [192.168.10.61]
+2017-04-05 11:42:23,569 p=27599 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 11:42:36,963 p=27599 u=ejos |  changed: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux'])
+2017-04-05 11:42:36,968 p=27599 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 11:42:37,289 p=27599 u=ejos |  changed: [192.168.10.61]
+2017-04-05 11:42:37,291 p=27599 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 11:42:37,292 p=27599 u=ejos |  192.168.10.61              : ok=9    changed=4    unreachable=0    failed=0   
+2017-04-05 12:31:57,448 p=29513 u=ejos |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 34, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      - fedora-packager
+
+^ here
+
+2017-04-05 12:32:07,549 p=29519 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 12:32:07,866 p=29519 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 12:32:15,943 p=29519 u=ejos |  ok: [192.168.10.61]
+2017-04-05 12:32:15,945 p=29519 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 12:32:16,415 p=29519 u=ejos |  changed: [192.168.10.61]
+2017-04-05 12:32:16,471 p=29519 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 12:32:17,380 p=29519 u=ejos |  ok: [192.168.10.61]
+2017-04-05 12:32:17,384 p=29519 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 12:32:17,944 p=29519 u=ejos |  ok: [192.168.10.61]
+2017-04-05 12:32:17,948 p=29519 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 12:32:18,766 p=29519 u=ejos |  ok: [192.168.10.61]
+2017-04-05 12:32:18,770 p=29519 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 12:32:19,271 p=29519 u=ejos |  changed: [192.168.10.61]
+2017-04-05 12:32:19,275 p=29519 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 12:32:31,918 p=29519 u=ejos |  ok: [192.168.10.61]
+2017-04-05 12:32:31,922 p=29519 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 12:33:26,940 p=29519 u=ejos |  changed: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager'])
+2017-04-05 12:33:26,943 p=29519 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 12:33:27,260 p=29519 u=ejos |  changed: [192.168.10.61]
+2017-04-05 12:33:27,263 p=29519 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 12:33:27,263 p=29519 u=ejos |  192.168.10.61              : ok=9    changed=4    unreachable=0    failed=0   
+2017-04-05 12:40:21,208 p=29922 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+Linux host-192-168-10-61 3.10.0-514.6.1.el7.x86_64 #1 SMP Wed Jan 18 13:06:36 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 12:41:24,902 p=29956 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 12:41:24,946 p=29956 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 12:41:26,675 p=29956 u=ejos |  ok: [192.168.10.61]
+2017-04-05 12:41:26,678 p=29956 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 12:41:27,112 p=29956 u=ejos |  changed: [192.168.10.61]
+2017-04-05 12:41:27,117 p=29956 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 12:41:27,928 p=29956 u=ejos |  ok: [192.168.10.61]
+2017-04-05 12:41:27,931 p=29956 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 12:41:28,700 p=29956 u=ejos |  ok: [192.168.10.61]
+2017-04-05 12:41:28,704 p=29956 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 12:41:30,020 p=29956 u=ejos |  ok: [192.168.10.61]
+2017-04-05 12:41:30,024 p=29956 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 12:41:30,052 p=29956 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "Unable to find 'build.sh' in expected paths."}
+2017-04-05 12:41:30,054 p=29956 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 12:41:30,054 p=29956 u=ejos |  192.168.10.61              : ok=5    changed=1    unreachable=0    failed=1   
+2017-04-05 12:47:03,093 p=30184 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+/bin/spectool
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 12:47:13,221 p=30202 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+/bin/git
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 12:47:21,226 p=30212 u=ejos |  192.168.10.61 | FAILED | rc=1 >>
+which: no popd in (/sbin:/bin:/usr/sbin:/usr/bin)
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 12:47:57,827 p=30228 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+Complementos cargados:fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.gtdinternet.com
+ * epel: mirror.globo.com
+ * extras: mirror.gtdinternet.com
+ * updates: mirror.gtdinternet.com
+Aviso: No se ha encontrado ningún resultado para: popd
+No matches found
+mux_client_request_session: read from master failed: Broken pipe
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 12:48:49,925 p=30251 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+Complementos cargados:fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.gtdinternet.com
+ * epel: mirror.globo.com
+ * extras: mirror.gtdinternet.com
+ * updates: mirror.gtdinternet.com
+Aviso: No se ha encontrado ningún resultado para: popd
+No matches found
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 12:49:47,232 p=30350 u=ejos |  192.168.10.61 | FAILED | rc=1 >>
+which: no popd in (/sbin:/bin:/usr/sbin:/usr/bin)
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 12:50:48,501 p=30410 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+Complementos cargados:fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.gtdinternet.com
+ * epel: fedora.kiewel-online.ch
+ * extras: mirror.gtdinternet.com
+ * updates: mirror.gtdinternet.com
+============================== N/S matched: mock ===============================
+cs[1mmock(B[m.noarch : A [1mmock(B[m wrapper for Static Analysis tools
+cs[1mmock(B[m-common.noarch : Core of cs[1mmock(B[m (a [1mmock(B[m wrapper for Static Analysis tools)
+cs[1mmock(B[m-plugin-clang.noarch : cs[1mmock(B[m plug-in providing the support for Clang
+cs[1mmock(B[m-plugin-cppcheck.noarch : cs[1mmock(B[m plug-in providing the support for
+                              : Cppcheck
+cs[1mmock(B[m-plugin-pylint.noarch : cs[1mmock(B[m plug-in providing the support for Pylint.
+cs[1mmock(B[m-plugin-shellcheck.noarch : cs[1mmock(B[m plug-in providing the support for
+                                : ShellCheck.
+easy[1mmock(B[m.noarch : Easy [1mmock(B[m objects
+easy[1mmock(B[m-javadoc.noarch : Javadoc for easy[1mmock(B[m
+easy[1mmock(B[m2.noarch : Easy [1mmock(B[m objects
+easy[1mmock(B[m2-javadoc.noarch : Javadoc for easy[1mmock(B[m2
+gfal2-plugin-[1mmock(B[m.x86_64 : Provides a [1mMock(B[m dummy protocol for gfal2
+g[1mmock(B[m.noarch : Google C++ [1mMock(B[ming Framework
+g[1mmock(B[m-devel.noarch : Development files for g[1mmock(B[m
+j[1mmock(B[m.noarch : Java library for testing code with [1mmock(B[m objects
+j[1mmock(B[m-example.noarch : j[1mMock(B[m Examples
+j[1mmock(B[m-javadoc.noarch : Javadoc for j[1mmock(B[m
+j[1mmock(B[m-junit3.noarch : j[1mMock(B[m JUnit 3 Integration
+j[1mmock(B[m-junit4.noarch : j[1mMock(B[m JUnit 4 Integration
+j[1mmock(B[m-legacy.noarch : j[1mMock(B[m Legacy Plugins
+j[1mmock(B[m-parent.noarch : j[1mMock(B[m Parent POM
+j[1mmock(B[m-testjar.noarch : j[1mMock(B[m Test Jar
+libc[1mmock(B[ma-devel.x86_64 : Development headers for the c[1mmock(B[ma library
+mingw32-c[1mmock(B[ma-static.noarch : Static version of the MinGW Windows c[1mmock(B[ma
+                             : library
+mingw64-c[1mmock(B[ma-static.noarch : Static version of the MinGW Windows c[1mmock(B[ma
+                             : library
+[1mmock(B[m-lvm.noarch : LVM plugin for [1mmock(B[m
+[1mmock(B[m-scm.noarch : [1mMock(B[m SCM integration module
+[1mmock(B[mito.noarch : A Java [1mmock(B[ming framework
+[1mmock(B[mito-javadoc.noarch : Javadocs for [1mmock(B[mito
+nodejs-std-[1mmock(B[ms.noarch : [1mMock(B[m node stdout and stderr without pain
+perl-DBD-[1mMock(B[m.noarch : [1mMock(B[m database driver for testing
+perl-[1mMock(B[m-Quick.noarch : Quickly [1mmock(B[m objects and classes, side-effect free
+perl-[1mMock(B[m-Sub.noarch : [1mMock(B[m package, object and standard subroutines, with unit
+                     : testing in mind
+perl-Test-[1mMock(B[m-Guard.noarch : Simple [1mmock(B[m test library using RAII
+perl-Test-[1mMock(B[m-LWP.noarch : Easy [1mmock(B[ming of LWP packages
+perl-Test-Tiny[1mMock(B[mer.noarch : A very simple tool to [1mmock(B[m external modules
+perl-Time-[1mMock(B[m.noarch : Replaces actual time with simulated time - alternative
+                      : to Test::[1mMock(B[mTime
+php-deepend-[1mMock(B[mery.noarch : [1mMock(B[mery is a simple but flexible PHP [1mmock(B[m object
+                           : framework
+php-mnapoli-phpunit-easy[1mmock(B[m.noarch : Helpers to build PHPUnit [1mmock(B[ms
+php-phpunit-PHPUnit-[1mMock(B[mObject.noarch : [1mMock(B[m Object library for PHPUnit
+python-XStatic-Angular-[1mMock(B[m.noarch : Angular-[1mMock(B[m (XStatic packaging standard)
+python-dbus[1mmock(B[m.noarch : [1mMock(B[m D-Bus objects
+python-mini[1mmock(B[m.noarch : The simplest possible [1mmock(B[m library
+python2-flex[1mmock(B[m.noarch : Testing library that makes it easy to create [1mmock(B[ms,
+                        : stubs and fakes
+python2-[1mmock(B[m.noarch : A Python [1mMock(B[ming and Patching Library for Testing
+python34-flex[1mmock(B[m.noarch : Testing library that makes it easy to create [1mmock(B[ms,
+                         : stubs and fakes
+python34-[1mmock(B[m.noarch : A Python [1mMock(B[ming and Patching Library for Testing
+rubygem-flex[1mmock(B[m.noarch : [1mMock(B[m object library for ruby
+rubygem-flex[1mmock(B[m-doc.noarch : Documentation for rubygem-flex[1mmock(B[m
+rubygem-rspec-[1mmock(B[ms.noarch : Rspec-2 doubles ([1mmock(B[ms and stubs)
+rubygem-rspec-[1mmock(B[ms-doc.noarch : Documentation for rubygem-rspec-[1mmock(B[ms
+rubygem-web[1mmock(B[m-doc.noarch : Documentation for rubygem-web[1mmock(B[m
+c[1mmock(B[mery2.x86_64 : Lightweight C unit testing framework
+c[1mmock(B[mery2-devel.x86_64 : Lightweight C unit testing framework
+erlang-meck.x86_64 : A [1mmock(B[ming library for Erlang
+libc[1mmock(B[ma.x86_64 : Lightweight library to simplify and generalize unit tests for
+                 : C
+libc[1mmock(B[ma-static.x86_64 : Lightweight library to simplify and generalize unit
+                        : tests for C
+mingw32-c[1mmock(B[ma.noarch : MinGW GnuTLS TLS/SSL encryption library
+mingw64-c[1mmock(B[ma.noarch : MinGW GnuTLS TLS/SSL encryption library
+[1mmock(B[m.noarch : Builds packages inside chroots
+nodejs-hock.noarch : A [1mmock(B[ming server for HTTP requests
+nodejs-require-inject.noarch : A simple [1mmock(B[m injector needing no instrumentation
+                             : in the libraries being tested
+perl-Test-[1mMock(B[mModule.noarch : Override subroutines in a module for unit testing
+perl-Test-[1mMock(B[mObject.noarch : Perl extension for emulating troublesome
+                            : interfaces
+perl-Test-[1mMock(B[mTime.noarch : Replaces actual time with simulated time
+php-phpspec-prophecy.noarch : Highly opinionated [1mmock(B[ming framework for PHP
+python-dingus.noarch : A record-then-assert [1mmock(B[ming library
+python-fudge.noarch : A Python module for using fake objects ([1mmock(B[ms and stubs)
+                    : to test real ones
+python-httpretty.noarch : HTTP request [1mmock(B[m tool for Python
+python-mox.noarch : [1mMock(B[m object framework
+python-vcrpy.noarch : Automatically [1mmock(B[m your HTTP interactions to simplify and
+                    : speed up testing
+python2-chai.noarch : Easy to use [1mmock(B[ming/stub framework
+python2-fauxquests.noarch : [1mMock(B[m HTTP requests sent with the requests package
+python34-chai.noarch : Easy to use [1mmock(B[ming/stub framework
+rubygem-mocha.noarch : [1mMock(B[ming and stubbing library
+rubygem-web[1mmock(B[m.noarch : Library for stubbing HTTP requests in Ruby
+
+  Nombre y resumen que coinciden con [1m y sólo (B[m, use "buscar todo" para todo.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 13:00:37,886 p=30764 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:00:37,929 p=30764 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:00:45,908 p=30764 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:00:45,911 p=30764 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:00:46,305 p=30764 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:00:46,309 p=30764 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:00:47,211 p=30764 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:00:47,215 p=30764 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:00:47,805 p=30764 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:00:47,808 p=30764 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 13:00:48,380 p=30764 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:00:48,385 p=30764 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 13:00:48,922 p=30764 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:00:48,927 p=30764 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 13:01:01,801 p=30764 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:01:01,805 p=30764 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 13:01:02,371 p=30764 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 13:01:02,374 p=30764 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 13:01:03,620 p=30764 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:01:03,625 p=30764 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 13:01:04,186 p=30764 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "cmd": "/bin/git clone --origin origin 'git://git.code.sf.net/p/aufs/aufs3-standalone -b aufs4.10' /tmp", "failed": true, "msg": "fatal: destination path '/tmp' already exists and is not an empty directory.", "rc": 128, "stderr": "fatal: destination path '/tmp' already exists and is not an empty directory.\n", "stdout": "", "stdout_lines": []}
+2017-04-05 13:01:04,188 p=30764 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:01:04,188 p=30764 u=ejos |  192.168.10.61              : ok=9    changed=3    unreachable=0    failed=1   
+2017-04-05 13:01:32,233 p=30888 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:01:32,278 p=30888 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:01:33,254 p=30888 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:01:33,258 p=30888 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:01:33,775 p=30888 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:01:33,778 p=30888 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:01:34,605 p=30888 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:01:34,610 p=30888 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:01:35,657 p=30888 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:01:35,661 p=30888 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 13:01:36,677 p=30888 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:01:36,680 p=30888 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 13:01:37,134 p=30888 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:01:37,138 p=30888 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 13:01:52,563 p=30888 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:01:52,566 p=30888 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 13:01:53,180 p=30888 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 13:01:53,184 p=30888 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 13:01:53,998 p=30888 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:01:54,001 p=30888 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 13:01:55,048 p=30888 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "cmd": "/bin/git clone --origin origin 'git://git.code.sf.net/p/aufs/aufs3-standalone -b aufs4.10' /tmp/aufs4.10", "failed": true, "msg": "fatal: remote error: access denied or repository not exported: /p/aufs/aufs3-standalone -b aufs4.10", "rc": 128, "stderr": "fatal: remote error: access denied or repository not exported: /p/aufs/aufs3-standalone -b aufs4.10\n", "stdout": "Cloning into '/tmp/aufs4.10'...\n", "stdout_lines": ["Cloning into '/tmp/aufs4.10'..."]}
+2017-04-05 13:01:55,049 p=30888 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:01:55,050 p=30888 u=ejos |  192.168.10.61              : ok=9    changed=2    unreachable=0    failed=1   
+2017-04-05 13:09:04,115 p=31164 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:09:04,164 p=31164 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:09:12,092 p=31164 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:09:12,096 p=31164 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:09:12,517 p=31164 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:09:12,522 p=31164 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:09:13,340 p=31164 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:09:13,344 p=31164 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:09:13,871 p=31164 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:09:13,874 p=31164 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 13:09:14,396 p=31164 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:09:14,400 p=31164 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 13:09:14,797 p=31164 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:09:14,800 p=31164 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 13:09:31,020 p=31164 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:09:31,023 p=31164 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 13:09:31,782 p=31164 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 13:09:31,787 p=31164 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 13:09:33,161 p=31164 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:09:33,166 p=31164 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 13:09:44,369 p=31164 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "cmd": "/bin/git fetch origin autofs4.10", "failed": true, "msg": "fatal: Couldn't find remote ref autofs4.10", "rc": 128, "stderr": "fatal: Couldn't find remote ref autofs4.10\n", "stdout": "", "stdout_lines": []}
+2017-04-05 13:09:44,371 p=31164 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:09:44,371 p=31164 u=ejos |  192.168.10.61              : ok=9    changed=2    unreachable=0    failed=1   
+2017-04-05 13:14:18,282 p=31456 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:14:18,334 p=31456 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:14:19,297 p=31456 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:14:19,300 p=31456 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:14:19,300 p=31456 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=0   
+2017-04-05 13:14:38,072 p=31474 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:14:38,119 p=31474 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:14:38,843 p=31474 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:14:38,846 p=31474 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:14:38,846 p=31474 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=0   
+2017-04-05 13:14:53,168 p=31489 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:14:53,212 p=31489 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:14:54,109 p=31489 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:14:54,112 p=31489 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:14:54,598 p=31489 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:14:54,605 p=31489 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:14:55,472 p=31489 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:14:55,476 p=31489 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:14:56,256 p=31489 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:14:56,259 p=31489 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 13:14:56,948 p=31489 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:14:56,951 p=31489 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 13:14:57,486 p=31489 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:14:57,490 p=31489 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 13:15:14,760 p=31489 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:15:14,764 p=31489 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 13:15:15,358 p=31489 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 13:15:15,364 p=31489 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 13:15:16,290 p=31489 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:15:16,293 p=31489 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 13:15:17,046 p=31489 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "unsupported parameter for module: tags"}
+2017-04-05 13:15:17,048 p=31489 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:15:17,048 p=31489 u=ejos |  192.168.10.61              : ok=9    changed=2    unreachable=0    failed=1   
+2017-04-05 13:15:35,061 p=31628 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:15:35,105 p=31628 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:15:35,849 p=31628 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:15:35,853 p=31628 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:15:35,853 p=31628 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=0   
+2017-04-05 13:18:33,199 p=31901 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:18:33,244 p=31901 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:18:34,603 p=31901 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:18:34,605 p=31901 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:18:34,606 p=31901 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=0   
+2017-04-05 13:18:38,312 p=31919 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:18:38,362 p=31919 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:18:40,066 p=31919 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:18:40,068 p=31919 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:18:40,069 p=31919 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=0   
+2017-04-05 13:18:43,369 p=31933 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:18:43,417 p=31933 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:18:44,234 p=31933 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:18:44,237 p=31933 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:18:44,237 p=31933 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=0   
+2017-04-05 13:18:51,363 p=31947 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:18:51,412 p=31947 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:18:52,684 p=31947 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:18:52,687 p=31947 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:18:53,142 p=31947 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:18:53,146 p=31947 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:18:54,554 p=31947 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:18:54,557 p=31947 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:18:55,851 p=31947 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:18:55,857 p=31947 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 13:18:56,580 p=31947 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:18:56,584 p=31947 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 13:18:57,054 p=31947 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:18:57,059 p=31947 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 13:19:14,136 p=31947 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:19:14,140 p=31947 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 13:19:15,002 p=31947 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 13:19:15,005 p=31947 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 13:19:16,871 p=31947 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:19:16,874 p=31947 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 13:19:17,817 p=31947 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "unsupported parameter for module: tags"}
+2017-04-05 13:19:17,819 p=31947 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:19:17,819 p=31947 u=ejos |  192.168.10.61              : ok=9    changed=2    unreachable=0    failed=1   
+2017-04-05 13:19:35,633 p=32062 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:19:35,678 p=32062 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:19:37,368 p=32062 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:19:37,370 p=32062 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:19:37,370 p=32062 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=0   
+2017-04-05 13:20:04,248 p=32116 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:20:04,298 p=32116 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:20:05,166 p=32116 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:20:05,168 p=32116 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:20:05,168 p=32116 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=0   
+2017-04-05 13:20:07,947 p=32131 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:20:07,995 p=32131 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:20:08,899 p=32131 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:20:08,901 p=32131 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:20:08,901 p=32131 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=0   
+2017-04-05 13:20:14,002 p=32147 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:20:14,046 p=32147 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:20:15,214 p=32147 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:20:15,216 p=32147 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:20:15,816 p=32147 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:20:15,820 p=32147 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:20:16,806 p=32147 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:20:16,809 p=32147 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:20:17,507 p=32147 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:20:17,510 p=32147 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 13:20:18,324 p=32147 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:20:18,328 p=32147 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 13:20:18,753 p=32147 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:20:18,756 p=32147 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 13:20:38,964 p=32147 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:20:38,968 p=32147 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 13:20:39,610 p=32147 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 13:20:39,615 p=32147 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 13:20:40,516 p=32147 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:20:40,519 p=32147 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 13:20:41,042 p=32147 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "unsupported parameter for module: tags"}
+2017-04-05 13:20:41,044 p=32147 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:20:41,045 p=32147 u=ejos |  192.168.10.61              : ok=9    changed=2    unreachable=0    failed=1   
+2017-04-05 13:22:21,390 p=32267 u=ejos |  ERROR! included task files must contain a list of tasks
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 2, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+---
+tasks:
+^ here
+
+2017-04-05 13:22:29,317 p=32273 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:22:29,360 p=32273 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:22:30,202 p=32273 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:22:30,206 p=32273 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:22:30,764 p=32273 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:22:30,770 p=32273 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:22:31,640 p=32273 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:22:31,645 p=32273 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:22:32,180 p=32273 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:22:32,183 p=32273 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 13:22:32,704 p=32273 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:22:32,707 p=32273 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 13:22:33,109 p=32273 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:22:33,113 p=32273 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 13:22:50,168 p=32273 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:22:50,173 p=32273 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 13:22:50,750 p=32273 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 13:22:50,754 p=32273 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 13:22:51,645 p=32273 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:22:51,648 p=32273 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 13:22:52,263 p=32273 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "unsupported parameter for module: tags"}
+2017-04-05 13:22:52,265 p=32273 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:22:52,265 p=32273 u=ejos |  192.168.10.61              : ok=9    changed=2    unreachable=0    failed=1   
+2017-04-05 13:24:22,451 p=32429 u=ejos |  ERROR! 'task' is not a valid attribute for a Task
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 37, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Copy aufs support for kernel 4.10
+  ^ here
+
+2017-04-05 13:24:39,622 p=32437 u=ejos |  ERROR! no action detected in task. This often indicates a misspelled module name, or incorrect module path.
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 40, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- task:
+  ^ here
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 40, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- task:
+  ^ here
+
+2017-04-05 13:25:14,025 p=32478 u=ejos |  ERROR! 'refspec' is not a valid attribute for a Task
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 40, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- git:
+  ^ here
+
+2017-04-05 13:25:26,187 p=32486 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:25:26,230 p=32486 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:25:27,131 p=32486 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:25:27,134 p=32486 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:25:27,602 p=32486 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:25:27,608 p=32486 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:25:28,670 p=32486 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:25:28,675 p=32486 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:25:29,974 p=32486 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:25:29,981 p=32486 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 13:25:31,458 p=32486 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:25:31,463 p=32486 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 13:25:32,533 p=32486 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:25:32,536 p=32486 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 13:25:48,967 p=32486 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:25:48,971 p=32486 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 13:25:49,742 p=32486 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 13:25:49,749 p=32486 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 13:25:51,227 p=32486 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:25:51,231 p=32486 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 13:25:53,092 p=32486 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "cmd": ["/bin/git", "fetch", "origin", "+refs/tags/*:refs/tags/*", "autofs4.10"], "failed": true, "msg": "Failed to download remote objects and refs:  fatal: Couldn't find remote ref autofs4.10\n"}
+2017-04-05 13:25:53,094 p=32486 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:25:53,095 p=32486 u=ejos |  192.168.10.61              : ok=9    changed=2    unreachable=0    failed=1   
+2017-04-05 13:28:06,219 p=32660 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:28:06,269 p=32660 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:28:07,178 p=32660 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:28:07,181 p=32660 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:28:07,629 p=32660 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:28:07,634 p=32660 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:28:08,707 p=32660 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:28:08,712 p=32660 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:28:09,310 p=32660 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:28:09,314 p=32660 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 13:28:09,859 p=32660 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:28:09,862 p=32660 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 13:28:10,268 p=32660 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:28:10,273 p=32660 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 13:28:22,328 p=32660 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:28:22,331 p=32660 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 13:28:22,866 p=32660 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 13:28:22,874 p=32660 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 13:28:23,976 p=32660 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:28:23,979 p=32660 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 13:28:26,600 p=32660 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "cmd": "/bin/git checkout --force autofs4.10", "failed": true, "msg": "Failed to checkout autofs4.10", "rc": 1, "stderr": "error: pathspec 'autofs4.10' did not match any file(s) known to git.\n", "stdout": "", "stdout_lines": []}
+2017-04-05 13:28:26,602 p=32660 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:28:26,602 p=32660 u=ejos |  192.168.10.61              : ok=9    changed=2    unreachable=0    failed=1   
+2017-04-05 13:33:02,336 p=484 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:33:02,383 p=484 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:33:03,354 p=484 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:33:03,359 p=484 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:33:03,780 p=484 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:33:03,785 p=484 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:33:04,690 p=484 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:33:04,694 p=484 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:33:05,270 p=484 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:33:05,273 p=484 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 13:33:05,855 p=484 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:33:05,858 p=484 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 13:33:06,251 p=484 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:33:06,254 p=484 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 13:33:17,525 p=484 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:33:17,530 p=484 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 13:33:18,091 p=484 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 13:33:18,094 p=484 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 13:33:18,883 p=484 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:33:18,887 p=484 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 13:33:21,016 p=484 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:33:21,021 p=484 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:33:21,322 p=484 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:33:21,324 p=484 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:33:21,325 p=484 u=ejos |  192.168.10.61              : ok=11   changed=4    unreachable=0    failed=0   
+2017-04-05 13:34:03,423 p=626 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+aufs3-base.patch	config.mk      lockdep-debug.patch
+aufs3-kbuild.patch	COPYING        Makefile
+aufs3-loopback.patch	Documentation  README
+aufs3-mmap.patch	fs	       tmpfs-idr.patch
+aufs3-standalone.patch	include        vfs-ino.patch
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 13:38:53,128 p=761 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+total 60
+drwx------ 3 root root  4096 abr  3 12:10 systemd-private-1fc9432398e24c9c8748bdb4c2d53cfe-ntpd.service-hDJEwu
+drwx------ 2 root root  4096 abr  5 11:39 tmpr1C5cs
+drwx------ 2 root root  4096 abr  5 11:40 tmpJQtxNX
+-rw-r--r-- 1 root root 44282 abr  5 13:01 kernel-ml-aufs-4.10.spec
+drwxr-xr-x 6 root root  4096 abr  5 13:33 aufs4.10
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 13:40:08,865 p=843 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:40:08,910 p=843 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:40:09,813 p=843 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:40:09,815 p=843 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:40:10,295 p=843 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:40:10,302 p=843 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:40:11,163 p=843 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:40:11,167 p=843 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:40:11,707 p=843 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:40:11,711 p=843 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 13:40:12,294 p=843 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:40:12,297 p=843 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 13:40:12,725 p=843 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:40:12,729 p=843 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 13:40:29,500 p=843 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:40:29,504 p=843 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 13:40:30,167 p=843 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 13:40:30,170 p=843 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 13:40:31,100 p=843 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:40:31,103 p=843 u=ejos |  TASK [master : Compile aufs support for kernel 4.10] ***************************
+2017-04-05 13:40:31,562 p=843 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": ["spectool", "-g", "-C", "kernel-ml-aufs", "tmp/kernel-ml-aufs-4.10.spec"], "delta": "0:00:00.142858", "end": "2017-04-05 13:40:31.541180", "failed": true, "rc": 2, "start": "2017-04-05 13:40:31.398322", "stderr": "Can't open 'tmp/kernel-ml-aufs-4.10.spec': No existe el fichero o el directorio at /bin/spectool line 314.", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-05 13:40:31,564 p=843 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:40:31,564 p=843 u=ejos |  192.168.10.61              : ok=9    changed=2    unreachable=0    failed=1   
+2017-04-05 13:41:01,585 p=963 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+/bin/spectool
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 13:41:35,073 p=985 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:41:35,118 p=985 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:41:35,852 p=985 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:41:35,854 p=985 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:41:36,258 p=985 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:41:36,263 p=985 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:41:37,132 p=985 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:41:37,138 p=985 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:41:37,867 p=985 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:41:37,872 p=985 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 13:41:38,418 p=985 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:41:38,423 p=985 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 13:41:39,036 p=985 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:41:39,039 p=985 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 13:41:51,114 p=985 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:41:51,117 p=985 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 13:41:51,757 p=985 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 13:41:51,761 p=985 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 13:41:52,654 p=985 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:41:52,659 p=985 u=ejos |  TASK [master : Compile aufs support for kernel 4.10] ***************************
+2017-04-05 13:41:53,891 p=985 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": ["spectool", "-g", "-C", "kernel-ml-aufs", "/tmp/kernel-ml-aufs-4.10.spec"], "delta": "0:00:00.958330", "end": "2017-04-05 13:41:53.868913", "failed": true, "rc": 23, "start": "2017-04-05 13:41:52.910583", "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0Warning: Failed to create the file kernel-ml-aufs/linux-4.10.8.tar.xz: No \nWarning: existe el fichero o el directorio\n\r  0 89.8M    0  2289    0     0   2924      0  8:57:08 --:--:--  8:57:08  2923\ncurl: (23) Failed writing body (0 != 2289)", "stdout": "Getting https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.10.8.tar.xz to kernel-ml-aufs/linux-4.10.8.tar.xz", "stdout_lines": ["Getting https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.10.8.tar.xz to kernel-ml-aufs/linux-4.10.8.tar.xz"], "warnings": []}
+2017-04-05 13:41:53,893 p=985 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:41:53,893 p=985 u=ejos |  192.168.10.61              : ok=9    changed=2    unreachable=0    failed=1   
+2017-04-05 13:46:19,775 p=1264 u=ejos |  192.168.10.61 | FAILED | rc=23 >>
+Getting https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.10.8.tar.xz to kernel-ml-aufs/linux-4.10.8.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0Warning: Failed to create the file kernel-ml-aufs/linux-4.10.8.tar.xz: No 
+Warning: existe el fichero o el directorio
+  0 89.8M    0  2759    0     0   1549      0 16:53:56  0:00:01 16:53:55  1549
+curl: (23) Failed writing body (0 != 2759)
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 13:51:34,124 p=1493 u=ejos |  ERROR! this task 'file' has extra params, which is only allowed in the following modules: command, win_command, shell, win_shell, script, include, include_vars, add_host, group_by, set_fact, raw, meta
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 40, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Creating dir for aufs support for kernel 4.10
+  ^ here
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 40, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Creating dir for aufs support for kernel 4.10
+  ^ here
+
+2017-04-05 13:53:23,816 p=1506 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 13:53:23,861 p=1506 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 13:53:24,910 p=1506 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:53:24,912 p=1506 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:53:25,365 p=1506 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:53:25,369 p=1506 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:53:26,245 p=1506 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:53:26,250 p=1506 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 13:53:26,846 p=1506 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:53:26,848 p=1506 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 13:53:27,440 p=1506 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:53:27,445 p=1506 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 13:53:27,914 p=1506 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:53:27,918 p=1506 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 13:53:45,664 p=1506 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:53:45,672 p=1506 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 13:53:46,312 p=1506 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 13:53:46,315 p=1506 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 13:53:47,363 p=1506 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:53:47,366 p=1506 u=ejos |  TASK [master : Creating dir for aufs support for kernel 4.10] ******************
+2017-04-05 13:53:47,905 p=1506 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:53:47,909 p=1506 u=ejos |  TASK [master : Compile aufs support for kernel 4.10] ***************************
+2017-04-05 13:54:09,889 p=1506 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:54:09,892 p=1506 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 13:54:12,505 p=1506 u=ejos |  ok: [192.168.10.61]
+2017-04-05 13:54:12,509 p=1506 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 13:54:12,837 p=1506 u=ejos |  changed: [192.168.10.61]
+2017-04-05 13:54:12,839 p=1506 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 13:54:12,839 p=1506 u=ejos |  192.168.10.61              : ok=13   changed=5    unreachable=0    failed=0   
+2017-04-05 14:11:50,555 p=2255 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 14:11:50,600 p=2255 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 14:11:52,365 p=2255 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:11:52,368 p=2255 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 14:11:53,210 p=2255 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:11:53,215 p=2255 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 14:11:54,762 p=2255 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:11:54,765 p=2255 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 14:11:55,822 p=2255 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:11:55,825 p=2255 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 14:11:57,029 p=2255 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:11:57,033 p=2255 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 14:11:57,940 p=2255 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:11:57,943 p=2255 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 14:12:16,302 p=2255 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:12:16,306 p=2255 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 14:12:17,648 p=2255 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 14:12:17,656 p=2255 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 14:12:19,679 p=2255 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:12:19,682 p=2255 u=ejos |  TASK [master : Creating dir for aufs support for kernel 4.10] ******************
+2017-04-05 14:12:20,430 p=2255 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:12:20,433 p=2255 u=ejos |  TASK [master : Compile aufs support for kernel 4.10] ***************************
+2017-04-05 14:12:20,952 p=2255 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:12:20,956 p=2255 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 14:12:24,103 p=2255 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:12:24,108 p=2255 u=ejos |  TASK [master : Changing directory] *********************************************
+2017-04-05 14:12:24,576 p=2255 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "popd /tmp/aufs4.10 && git archive ` git log -1 --pretty='%H' ` > /tmp/kernel-ml-aufs/aufs3-standalone.tar", "delta": "0:00:00.002918", "end": "2017-04-05 14:12:24.555859", "failed": true, "rc": 1, "start": "2017-04-05 14:12:24.552941", "stderr": "/bin/sh: línea 0: popd: la pila de directorios está vacía", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-05 14:12:24,578 p=2255 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 14:12:24,578 p=2255 u=ejos |  192.168.10.61              : ok=12   changed=3    unreachable=0    failed=1   
+2017-04-05 14:13:31,885 p=2428 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 14:13:31,933 p=2428 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 14:13:33,569 p=2428 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:13:33,573 p=2428 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 14:13:34,281 p=2428 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:13:34,286 p=2428 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 14:13:36,258 p=2428 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:13:36,261 p=2428 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 14:13:38,743 p=2428 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:13:38,747 p=2428 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 14:13:40,641 p=2428 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:13:40,647 p=2428 u=ejos |  TASK [master : Replaciong Kernel Value] ****************************************
+2017-04-05 14:13:41,504 p=2428 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:13:41,508 p=2428 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 14:13:58,463 p=2428 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:13:58,467 p=2428 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 14:13:59,913 p=2428 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 14:13:59,917 p=2428 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 14:14:01,411 p=2428 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:14:01,415 p=2428 u=ejos |  TASK [master : Creating dir for aufs support for kernel 4.10] ******************
+2017-04-05 14:14:02,022 p=2428 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:14:02,026 p=2428 u=ejos |  TASK [master : Compile aufs support for kernel 4.10] ***************************
+2017-04-05 14:14:03,436 p=2428 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:14:03,439 p=2428 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 14:14:06,189 p=2428 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:14:06,194 p=2428 u=ejos |  TASK [master : Changing directory] *********************************************
+2017-04-05 14:14:06,543 p=2428 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:14:06,546 p=2428 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 14:14:06,936 p=2428 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:14:06,939 p=2428 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 14:14:06,940 p=2428 u=ejos |  192.168.10.61              : ok=14   changed=5    unreachable=0    failed=0   
+2017-04-05 14:28:53,802 p=2969 u=ejos |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 55, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+vars:
+^ here
+
+2017-04-05 14:29:09,939 p=2978 u=ejos |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 7, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Copy kernel-lt-aufs.repo from spaceduck repo
+^ here
+
+2017-04-05 14:37:40,928 p=3219 u=ejos |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 53, column 14, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- shell: cd /tmp/aufs4.10 && git log -1 --pretty='%H'
+     register: git_latest_commit_log
+             ^ here
+
+2017-04-05 14:37:54,178 p=3260 u=ejos |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 53, column 13, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- shell: cd /tmp/aufs4.10 && git log -1 --pretty='%H'
+    register: git_latest_commit_log
+            ^ here
+
+2017-04-05 14:42:49,799 p=3405 u=ejos |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 53, column 13, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- shell: cd /tmp/aufs4.10 && git log -1 --pretty='%H'
+    register: git_latest_commit_log
+            ^ here
+
+2017-04-05 14:43:09,377 p=3414 u=ejos |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 53, column 13, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- shell: cd /tmp/aufs4.10 && git log -1 --pretty='%H'
+    register: git_latest_commit_log
+            ^ here
+
+2017-04-05 14:43:16,733 p=3421 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 14:43:16,779 p=3421 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 14:43:17,749 p=3421 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:43:17,752 p=3421 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 14:43:18,588 p=3421 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:43:18,594 p=3421 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 14:43:19,487 p=3421 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:43:19,490 p=3421 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 14:43:20,047 p=3421 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:43:20,051 p=3421 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 14:43:21,283 p=3421 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:43:21,287 p=3421 u=ejos |  TASK [master : Replacing Kernel Value] *****************************************
+2017-04-05 14:43:21,682 p=3421 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:43:21,687 p=3421 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 14:43:35,360 p=3421 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:43:35,365 p=3421 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 14:43:35,960 p=3421 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 14:43:35,965 p=3421 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 14:43:37,027 p=3421 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:43:37,031 p=3421 u=ejos |  TASK [master : Creating dir for aufs support for kernel 4.10] ******************
+2017-04-05 14:43:37,569 p=3421 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:43:37,573 p=3421 u=ejos |  TASK [master : Compile aufs support for kernel 4.10] ***************************
+2017-04-05 14:43:37,928 p=3421 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:43:37,930 p=3421 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 14:43:40,933 p=3421 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:43:40,939 p=3421 u=ejos |  TASK [master : command] ********************************************************
+2017-04-05 14:43:41,323 p=3421 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:43:41,328 p=3421 u=ejos |  TASK [master : Creating a Tar File] ********************************************
+2017-04-05 14:43:42,281 p=3421 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:43:42,286 p=3421 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 14:43:42,669 p=3421 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:43:42,671 p=3421 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 14:43:42,671 p=3421 u=ejos |  192.168.10.61              : ok=15   changed=6    unreachable=0    failed=0   
+2017-04-05 14:47:22,899 p=3777 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 14:47:22,944 p=3777 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 14:47:23,960 p=3777 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:47:23,962 p=3777 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 14:47:24,455 p=3777 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:47:24,458 p=3777 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 14:47:25,510 p=3777 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:47:25,516 p=3777 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 14:47:26,247 p=3777 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:47:26,252 p=3777 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 14:47:27,016 p=3777 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:47:27,021 p=3777 u=ejos |  TASK [master : Replacing Kernel Value] *****************************************
+2017-04-05 14:47:27,454 p=3777 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:47:27,457 p=3777 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 14:47:44,070 p=3777 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:47:44,074 p=3777 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 14:47:45,418 p=3777 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 14:47:45,421 p=3777 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 14:47:46,460 p=3777 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:47:46,465 p=3777 u=ejos |  TASK [master : Creating dir for aufs support for kernel 4.10] ******************
+2017-04-05 14:47:47,020 p=3777 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:47:47,023 p=3777 u=ejos |  TASK [master : Compile aufs support for kernel 4.10] ***************************
+2017-04-05 14:47:47,416 p=3777 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:47:47,419 p=3777 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 14:47:49,844 p=3777 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:47:49,847 p=3777 u=ejos |  TASK [master : command] ********************************************************
+2017-04-05 14:47:50,153 p=3777 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:47:50,156 p=3777 u=ejos |  TASK [master : Creating a Tar File] ********************************************
+2017-04-05 14:47:50,516 p=3777 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:47:50,521 p=3777 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 14:47:50,891 p=3777 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:47:50,894 p=3777 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 14:47:50,894 p=3777 u=ejos |  192.168.10.61              : ok=15   changed=6    unreachable=0    failed=0   
+2017-04-05 14:49:03,049 p=3930 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 14:49:03,095 p=3930 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 14:49:04,140 p=3930 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:49:04,142 p=3930 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 14:49:04,562 p=3930 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:49:04,567 p=3930 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 14:49:05,378 p=3930 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:49:05,383 p=3930 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 14:49:05,960 p=3930 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:49:05,964 p=3930 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 14:49:06,522 p=3930 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:49:06,525 p=3930 u=ejos |  TASK [master : Replacing Kernel Value] *****************************************
+2017-04-05 14:49:06,934 p=3930 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:49:06,938 p=3930 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 14:49:19,438 p=3930 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:49:19,443 p=3930 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 14:49:19,975 p=3930 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 14:49:19,980 p=3930 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 14:49:20,867 p=3930 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:49:20,870 p=3930 u=ejos |  TASK [master : Creating dir for aufs support for kernel 4.10] ******************
+2017-04-05 14:49:21,453 p=3930 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:49:21,457 p=3930 u=ejos |  TASK [master : Compile aufs support for kernel 4.10] ***************************
+2017-04-05 14:49:21,828 p=3930 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:49:21,833 p=3930 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 14:49:24,395 p=3930 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:49:24,399 p=3930 u=ejos |  TASK [master : command] ********************************************************
+2017-04-05 14:49:24,693 p=3930 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:49:24,699 p=3930 u=ejos |  TASK [master : Creating a Tar File] ********************************************
+2017-04-05 14:49:25,027 p=3930 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:49:25,032 p=3930 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 14:49:25,400 p=3930 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:49:25,403 p=3930 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 14:49:25,403 p=3930 u=ejos |  192.168.10.61              : ok=15   changed=6    unreachable=0    failed=0   
+2017-04-05 14:54:58,879 p=4165 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 14:54:58,926 p=4165 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 14:54:59,786 p=4165 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:54:59,789 p=4165 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 14:55:00,436 p=4165 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:55:00,439 p=4165 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 14:55:01,327 p=4165 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:55:01,331 p=4165 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 14:55:02,103 p=4165 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:55:02,109 p=4165 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 14:55:02,685 p=4165 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:55:02,689 p=4165 u=ejos |  TASK [master : Replacing Kernel Value] *****************************************
+2017-04-05 14:55:03,081 p=4165 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:55:03,086 p=4165 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 14:55:15,247 p=4165 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:55:15,251 p=4165 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 14:55:15,886 p=4165 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 14:55:15,891 p=4165 u=ejos |  TASK [master : Copy aufs support for kernel 4.10] ******************************
+2017-04-05 14:55:16,689 p=4165 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:55:16,693 p=4165 u=ejos |  TASK [master : Creating dir for aufs support for kernel 4.10] ******************
+2017-04-05 14:55:17,183 p=4165 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:55:17,187 p=4165 u=ejos |  TASK [master : Compile aufs support for kernel 4.10] ***************************
+2017-04-05 14:55:17,607 p=4165 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:55:17,611 p=4165 u=ejos |  TASK [master : git] ************************************************************
+2017-04-05 14:55:19,995 p=4165 u=ejos |  ok: [192.168.10.61]
+2017-04-05 14:55:19,998 p=4165 u=ejos |  TASK [master : Getting latest commit] ******************************************
+2017-04-05 14:55:20,292 p=4165 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:55:20,296 p=4165 u=ejos |  TASK [master : Creating a Tar File] ********************************************
+2017-04-05 14:55:20,637 p=4165 u=ejos |  changed: [192.168.10.61]
+2017-04-05 14:55:20,640 p=4165 u=ejos |  TASK [master : Building rpm packages] ******************************************
+2017-04-05 14:55:21,258 p=4165 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "mock -r epel-7-x86_64 --buildsrpm --spec /tmp/kernel-ml-aufs-4.10.spec --sources /tmp/kernel-ml-aufs --resultdir output", "delta": "0:00:00.333209", "end": "2017-04-05 14:55:21.240193", "failed": true, "rc": 1, "start": "2017-04-05 14:55:20.906984", "stderr": "INFO: mock.py version 1.3.4 starting (python version = 2.7.5)...\nStart: init plugins\nINFO: selinux disabled\nFinish: init plugins\nStart: run\nINFO: Start(/tmp/kernel-ml-aufs-4.10.spec)  Config(epel-7-x86_64)\nStart: clean chroot\nFinish: clean chroot\nStart: chroot init\nINFO: calling preinit hooks\nINFO: enabled root cache\nINFO: enabled yum cache\nStart: cleaning yum metadata\nFinish: cleaning yum metadata\nINFO: enabled HW Info plugin\nERROR: Exception(/tmp/kernel-ml-aufs-4.10.spec) Config(epel-7-x86_64) 0 minutes 0 seconds\nINFO: Results and/or logs in: output\nINFO: Cleaning up build root ('cleanup_on_failure=True')\nStart: clean chroot\nFinish: clean chroot\nERROR: 'ascii' codec can't encode character u'\\xf1' in position 19: ordinal not in range(128)\nTraceback (most recent call last):\n  File \"/usr/libexec/mock/mock\", line 886, in <module>\n    main()\n  File \"/usr/lib/python2.7/site-packages/mockbuild/trace_decorator.py\", line 89, in trace\n    result = func(*args, **kw)\n  File \"/usr/libexec/mock/mock\", line 701, in main\n    run_command(options, args, config_opts, commands, buildroot, state)\n  File \"/usr/lib/python2.7/site-packages/mockbuild/trace_decorator.py\", line 89, in trace\n    result = func(*args, **kw)\n  File \"/usr/libexec/mock/mock\", line 786, in run_command\n    do_buildsrpm(config_opts, commands, buildroot, options, args)\n  File \"/usr/lib/python2.7/site-packages/mockbuild/trace_decorator.py\", line 89, in trace\n    result = func(*args, **kw)\n  File \"/usr/libexec/mock/mock\", line 538, in do_buildsrpm\n    cmd=cmd, post=None, clean=clean)\n  File \"/usr/lib/python2.7/site-packages/mockbuild/trace_decorator.py\", line 89, in trace\n    result = func(*args, **kw)\n  File \"/usr/libexec/mock/mock\", line 464, in rebuild_generic\n    commands.init(prebuild=not config_opts.get('short_circuit'))\n  File \"/usr/lib/python2.7/site-packages/mockbuild/trace_decorator.py\", line 89, in trace\n    result = func(*args, **kw)\n  File \"/usr/lib/python2.7/site-packages/mockbuild/backend.py\", line 125, in init\n    self.buildroot.initialize(**kwargs)\n  File \"/usr/lib/python2.7/site-packages/mockbuild/trace_decorator.py\", line 89, in trace\n    result = func(*args, **kw)\n  File \"/usr/lib/python2.7/site-packages/mockbuild/buildroot.py\", line 90, in initialize\n    self._init(prebuild=prebuild, do_log=do_log)\n  File \"/usr/lib/python2.7/site-packages/mockbuild/trace_decorator.py\", line 89, in trace\n    result = func(*args, **kw)\n  File \"/usr/lib/python2.7/site-packages/mockbuild/buildroot.py\", line 123, in _init\n    self.plugins.call_hooks('preinit')\n  File \"/usr/lib/python2.7/site-packages/mockbuild/trace_decorator.py\", line 89, in trace\n    result = func(*args, **kw)\n  File \"/usr/lib/python2.7/site-packages/mockbuild/plugin.py\", line 69, in call_hooks\n    hook(*args, **kwargs)\n  File \"/usr/lib/python2.7/site-packages/mockbuild/trace_decorator.py\", line 89, in trace\n    result = func(*args, **kw)\n  File \"/usr/lib/python2.7/site-packages/mockbuild/plugins/hw_info.py\", line 50, in _PreInitHook\n    out.write(output)\nUnicodeEncodeError: 'ascii' codec can't encode character u'\\xf1' in position 19: ordinal not in range(128)", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-05 14:55:21,260 p=4165 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 14:55:21,260 p=4165 u=ejos |  192.168.10.61              : ok=14   changed=5    unreachable=0    failed=1   
+2017-04-05 16:42:31,565 p=6863 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 16:42:31,606 p=6863 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 16:42:32,459 p=6863 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:42:32,462 p=6863 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 16:42:32,901 p=6863 u=ejos |  changed: [192.168.10.61]
+2017-04-05 16:42:32,907 p=6863 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 16:42:33,755 p=6863 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:42:33,758 p=6863 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 16:42:34,352 p=6863 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:42:34,355 p=6863 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 16:42:34,880 p=6863 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:42:34,885 p=6863 u=ejos |  TASK [master : Replacing Kernel Value] *****************************************
+2017-04-05 16:42:35,269 p=6863 u=ejos |  changed: [192.168.10.61]
+2017-04-05 16:42:35,272 p=6863 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 16:42:48,271 p=6863 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:42:48,274 p=6863 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 16:42:48,817 p=6863 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 16:42:48,822 p=6863 u=ejos |  TASK [master : Download latest packages for aufs support] **********************
+2017-04-05 16:42:48,889 p=6863 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"failed": true, "msg": "the field 'args' has an invalid value, which appears to include a variable that is undefined. The error was: 'rpm_aufs_package' is undefined\n\nThe error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 37, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Download latest packages for aufs support\n  ^ here\n"}
+2017-04-05 16:42:48,891 p=6863 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 16:42:48,891 p=6863 u=ejos |  192.168.10.61              : ok=8    changed=2    unreachable=0    failed=1   
+2017-04-05 16:44:43,231 p=6993 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 16:44:43,270 p=6993 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 16:44:44,139 p=6993 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:44:44,142 p=6993 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 16:44:44,692 p=6993 u=ejos |  changed: [192.168.10.61]
+2017-04-05 16:44:44,698 p=6993 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 16:44:45,529 p=6993 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:44:45,534 p=6993 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 16:44:46,137 p=6993 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:44:46,142 p=6993 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 16:44:47,167 p=6993 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:44:47,172 p=6993 u=ejos |  TASK [master : Replacing Kernel Value] *****************************************
+2017-04-05 16:44:47,890 p=6993 u=ejos |  changed: [192.168.10.61]
+2017-04-05 16:44:47,895 p=6993 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 16:45:00,334 p=6993 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:45:00,340 p=6993 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 16:45:00,933 p=6993 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 16:45:00,937 p=6993 u=ejos |  TASK [master : Download latest packages for aufs support] **********************
+2017-04-05 16:45:00,996 p=6993 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"failed": true, "msg": "the field 'args' has an invalid value, which appears to include a variable that is undefined. The error was: 'rpm_aufs_package' is undefined\n\nThe error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/tasks/install.yml': line 37, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Download latest packages for aufs support\n  ^ here\n"}
+2017-04-05 16:45:00,998 p=6993 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 16:45:00,998 p=6993 u=ejos |  192.168.10.61              : ok=8    changed=2    unreachable=0    failed=1   
+2017-04-05 16:49:22,774 p=7236 u=ejos |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/master/vars/main.yml': line 2, column 17, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+--
+rpm_aufs_package: kernel-ml-4.10.8-1.el7.elrepo.x86_64.rpm
+                ^ here
+
+2017-04-05 16:53:25,274 p=7336 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-05 16:53:25,318 p=7336 u=ejos |  TASK [setup] *******************************************************************
+2017-04-05 16:53:33,357 p=7336 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:53:33,359 p=7336 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 16:53:33,775 p=7336 u=ejos |  changed: [192.168.10.61]
+2017-04-05 16:53:33,781 p=7336 u=ejos |  TASK [master : Copy kernel-lt-aufs.repo from spaceduck repo] *******************
+2017-04-05 16:53:35,053 p=7336 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:53:35,058 p=7336 u=ejos |  TASK [master : Copy kernel-ml-aufs.repo from spaceduck repo] *******************
+2017-04-05 16:53:35,672 p=7336 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:53:35,678 p=7336 u=ejos |  TASK [master : Copy bnied-kernel-ml-aufs from fedorainfracloud repo] ***********
+2017-04-05 16:53:36,229 p=7336 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:53:36,234 p=7336 u=ejos |  TASK [master : Replacing Kernel Value] *****************************************
+2017-04-05 16:53:36,726 p=7336 u=ejos |  changed: [192.168.10.61]
+2017-04-05 16:53:36,729 p=7336 u=ejos |  TASK [master : Updates Repo] ***************************************************
+2017-04-05 16:53:49,493 p=7336 u=ejos |  ok: [192.168.10.61]
+2017-04-05 16:53:49,499 p=7336 u=ejos |  TASK [master : Install list of Packages] ***************************************
+2017-04-05 16:53:50,173 p=7336 u=ejos |  ok: [192.168.10.61] => (item=[u'bzip2', u'cpio', u'file', u'gzip', u'unzip', u'zip', u'tree', u'tmux', u'epel-release', u'fedora-packager', u'mock', u'git'])
+2017-04-05 16:53:50,176 p=7336 u=ejos |  TASK [master : Download latest packages for aufs support] **********************
+2017-04-05 16:54:36,408 p=7336 u=ejos |  changed: [192.168.10.61]
+2017-04-05 16:54:36,410 p=7336 u=ejos |   [WARNING]: Consider using get_url or uri module rather than running wget
+
+2017-04-05 16:54:36,413 p=7336 u=ejos |  TASK [command] *****************************************************************
+2017-04-05 16:54:36,722 p=7336 u=ejos |  changed: [192.168.10.61]
+2017-04-05 16:54:36,724 p=7336 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-05 16:54:36,724 p=7336 u=ejos |  192.168.10.61              : ok=10   changed=4    unreachable=0    failed=0   

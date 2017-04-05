@@ -1,0 +1,41 @@
+---
+- name: Copy kernel-lt-aufs.repo from spaceduck repo
+  copy: src=kernel-lt-aufs.repo dest=/etc/yum.repos.d/
+
+- name: Copy kernel-ml-aufs.repo from spaceduck repo
+  copy: src=kernel-ml-aufs.repo dest=/etc/yum.repos.d/
+
+- name: Copy bnied-kernel-ml-aufs from fedorainfracloud repo
+  copy: src=bnied-kernel-ml-aufs-epel-7.repo dest=/etc/yum.repos.d/
+
+- name: Replacing Kernel Value
+  replace:
+    dest: /etc/sysconfig/kernel
+    regexp: 'DEFAULTKERNEL=kernel'
+    replace: 'DEFAULTKERNEL=kernel-ml-aufs'
+    backup: yes
+
+- name: Updates Repo
+  yum: name=* update_cache=yes
+
+- name: Install list of Packages
+  yum: name={{ item }} state=installed
+  with_items:
+      - bzip2 
+      - cpio 
+      - file 
+      - gzip 
+      - unzip 
+      - zip 
+      - tree
+      - tmux
+      - epel-release
+      - fedora-packager
+      - mock
+      - git
+
+- name: Download latest packages for aufs support
+  get_url: 
+    url: wget http://elrepo.org/linux/kernel/el7/x86_64/RPMS/{{ rpm_aufs_package }}
+    dest: /tmp/{{ rpm_aufs_package }}
+ # shell: wget http://elrepo.org/linux/kernel/el7/x86_64/RPMS/kernel-ml-4.10.8-1.el7.elrepo.x86_64.rpm -O /tmp/kernel-ml-4.10.8-1.el7.elrepo.x86_64.rpm 
