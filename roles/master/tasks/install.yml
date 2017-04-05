@@ -36,6 +36,8 @@
 
 - name: Download latest packages for aufs support
   get_url: 
-    url: wget http://elrepo.org/linux/kernel/el7/x86_64/RPMS/{{ rpm_aufs_package }}
+    url: http://elrepo.org/linux/kernel/el7/x86_64/RPMS/{{ rpm_aufs_package }}
     dest: /tmp/{{ rpm_aufs_package }}
- # shell: wget http://elrepo.org/linux/kernel/el7/x86_64/RPMS/kernel-ml-4.10.8-1.el7.elrepo.x86_64.rpm -O /tmp/kernel-ml-4.10.8-1.el7.elrepo.x86_64.rpm 
+
+- name: Install AUFS Packages Support
+  yum: name=/tmp/{{ rpm_aufs_package }} state=present
