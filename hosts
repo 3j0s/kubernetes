@@ -6,4 +6,13 @@
 172.16.61.71:9022
 
 [test]
-192.168.10.60 ansible_ssh_private_key_file=/home/ejos/Ansible/Kubernetes/kube ansible_user=ejos ansible_become=true
+192.168.10.61 ansible_ssh_private_key_file=/home/ejos/Ansible/kubernetes/kube ansible_user=ejos ansible_become=true
+
+[etcd]
+192.168.10.61 ansible_ssh_private_key_file=/home/ejos/Ansible/kubernetes/kube ansible_user=ejos ansible_become=true
+
+[masters]
+192.168.10.61 ansible_ssh_private_key_file=/home/ejos/Ansible/kubernetes/kube ansible_user=ejos ansible_become=true
+
+[nodes]
+192.168.10.61 ansible_ssh_private_key_file=/home/ejos/Ansible/kubernetes/kube ansible_user=ejos ansible_become=true
