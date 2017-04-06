@@ -1,0 +1,63 @@
+---
+- name: Copy kernel-lt-aufs.repo from spaceduck repo
+  copy: src=kernel-lt-aufs.repo dest=/etc/yum.repos.d/
+
+- name: Copy kernel-ml-aufs.repo from spaceduck repo
+  copy: src=kernel-ml-aufs.repo dest=/etc/yum.repos.d/
+
+- name: Copy bnied-kernel-ml-aufs from fedorainfracloud repo
+  copy: src=bnied-kernel-ml-aufs-epel-7.repo dest=/etc/yum.repos.d/
+
+- name: Replacing Kernel Value
+  replace:
+    dest: /etc/sysconfig/kernel
+    regexp: 'DEFAULTKERNEL=kernel'
+    replace: 'DEFAULTKERNEL=kernel-ml-aufs'
+    backup: yes
+
+- name: Updates Repo
+  yum: name=* update_cache=yes
+
+- name: Install list of Packages
+  yum: name={{ item }} state=installed
+  with_items:
+      - bzip2 
+      - cpio 
+      - file 
+      - gzip 
+      - unzip 
+      - zip 
+      - tree
+      - tmux
+      - epel-release
+      - fedora-packager
+      - mock
+      - git
+
+- name: Copy aufs support for kernel 4.10 
+  copy: src=kernel-ml-aufs-4.10.spec dest=/tmp
+ 
+- name: Creating dir for aufs support for kernel 4.10 
+  file: path=/tmp/kernel-ml-aufs state=directory
+
+- name: Compile aufs support for kernel 4.10 
+  command: spectool -g -C /tmp/kernel-ml-aufs /tmp/kernel-ml-aufs-4.10.spec
+
+- git:
+    repo: 'git://git.code.sf.net/p/aufs/aufs3-standalone'
+    dest: /tmp/aufs4.10
+    version: aufs3.19
+    clone: yes
+
+- name: Getting latest commit
+  shell: git --git-dir  /tmp/aufs4.10/.git log -1 --pretty='%H'
+  register: git_latest_commit_log
+
+- name: Creating a Tar File
+  shell: git --git-dir /tmp/aufs4.10/.git archive {{git_latest_commit_log.stdout}} > /tmp/kernel-ml-aufs/aufs3-standalone.tar  
+  
+- name: Building rpm packages
+  shell: mock -r epel-7-x86_64 --buildsrpm --spec /tmp/kernel-ml-aufs-4.10.spec --sources /tmp/kernel-ml-aufs --resultdir output
+
+- name: ReBuilding rpm packages
+  shell: mock -r epel-7-x86_64 --rebuild --resultdir output output/kernel-ml-aufs-4.10.0-1.el7.src.rpm

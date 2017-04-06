@@ -4,6 +4,6 @@
   pre_tasks:
     - shell: echo "Initializing Kubernetes Support.."
   roles:
-    - { role: master }
+    - { role: etcd }
   post_tasks:
     - shell: echo "Finalizing Kubernetes Process"

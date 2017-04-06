@@ -1,0 +1,19 @@
+---
+- name: Install list of Packages
+  yum: name={{ item }} state=installed
+  with_items:
+      - ntpd 
+      - etcd 
+
+- name: Copy etcd config file
+  copy: src=etcd.conf dest=/etc/etcd/etcd.conf
+
+- name: Make sure etcd service is enable
+  systemd: 
+     name: etcd
+     enable: yes
+
+- name: reload service etcd, in all cases
+  systemd:
+    name: etcd
+    state: restart
