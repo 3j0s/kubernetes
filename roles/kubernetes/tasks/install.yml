@@ -2,18 +2,8 @@
 - name: Install list of Packages
   yum: name={{ item }} state=installed
   with_items:
-      - ntpd 
-      - etcd 
+      - kubernetes 
 
-- name: Copy etcd config file
-  copy: src=etcd.conf dest=/etc/etcd/etcd.conf
+#- name: Copy kubernetes config file
+#  copy: src=kube.conf dest=/etc/kubernets/kube.conf
 
-- name: Make sure etcd service is enable
-  systemd: 
-     name: etcd
-     enable: yes
-
-- name: reload service etcd, in all cases
-  systemd:
-    name: etcd
-    state: restart

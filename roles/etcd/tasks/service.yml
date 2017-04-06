@@ -1,0 +1,20 @@
+---
+- name: Make sure ntpd service is enabled
+  systemd: 
+     name: ntpd
+     enabled: yes
+
+- name: reload service ntpd, in all cases
+  systemd:
+    name: ntpd
+    state: restarted
+
+- name: Make sure etcd service is enabled
+  systemd: 
+     name: etcd
+     enabled: yes
+
+- name: reload service etcd, in all cases
+  systemd:
+    name: etcd
+    state: restarted

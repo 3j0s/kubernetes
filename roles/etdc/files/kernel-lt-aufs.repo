@@ -1,4 +1,0 @@
-[kernel-lt-aufs]
-name=RHEL AUFS Kernel - Longterm
-baseurl=https://yum.spaceduck.org/kernel-lt-aufs/$releasever/$basearch/
-gpgcheck=0

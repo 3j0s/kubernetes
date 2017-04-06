@@ -1,4 +1,0 @@
-[kernel-ml-aufs]
-name=RHEL AUFS Kernel - Mainline
-baseurl=https://yum.spaceduck.org/kernel-ml-aufs/$releasever/$basearch/
-gpgcheck=0

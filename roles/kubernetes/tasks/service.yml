@@ -1,11 +1,14 @@
 ---
-- name: Configuration Clamav
-  synchronize: 
-    src=clamav
-    dest=/etc/
-    checksum=yes
-    recursive=yes
-    archive=yes
+- name: Enabling kubernetes service
+  systemd: name={{ item }} enabled=yes
+  with_items:
+      - kube-apiserver
+      - kube-controller-manager 
+      - kube-scheduler
 
-- name: restart clamav service
-  service: name=clamav-freshclam state=restarted
+- name: Restarting kubernetes service
+  systemd: name={{ item }} state=restarted
+  with_items:
+      - kube-apiserver
+      - kube-controller-manager 
+      - kube-scheduler

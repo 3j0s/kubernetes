@@ -1375,3 +1375,86 @@ Shared connection to 192.168.10.61 closed.
 Shared connection to 192.168.10.61 closed.
 
 
+2017-04-06 11:43:17,886 p=14581 u=ejos |  192.168.10.61 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2017-04-06 11:43:36,015 p=14609 u=ejos |  ERROR! the role 'etcd' was not found in /home/ejos/Ansible/kubernetes/roles:/home/ejos/Ansible/kubernetes/roles:/home/ejos/Ansible/kubernetes
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/play.yml': line 7, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  roles:
+    - { role: etcd }
+      ^ here
+
+2017-04-06 11:45:04,356 p=14747 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 11:45:04,397 p=14747 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 11:45:06,479 p=14747 u=ejos |  ok: [192.168.10.61]
+2017-04-06 11:45:06,483 p=14747 u=ejos |  TASK [command] *****************************************************************
+2017-04-06 11:45:07,237 p=14747 u=ejos |  changed: [192.168.10.61]
+2017-04-06 11:45:07,241 p=14747 u=ejos |  TASK [etcd : Install list of Packages] *****************************************
+2017-04-06 11:45:37,567 p=14747 u=ejos |  failed: [192.168.10.61] (item=[u'ntpd', u'etcd']) => {"changed": false, "failed": true, "item": ["ntpd", "etcd"], "msg": "No package matching 'ntpd' found available, installed or updated", "rc": 126, "results": ["No package matching 'ntpd' found available, installed or updated"]}
+2017-04-06 11:45:37,568 p=14747 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 11:45:37,568 p=14747 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=1   
+2017-04-06 11:47:14,372 p=14844 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 11:47:14,415 p=14844 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 11:47:16,006 p=14844 u=ejos |  ok: [192.168.10.61]
+2017-04-06 11:47:16,009 p=14844 u=ejos |  TASK [command] *****************************************************************
+2017-04-06 11:47:16,880 p=14844 u=ejos |  changed: [192.168.10.61]
+2017-04-06 11:47:16,886 p=14844 u=ejos |  TASK [etcd : Install list of Packages] *****************************************
+2017-04-06 11:47:31,746 p=14844 u=ejos |  changed: [192.168.10.61] => (item=[u'ntp', u'etcd'])
+2017-04-06 11:47:31,749 p=14844 u=ejos |  TASK [etcd : Copy etcd config file] ********************************************
+2017-04-06 11:47:33,497 p=14844 u=ejos |  changed: [192.168.10.61]
+2017-04-06 11:47:33,500 p=14844 u=ejos |  TASK [etcd : Make sure ntpd service is enable] *********************************
+2017-04-06 11:47:34,327 p=14844 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "unsupported parameter for module: enable"}
+2017-04-06 11:47:34,329 p=14844 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 11:47:34,329 p=14844 u=ejos |  192.168.10.61              : ok=4    changed=3    unreachable=0    failed=1   
+2017-04-06 11:49:16,393 p=15026 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 11:49:16,443 p=15026 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 11:49:18,095 p=15026 u=ejos |  ok: [192.168.10.61]
+2017-04-06 11:49:18,099 p=15026 u=ejos |  TASK [command] *****************************************************************
+2017-04-06 11:49:18,931 p=15026 u=ejos |  changed: [192.168.10.61]
+2017-04-06 11:49:18,938 p=15026 u=ejos |  TASK [etcd : Install list of Packages] *****************************************
+2017-04-06 11:49:19,995 p=15026 u=ejos |  ok: [192.168.10.61] => (item=[u'ntp', u'etcd'])
+2017-04-06 11:49:20,000 p=15026 u=ejos |  TASK [etcd : Copy etcd config file] ********************************************
+2017-04-06 11:49:21,503 p=15026 u=ejos |  ok: [192.168.10.61]
+2017-04-06 11:49:21,508 p=15026 u=ejos |  TASK [etcd : Make sure ntpd service is enabled] ********************************
+2017-04-06 11:49:22,278 p=15026 u=ejos |  ok: [192.168.10.61]
+2017-04-06 11:49:22,282 p=15026 u=ejos |  TASK [etcd : reload service ntpd, in all cases] ********************************
+2017-04-06 11:49:22,900 p=15026 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "value of state must be one of: started,stopped,restarted,reloaded, got: restart"}
+2017-04-06 11:49:22,902 p=15026 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 11:49:22,903 p=15026 u=ejos |  192.168.10.61              : ok=5    changed=1    unreachable=0    failed=1   
+2017-04-06 11:49:54,479 p=15099 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 11:49:54,530 p=15099 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 11:49:55,693 p=15099 u=ejos |  ok: [192.168.10.61]
+2017-04-06 11:49:55,696 p=15099 u=ejos |  TASK [command] *****************************************************************
+2017-04-06 11:49:56,443 p=15099 u=ejos |  changed: [192.168.10.61]
+2017-04-06 11:49:56,447 p=15099 u=ejos |  TASK [etcd : Install list of Packages] *****************************************
+2017-04-06 11:49:57,596 p=15099 u=ejos |  ok: [192.168.10.61] => (item=[u'ntp', u'etcd'])
+2017-04-06 11:49:57,600 p=15099 u=ejos |  TASK [etcd : Copy etcd config file] ********************************************
+2017-04-06 11:49:59,340 p=15099 u=ejos |  ok: [192.168.10.61]
+2017-04-06 11:49:59,345 p=15099 u=ejos |  TASK [etcd : Make sure ntpd service is enabled] ********************************
+2017-04-06 11:50:00,256 p=15099 u=ejos |  ok: [192.168.10.61]
+2017-04-06 11:50:00,260 p=15099 u=ejos |  TASK [etcd : reload service ntpd, in all cases] ********************************
+2017-04-06 11:50:01,095 p=15099 u=ejos |  changed: [192.168.10.61]
+2017-04-06 11:50:01,101 p=15099 u=ejos |  TASK [etcd : Make sure etcd service is enabled] ********************************
+2017-04-06 11:50:01,900 p=15099 u=ejos |  changed: [192.168.10.61]
+2017-04-06 11:50:01,903 p=15099 u=ejos |  TASK [etcd : reload service etcd, in all cases] ********************************
+2017-04-06 11:50:02,936 p=15099 u=ejos |  changed: [192.168.10.61]
+2017-04-06 11:50:02,939 p=15099 u=ejos |  TASK [kubernetes : Install list of Packages] ***********************************
+2017-04-06 11:51:33,285 p=15099 u=ejos |  changed: [192.168.10.61] => (item=[u'kubernetes'])
+2017-04-06 11:51:33,288 p=15099 u=ejos |  TASK [kubernetes : Enabling kubernetes service] ********************************
+2017-04-06 11:51:34,067 p=15099 u=ejos |  changed: [192.168.10.61] => (item=kube-apiserver)
+2017-04-06 11:51:34,784 p=15099 u=ejos |  changed: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-06 11:51:35,550 p=15099 u=ejos |  changed: [192.168.10.61] => (item=kube-scheduler)
+2017-04-06 11:51:35,558 p=15099 u=ejos |  TASK [kubernetes : Restarting kubernetes service] ******************************
+2017-04-06 11:51:36,874 p=15099 u=ejos |  changed: [192.168.10.61] => (item=kube-apiserver)
+2017-04-06 11:51:37,605 p=15099 u=ejos |  changed: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-06 11:51:38,335 p=15099 u=ejos |  changed: [192.168.10.61] => (item=kube-scheduler)
+2017-04-06 11:51:38,341 p=15099 u=ejos |  TASK [command] *****************************************************************
+2017-04-06 11:51:38,999 p=15099 u=ejos |  changed: [192.168.10.61]
+2017-04-06 11:51:39,001 p=15099 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 11:51:39,002 p=15099 u=ejos |  192.168.10.61              : ok=12   changed=8    unreachable=0    failed=0   
