@@ -1,0 +1,10 @@
+[bnied-kernel-ml-aufs]
+name=Copr repo for kernel-ml-aufs owned by bnied
+baseurl=https://copr-be.cloud.fedoraproject.org/results/bnied/kernel-ml-aufs/epel-7-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://copr-be.cloud.fedoraproject.org/results/bnied/kernel-ml-aufs/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1

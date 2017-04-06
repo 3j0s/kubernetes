@@ -1365,3 +1365,13 @@ Should be written as:
 2017-04-05 17:08:58,956 p=8083 u=ejos |  changed: [192.168.10.61]
 2017-04-05 17:08:58,958 p=8083 u=ejos |  PLAY RECAP *********************************************************************
 2017-04-05 17:08:58,959 p=8083 u=ejos |  192.168.10.61              : ok=11   changed=5    unreachable=0    failed=0   
+2017-04-05 17:17:38,504 p=8372 u=ejos |  192.168.10.61 | FAILED | rc=1 >>
+modprobe: FATAL: Module aufs not found.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-05 17:18:14,758 p=8390 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+/tmp/kernel-ml-4.10.8-1.el7.elrepo.x86_64.rpm
+Shared connection to 192.168.10.61 closed.
+
+
