@@ -4293,3 +4293,46 @@ The offending line appears to be:
 2017-04-08 16:10:25,207 p=2061 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /etc/kubernetes/skydns-svc.yml", "delta": "0:00:00.410405", "end": "2017-04-08 16:10:25.130739", "failed": true, "rc": 1, "start": "2017-04-08 16:10:24.720334", "stderr": "The Service \"kube-dns\" is invalid: spec.clusterIP: Invalid value: \"10.254.254.254\": provided IP is already allocated", "stdout": "", "stdout_lines": [], "warnings": []}
 2017-04-08 16:10:25,209 p=2061 u=ejos |  PLAY RECAP *********************************************************************
 2017-04-08 16:10:25,210 p=2061 u=ejos |  192.168.10.61              : ok=2    changed=0    unreachable=0    failed=1   
+2017-04-08 16:14:26,578 p=2194 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 16:14:26,636 p=2194 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 16:14:30,270 p=2194 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:14:30,276 p=2194 u=ejos |  TASK [kubernetes : Install list of Packages] ***********************************
+2017-04-08 16:14:31,640 p=2194 u=ejos |  ok: [192.168.10.61] => (item=[u'kubernetes'])
+2017-04-08 16:14:31,643 p=2194 u=ejos |  TASK [kubernetes : Replacing Kubelet API Server Address] ***********************
+2017-04-08 16:14:32,649 p=2194 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:14:32,653 p=2194 u=ejos |  TASK [kubernetes : Replacing Kubelet address] **********************************
+2017-04-08 16:14:34,198 p=2194 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:14:34,201 p=2194 u=ejos |  TASK [kubernetes : Inserting Kubelet port] *************************************
+2017-04-08 16:14:35,475 p=2194 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:14:35,480 p=2194 u=ejos |  TASK [kubernetes : Inserting Kubelet name] *************************************
+2017-04-08 16:14:38,517 p=2194 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:14:38,522 p=2194 u=ejos |  TASK [kubernetes : Replacing Kubelet api] **************************************
+2017-04-08 16:14:40,022 p=2194 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:14:40,027 p=2194 u=ejos |  TASK [kubernetes : Enabling kubernetes service] ********************************
+2017-04-08 16:14:41,035 p=2194 u=ejos |  ok: [192.168.10.61] => (item=kube-apiserver)
+2017-04-08 16:14:41,968 p=2194 u=ejos |  ok: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-08 16:14:43,262 p=2194 u=ejos |  ok: [192.168.10.61] => (item=kube-scheduler)
+2017-04-08 16:14:43,271 p=2194 u=ejos |  TASK [kubernetes : Restarting kubernetes service] ******************************
+2017-04-08 16:14:44,968 p=2194 u=ejos |  changed: [192.168.10.61] => (item=kube-apiserver)
+2017-04-08 16:14:46,281 p=2194 u=ejos |  changed: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-08 16:14:47,140 p=2194 u=ejos |  changed: [192.168.10.61] => (item=kube-scheduler)
+2017-04-08 16:14:47,144 p=2194 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 16:14:47,145 p=2194 u=ejos |  192.168.10.61              : ok=9    changed=1    unreachable=0    failed=0   
+2017-04-08 16:14:56,946 p=2298 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 16:14:57,014 p=2298 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 16:14:58,382 p=2298 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:14:58,387 p=2298 u=ejos |  TASK [kubernetes : Copy skydns svc yaml file] **********************************
+2017-04-08 16:15:02,712 p=2298 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:15:02,719 p=2298 u=ejos |  TASK [kubernetes : Building skydns svc yaml file] ******************************
+2017-04-08 16:15:03,723 p=2298 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /etc/kubernetes/skydns-svc.yml", "delta": "0:00:00.124536", "end": "2017-04-08 16:15:03.687495", "failed": true, "rc": 1, "start": "2017-04-08 16:15:03.562959", "stderr": "The Service \"kube-dns\" is invalid: spec.clusterIP: Invalid value: \"10.254.254.254\": provided IP is already allocated", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-08 16:15:03,725 p=2298 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 16:15:03,725 p=2298 u=ejos |  192.168.10.61              : ok=2    changed=0    unreachable=0    failed=1   
+2017-04-08 16:16:37,307 p=2398 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 16:16:37,377 p=2398 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 16:16:42,940 p=2398 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:16:42,944 p=2398 u=ejos |  TASK [kubernetes : Copy skydns svc yaml file] **********************************
+2017-04-08 16:16:46,461 p=2398 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:16:46,466 p=2398 u=ejos |  TASK [kubernetes : Building skydns svc yaml file] ******************************
+2017-04-08 16:16:47,852 p=2398 u=ejos |  changed: [192.168.10.61]
+2017-04-08 16:16:47,855 p=2398 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 16:16:47,855 p=2398 u=ejos |  192.168.10.61              : ok=3    changed=1    unreachable=0    failed=0   
