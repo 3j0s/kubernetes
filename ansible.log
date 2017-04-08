@@ -4336,3 +4336,38 @@ The offending line appears to be:
 2017-04-08 16:16:47,852 p=2398 u=ejos |  changed: [192.168.10.61]
 2017-04-08 16:16:47,855 p=2398 u=ejos |  PLAY RECAP *********************************************************************
 2017-04-08 16:16:47,855 p=2398 u=ejos |  192.168.10.61              : ok=3    changed=1    unreachable=0    failed=0   
+2017-04-08 16:18:33,806 p=2570 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 16:18:33,874 p=2570 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 16:18:36,041 p=2570 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:18:36,046 p=2570 u=ejos |  TASK [kubernetes : Copy skydns rc yaml file] ***********************************
+2017-04-08 16:18:44,025 p=2570 u=ejos |  changed: [192.168.10.61]
+2017-04-08 16:18:44,028 p=2570 u=ejos |  TASK [kubernetes : Building skydns rc service] *********************************
+2017-04-08 16:18:46,414 p=2570 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /etc/kubernetes/skydns-rc.yml", "delta": "0:00:00.100651", "end": "2017-04-08 16:18:46.374782", "failed": true, "rc": 1, "start": "2017-04-08 16:18:46.274131", "stderr": "Error from server (BadRequest): error when creating \"/etc/kubernetes/skydns-rc.yml\": ReplicationController in version \"v1beta1\" cannot be handled as a ReplicationController: no kind \"ReplicationController\" is registered for version \"v1beta1\"", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-08 16:18:46,422 p=2570 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 16:18:46,422 p=2570 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=1   
+2017-04-08 16:20:31,632 p=2693 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 16:20:31,701 p=2693 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 16:20:33,969 p=2693 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:20:33,973 p=2693 u=ejos |  TASK [kubernetes : Copy skydns rc yaml file] ***********************************
+2017-04-08 16:20:38,846 p=2693 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:20:38,851 p=2693 u=ejos |  TASK [kubernetes : Building skydns rc service] *********************************
+2017-04-08 16:20:40,879 p=2693 u=ejos |  changed: [192.168.10.61]
+2017-04-08 16:20:40,881 p=2693 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 16:20:40,882 p=2693 u=ejos |  192.168.10.61              : ok=3    changed=1    unreachable=0    failed=0   
+2017-04-08 16:20:58,888 p=2738 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS              RESTARTS   AGE
+kube-system   kube-dns-v11-2mq50   0/4       ContainerCreating   0          18s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 16:30:36,010 p=3048 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 16:30:36,073 p=3048 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 16:30:37,823 p=3048 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:30:37,829 p=3048 u=ejos |  TASK [kubernetes : Replacing Kubelet argument] *********************************
+2017-04-08 16:30:44,159 p=3048 u=ejos |  changed: [192.168.10.61]
+2017-04-08 16:30:44,163 p=3048 u=ejos |  TASK [kubernetes : Enabling kubelet service] ***********************************
+2017-04-08 16:30:45,486 p=3048 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:30:45,490 p=3048 u=ejos |  TASK [kubernetes : Restart kubelet service] ************************************
+2017-04-08 16:30:46,919 p=3048 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:30:46,921 p=3048 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 16:30:46,921 p=3048 u=ejos |  192.168.10.61              : ok=4    changed=1    unreachable=0    failed=0   
