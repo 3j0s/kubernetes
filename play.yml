@@ -7,6 +7,5 @@
     - { role: docker, tags: ['docker']}
     - { role: etcd, tags: ['etcd']}
     - { role: kubernetes, tags: ['kubernetes'] }
-    - { role: flannel, tags: ['flannel'] }
   post_tasks:
     - shell: echo "Finalizing Kubernetes Process"

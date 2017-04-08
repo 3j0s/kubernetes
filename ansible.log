@@ -4043,3 +4043,197 @@ Shared connection to 192.168.10.61 closed.
 
 2017-04-08 12:08:43,870 p=28410 u=ejos |   [ERROR]: User interrupted execution
 
+2017-04-08 12:11:23,504 p=28480 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 12:11:23,567 p=28480 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 12:11:25,465 p=28480 u=ejos |  ok: [192.168.10.61]
+2017-04-08 12:11:25,469 p=28480 u=ejos |  TASK [flannel : Install list of Packages] **************************************
+2017-04-08 12:11:26,809 p=28480 u=ejos |  ok: [192.168.10.61] => (item=[u'flannel'])
+2017-04-08 12:11:26,814 p=28480 u=ejos |  TASK [flannel : Replacing Flannel argument] ************************************
+2017-04-08 12:11:28,418 p=28480 u=ejos |  changed: [192.168.10.61]
+2017-04-08 12:11:28,421 p=28480 u=ejos |  TASK [flannel : Insert Flannel argument] ***************************************
+2017-04-08 12:11:31,732 p=28480 u=ejos |  ok: [192.168.10.61]
+2017-04-08 12:11:31,736 p=28480 u=ejos |  TASK [flannel : Make sure flannel service is enabled] **************************
+2017-04-08 12:11:33,541 p=28480 u=ejos |  ok: [192.168.10.61]
+2017-04-08 12:11:33,547 p=28480 u=ejos |  TASK [flannel : restart service flanneld] **************************************
+2017-04-08 12:11:50,435 p=28480 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "Unable to start service flanneld: Job for flanneld.service failed because a timeout was exceeded. See \"systemctl status flanneld.service\" and \"journalctl -xe\" for details.\n"}
+2017-04-08 12:11:50,437 p=28480 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 12:11:50,437 p=28480 u=ejos |  192.168.10.61              : ok=5    changed=1    unreachable=0    failed=1   
+2017-04-08 12:11:55,810 p=28544 u=ejos |  192.168.10.61 | FAILED | rc=3 >>
+● flanneld.service - Flanneld overlay address etcd agent
+   Loaded: loaded (/usr/lib/systemd/system/flanneld.service; enabled; vendor preset: disabled)
+   Active: activating (start) since sáb 2017-04-08 12:11:49 CLST; 5s ago
+ Main PID: 15713 (flanneld)
+   Memory: 4.6M
+   CGroup: /system.slice/flanneld.service
+           └─15713 /usr/bin/flanneld -etcd-endpoints=http://127.0.0.1:2379 -e...
+
+abr 08 12:11:49 host-192-168-10-61 flanneld-start[15713]: I0408 12:11:49.9154...
+abr 08 12:11:49 host-192-168-10-61 flanneld-start[15713]: I0408 12:11:49.9155...
+abr 08 12:11:49 host-192-168-10-61 flanneld-start[15713]: I0408 12:11:49.9157...
+abr 08 12:11:49 host-192-168-10-61 flanneld-start[15713]: I0408 12:11:49.9157...
+abr 08 12:11:49 host-192-168-10-61 flanneld-start[15713]: E0408 12:11:49.9186...
+abr 08 12:11:50 host-192-168-10-61 flanneld-start[15713]: E0408 12:11:50.9194...
+abr 08 12:11:51 host-192-168-10-61 flanneld-start[15713]: E0408 12:11:51.9199...
+abr 08 12:11:52 host-192-168-10-61 flanneld-start[15713]: E0408 12:11:52.9206...
+abr 08 12:11:53 host-192-168-10-61 flanneld-start[15713]: E0408 12:11:53.9212...
+abr 08 12:11:54 host-192-168-10-61 flanneld-start[15713]: E0408 12:11:54.9219...
+Hint: Some lines were ellipsized, use -l to show in full.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 12:16:05,366 p=28657 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:2380          0.0.0.0:*               LISTEN      4411/etcd           
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/systemd           
+tcp        0      0 127.0.0.1:8080          0.0.0.0:*               LISTEN      2854/kube-apiserver 
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      2122/sshd           
+tcp        0      0 127.0.0.1:10249         0.0.0.0:*               LISTEN      2973/kube-proxy     
+tcp6       0      0 :::2379                 :::*                    LISTEN      4411/etcd           
+tcp6       0      0 :::10251                :::*                    LISTEN      2934/kube-scheduler 
+tcp6       0      0 :::6443                 :::*                    LISTEN      2854/kube-apiserver 
+tcp6       0      0 :::10252                :::*                    LISTEN      2893/kube-controlle 
+tcp6       0      0 :::111                  :::*                    LISTEN      1/systemd           
+tcp6       0      0 :::22                   :::*                    LISTEN      2122/sshd           
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 12:26:26,711 p=28973 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+Removed symlink /etc/systemd/system/docker.service.requires/flanneld.service.
+Removed symlink /etc/systemd/system/multi-user.target.wants/flanneld.service.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 12:27:13,919 p=28991 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+
+KUBELET_ADDRESS="--address=127.0.0.1"
+
+
+KUBELET_HOSTNAME="--hostname-override=127.0.0.1"
+
+KUBELET_API_SERVER="--api-servers=http://127.0.0.1:8080"
+
+KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=registry.access.redhat.com/rhel7/pod-infrastructure:latest"
+
+KUBELET_ARGS="--cluster-dns=10.254.254.254 --cluster-domain=cluster.local"
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 12:35:08,780 p=29189 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+
+KUBELET_ADDRESS="--address=127.0.0.1"
+
+
+KUBELET_HOSTNAME="--hostname-override=127.0.0.1"
+
+KUBELET_API_SERVER="--api-servers=http://127.0.0.1:8080"
+
+KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=registry.access.redhat.com/rhel7/pod-infrastructure:latest"
+
+KUBELET_ARGS="--cluster-dns=10.254.254.254 --cluster-domain=cluster.local"
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 12:50:16,989 p=29490 u=ejos |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/kubernetes/tasks/service.yml': line 37, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- include kubectl.yml
+  tags:
+      ^ here
+
+2017-04-08 12:51:09,458 p=29506 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 12:51:09,513 p=29506 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 12:51:11,558 p=29506 u=ejos |  ok: [192.168.10.61]
+2017-04-08 12:51:11,561 p=29506 u=ejos |  TASK [kubernetes : Install list of Packages] ***********************************
+2017-04-08 12:51:12,725 p=29506 u=ejos |  ok: [192.168.10.61] => (item=[u'kubernetes'])
+2017-04-08 12:51:12,729 p=29506 u=ejos |  TASK [kubernetes : Copy kube-dns yaml file] ************************************
+2017-04-08 12:51:17,242 p=29506 u=ejos |  changed: [192.168.10.61]
+2017-04-08 12:51:17,248 p=29506 u=ejos |  TASK [kubernetes : Copy kube-rc yaml file] *************************************
+2017-04-08 12:51:21,369 p=29506 u=ejos |  changed: [192.168.10.61]
+2017-04-08 12:51:21,372 p=29506 u=ejos |  TASK [kubernetes : Copy apache-centos7 file] ***********************************
+2017-04-08 12:51:25,870 p=29506 u=ejos |  changed: [192.168.10.61]
+2017-04-08 12:51:25,874 p=29506 u=ejos |  TASK [kubernetes : Copy mariadb-centos7 file] **********************************
+2017-04-08 12:51:28,647 p=29506 u=ejos |  ok: [192.168.10.61]
+2017-04-08 12:51:28,651 p=29506 u=ejos |  TASK [kubernetes : Replacing Kubelet API] **************************************
+2017-04-08 12:51:30,940 p=29506 u=ejos |  changed: [192.168.10.61]
+2017-04-08 12:51:30,944 p=29506 u=ejos |  TASK [kubernetes : Replacing Kubelet argument] *********************************
+2017-04-08 12:51:32,381 p=29506 u=ejos |  ok: [192.168.10.61]
+2017-04-08 12:51:32,386 p=29506 u=ejos |  TASK [kubernetes : Enabling kubernetes service] ********************************
+2017-04-08 12:51:35,996 p=29506 u=ejos |  ok: [192.168.10.61] => (item=kube-apiserver)
+2017-04-08 12:51:37,784 p=29506 u=ejos |  ok: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-08 12:51:38,655 p=29506 u=ejos |  ok: [192.168.10.61] => (item=kube-scheduler)
+2017-04-08 12:51:38,664 p=29506 u=ejos |  TASK [kubernetes : Restarting kubernetes service] ******************************
+2017-04-08 12:51:40,095 p=29506 u=ejos |  changed: [192.168.10.61] => (item=kube-apiserver)
+2017-04-08 12:51:40,977 p=29506 u=ejos |  changed: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-08 12:51:41,853 p=29506 u=ejos |  changed: [192.168.10.61] => (item=kube-scheduler)
+2017-04-08 12:51:41,858 p=29506 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 12:51:41,858 p=29506 u=ejos |  192.168.10.61              : ok=10   changed=5    unreachable=0    failed=0   
+2017-04-08 13:22:51,005 p=30226 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 13:22:51,066 p=30226 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 13:22:55,834 p=30226 u=ejos |  ok: [192.168.10.61]
+2017-04-08 13:22:55,838 p=30226 u=ejos |  TASK [kubernetes : Install list of Packages] ***********************************
+2017-04-08 13:22:57,771 p=30226 u=ejos |  ok: [192.168.10.61] => (item=[u'kubernetes'])
+2017-04-08 13:22:57,775 p=30226 u=ejos |  TASK [kubernetes : Replacing Kubelet API Server Address] ***********************
+2017-04-08 13:23:00,264 p=30226 u=ejos |  ok: [192.168.10.61]
+2017-04-08 13:23:00,269 p=30226 u=ejos |  TASK [kubernetes : Replacing Kubelet argument] *********************************
+2017-04-08 13:23:02,392 p=30226 u=ejos |  ok: [192.168.10.61]
+2017-04-08 13:23:02,395 p=30226 u=ejos |  TASK [kubernetes : Replacing Kubelet address] **********************************
+2017-04-08 13:23:03,780 p=30226 u=ejos |  changed: [192.168.10.61]
+2017-04-08 13:23:03,783 p=30226 u=ejos |  TASK [kubernetes : Inserting Kubelet port] *************************************
+2017-04-08 13:23:05,871 p=30226 u=ejos |  changed: [192.168.10.61]
+2017-04-08 13:23:05,875 p=30226 u=ejos |  TASK [kubernetes : Inserting Kubelet name] *************************************
+2017-04-08 13:23:05,938 p=30226 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"failed": true, "msg": "the field 'args' has an invalid value, which appears to include a variable that is undefined. The error was: 'ansible_default_network' is undefined\n\nThe error appears to have been in '/home/ejos/Ansible/kubernetes/roles/kubernetes/tasks/service.yml': line 36, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Inserting Kubelet name\n  ^ here\n"}
+2017-04-08 13:23:05,940 p=30226 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 13:23:05,940 p=30226 u=ejos |  192.168.10.61              : ok=6    changed=2    unreachable=0    failed=1   
+2017-04-08 13:23:59,080 p=30294 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 13:23:59,138 p=30294 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 13:24:01,290 p=30294 u=ejos |  ok: [192.168.10.61]
+2017-04-08 13:24:01,294 p=30294 u=ejos |  TASK [kubernetes : Install list of Packages] ***********************************
+2017-04-08 13:24:02,842 p=30294 u=ejos |  ok: [192.168.10.61] => (item=[u'kubernetes'])
+2017-04-08 13:24:02,845 p=30294 u=ejos |  TASK [kubernetes : Replacing Kubelet API Server Address] ***********************
+2017-04-08 13:24:03,954 p=30294 u=ejos |  ok: [192.168.10.61]
+2017-04-08 13:24:03,960 p=30294 u=ejos |  TASK [kubernetes : Replacing Kubelet argument] *********************************
+2017-04-08 13:24:06,237 p=30294 u=ejos |  ok: [192.168.10.61]
+2017-04-08 13:24:06,241 p=30294 u=ejos |  TASK [kubernetes : Replacing Kubelet address] **********************************
+2017-04-08 13:24:07,090 p=30294 u=ejos |  ok: [192.168.10.61]
+2017-04-08 13:24:07,095 p=30294 u=ejos |  TASK [kubernetes : Inserting Kubelet port] *************************************
+2017-04-08 13:24:08,033 p=30294 u=ejos |  ok: [192.168.10.61]
+2017-04-08 13:24:08,038 p=30294 u=ejos |  TASK [kubernetes : Inserting Kubelet name] *************************************
+2017-04-08 13:24:10,981 p=30294 u=ejos |  changed: [192.168.10.61]
+2017-04-08 13:24:10,987 p=30294 u=ejos |  TASK [kubernetes : Replacing Kubelet api] **************************************
+2017-04-08 13:24:12,063 p=30294 u=ejos |  changed: [192.168.10.61]
+2017-04-08 13:24:12,067 p=30294 u=ejos |  TASK [kubernetes : Enabling kubernetes service] ********************************
+2017-04-08 13:24:16,101 p=30294 u=ejos |  ok: [192.168.10.61] => (item=kube-apiserver)
+2017-04-08 13:24:18,175 p=30294 u=ejos |  ok: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-08 13:24:19,285 p=30294 u=ejos |  ok: [192.168.10.61] => (item=kube-scheduler)
+2017-04-08 13:24:19,288 p=30294 u=ejos |  TASK [kubernetes : Restarting kubernetes service] ******************************
+2017-04-08 13:24:21,147 p=30294 u=ejos |  changed: [192.168.10.61] => (item=kube-apiserver)
+2017-04-08 13:24:22,371 p=30294 u=ejos |  changed: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-08 13:24:23,505 p=30294 u=ejos |  changed: [192.168.10.61] => (item=kube-scheduler)
+2017-04-08 13:24:23,513 p=30294 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 13:24:23,513 p=30294 u=ejos |  192.168.10.61              : ok=10   changed=3    unreachable=0    failed=0   
+2017-04-08 13:24:32,038 p=30394 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+
+KUBELET_ADDRESS="--address=0.0.0.0"
+
+KUBELET_PORT="--port=10250"
+
+KUBELET_HOSTNAME="--hostname_override=192.168.10.61"
+
+KUBELET_API_SERVER="--api-servers=http://192.168.10.61:8080"
+
+KUBELET_ARGS="--cluster-dns=10.254.254.254 --cluster-domain=cluster.local"
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 13:24:50,391 p=30405 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME        STATUS    AGE
+127.0.0.1   Ready     1d
+Shared connection to 192.168.10.61 closed.
+
+
