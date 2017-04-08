@@ -66,4 +66,4 @@
   tags:
     - restart_kubernetes_service
 
-#- include kubectl.yml
+- include kubectl.yml
