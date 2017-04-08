@@ -1,0 +1,15 @@
+---
+- name: Install list of Packages
+  yum: name={{ item }} state=installed
+  with_items:
+      - docker 
+
+- group:
+    name: docker
+    state: present
+
+- name: Append to group
+  shell: usermod -aG {{ item }} {{ user_admin }}
+  with_items:
+      - docker 
+      - dockerroot

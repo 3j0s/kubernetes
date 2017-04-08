@@ -12,3 +12,35 @@
       - kube-apiserver
       - kube-controller-manager 
       - kube-scheduler
+  tags:
+    - restart_kubernetes_service
+
+- name: Building kub-dns service
+  shell: kubectl create -f /etc/kubernetes/skydns-svc.yml
+  tags:
+    - build_skydns_dns
+
+- name: Building kub-rc service
+  shell: kubectl create -f /etc/kubernetes/skydns-rc.yml
+  tags:
+    - build_skydns_rc
+
+- name: Replacing Kubelet argument
+  replace:
+    dest: /etc/kubernetes/kubelet
+    regexp: 'KUBELET_ARGS=""'
+    replace: 'KUBELET_ARGS="--cluster-dns=10.254.254.254 --cluster-domain=cluster.local"'
+    backup: yes
+  tags:
+    - replace_kubelet_arg
+
+- name: Building httpd service
+  shell: kubectl create -f /srv/apache-centos7.json
+  tags:
+    - build_apache_json
+
+- name: Building mariadb service
+  shell: kubectl create -f /srv/mariadb-centos7.yml
+  tags:
+    - build_mariadb_json
+

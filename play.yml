@@ -4,7 +4,9 @@
   pre_tasks:
     - shell: echo "Initializing Kubernetes Support.."
   roles:
-    - { role: etcd }
-    - { role: kubernetes }
+    - { role: docker, tags: ['docker']}
+    - { role: etcd, tags: ['etcd']}
+    - { role: kubernetes, tags: ['kubernetes'] }
+    - { role: flannel, tags: ['flannel'] }
   post_tasks:
     - shell: echo "Finalizing Kubernetes Process"

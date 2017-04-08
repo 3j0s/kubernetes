@@ -1,0 +1,29 @@
+---
+
+- name: Replacing Flannel argument
+  replace:
+    dest: /etc/sysconfig/flanneld
+    regexp: 'FLANNEL_ETCD_ENDPOINTS="http://127.0.0.1:2379"'
+    replace: 'FLANNEL_ETCD_ENDPOINTS="http://{{ ansible_default_ipv4.address }}:2379"'
+    backup: yes
+  tags:
+    - replace_flannel_arg
+
+- name: Insert Flannel argument
+  lineinfile:
+    dest: /etc/sysconfig/flanneld
+    state: present
+    regexp: 'FLANNEL_ETCD_KEY'
+    line: 'FLANNEL_ETCD_KEY="/flannel/network"'
+  tags:
+    - insert_flannel_arg
+
+- name: Make sure flannel service is enabled
+  systemd: 
+     name: flanneld
+     enabled: yes
+
+- name: restart service flanneld
+  systemd:
+    name: flanneld
+    state: restarted

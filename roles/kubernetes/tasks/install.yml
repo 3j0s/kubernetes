@@ -4,6 +4,22 @@
   with_items:
       - kubernetes 
 
-#- name: Copy kubernetes config file
-#  copy: src=kube.conf dest=/etc/kubernets/kube.conf
+- name: Copy kube-dns yaml file
+  copy: src=skydns-svc.yml dest=/srv
+  tags:
+    - cp_skydns_svc
 
+- name: Copy kube-rc yaml file
+  copy: src=skydns-rc.yml dest=/srv
+  tags:
+    - cp_skydns_rc
+
+- name: Copy apache-centos7 file
+  copy: src=apache-centos7.json dest=/srv
+  tags:
+    - cp_apache_json
+
+- name: Copy mariadb-centos7 file
+  copy: src=mariadb-centos7.yml dest=/srv
+  tags:
+    - cp_mariadb_json

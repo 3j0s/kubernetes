@@ -1458,3 +1458,2588 @@ The offending line appears to be:
 2017-04-06 11:51:38,999 p=15099 u=ejos |  changed: [192.168.10.61]
 2017-04-06 11:51:39,001 p=15099 u=ejos |  PLAY RECAP *********************************************************************
 2017-04-06 11:51:39,002 p=15099 u=ejos |  192.168.10.61              : ok=12   changed=8    unreachable=0    failed=0   
+2017-04-06 12:28:54,480 p=16874 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 12:28:54,531 p=16874 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 12:28:56,639 p=16874 u=ejos |  ok: [192.168.10.61]
+2017-04-06 12:28:56,641 p=16874 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 12:28:56,641 p=16874 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=0   
+2017-04-06 12:29:23,938 p=16896 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 12:29:23,989 p=16896 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 12:29:25,760 p=16896 u=ejos |  ok: [192.168.10.61]
+2017-04-06 12:29:25,764 p=16896 u=ejos |  TASK [kubernetes : Install list of Packages] ***********************************
+2017-04-06 12:29:26,919 p=16896 u=ejos |  ok: [192.168.10.61] => (item=[u'kubernetes'])
+2017-04-06 12:29:26,922 p=16896 u=ejos |  TASK [kubernetes : Copy kube-dns yaml file] ************************************
+2017-04-06 12:29:28,682 p=16896 u=ejos |  changed: [192.168.10.61]
+2017-04-06 12:29:28,688 p=16896 u=ejos |  TASK [kubernetes : Enabling kubernetes service] ********************************
+2017-04-06 12:29:29,590 p=16896 u=ejos |  ok: [192.168.10.61] => (item=kube-apiserver)
+2017-04-06 12:29:30,294 p=16896 u=ejos |  ok: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-06 12:29:30,996 p=16896 u=ejos |  ok: [192.168.10.61] => (item=kube-scheduler)
+2017-04-06 12:29:30,999 p=16896 u=ejos |  TASK [kubernetes : Restarting kubernetes service] ******************************
+2017-04-06 12:29:31,926 p=16896 u=ejos |  changed: [192.168.10.61] => (item=kube-apiserver)
+2017-04-06 12:29:32,593 p=16896 u=ejos |  changed: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-06 12:29:33,246 p=16896 u=ejos |  changed: [192.168.10.61] => (item=kube-scheduler)
+2017-04-06 12:29:33,253 p=16896 u=ejos |  TASK [kubernetes : Building kub-dns service] ***********************************
+2017-04-06 12:29:34,161 p=16896 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /etc/kubernetes/skydns-svc.yml", "delta": "0:00:00.114416", "end": "2017-04-06 12:29:34.123010", "failed": true, "rc": 1, "start": "2017-04-06 12:29:34.008594", "stderr": "error: the path \"/etc/kubernetes/skydns-svc.yml\" does not exist", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-06 12:29:34,162 p=16896 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 12:29:34,163 p=16896 u=ejos |  192.168.10.61              : ok=5    changed=2    unreachable=0    failed=1   
+2017-04-06 12:31:04,517 p=17024 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 12:31:04,561 p=17024 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 12:31:06,078 p=17024 u=ejos |  ok: [192.168.10.61]
+2017-04-06 12:31:06,082 p=17024 u=ejos |  TASK [kubernetes : Install list of Packages] ***********************************
+2017-04-06 12:31:07,149 p=17024 u=ejos |  ok: [192.168.10.61] => (item=[u'kubernetes'])
+2017-04-06 12:31:07,155 p=17024 u=ejos |  TASK [kubernetes : Copy kube-dns yaml file] ************************************
+2017-04-06 12:31:09,049 p=17024 u=ejos |  changed: [192.168.10.61]
+2017-04-06 12:31:09,053 p=17024 u=ejos |  TASK [kubernetes : Enabling kubernetes service] ********************************
+2017-04-06 12:31:09,888 p=17024 u=ejos |  ok: [192.168.10.61] => (item=kube-apiserver)
+2017-04-06 12:31:10,530 p=17024 u=ejos |  ok: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-06 12:31:11,217 p=17024 u=ejos |  ok: [192.168.10.61] => (item=kube-scheduler)
+2017-04-06 12:31:11,224 p=17024 u=ejos |  TASK [kubernetes : Restarting kubernetes service] ******************************
+2017-04-06 12:31:12,143 p=17024 u=ejos |  changed: [192.168.10.61] => (item=kube-apiserver)
+2017-04-06 12:31:12,848 p=17024 u=ejos |  changed: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-06 12:31:13,554 p=17024 u=ejos |  changed: [192.168.10.61] => (item=kube-scheduler)
+2017-04-06 12:31:13,557 p=17024 u=ejos |  TASK [kubernetes : Building kub-dns service] ***********************************
+2017-04-06 12:31:14,658 p=17024 u=ejos |  changed: [192.168.10.61]
+2017-04-06 12:31:14,660 p=17024 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 12:31:14,660 p=17024 u=ejos |  192.168.10.61              : ok=6    changed=3    unreachable=0    failed=0   
+2017-04-06 12:56:51,198 p=18462 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 12:56:51,256 p=18462 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 12:56:54,610 p=18462 u=ejos |  ok: [192.168.10.61]
+2017-04-06 12:56:54,615 p=18462 u=ejos |  TASK [docker : Install list of Packages] ***************************************
+2017-04-06 12:56:55,728 p=18462 u=ejos |  ok: [192.168.10.61] => (item=[u'docker'])
+2017-04-06 12:56:55,731 p=18462 u=ejos |  TASK [docker : Append to group] ************************************************
+2017-04-06 12:56:56,841 p=18462 u=ejos |  changed: [192.168.10.61]
+2017-04-06 12:56:56,847 p=18462 u=ejos |  TASK [docker : Enabling kubernetes service] ************************************
+2017-04-06 12:56:57,785 p=18462 u=ejos |  changed: [192.168.10.61] => (item=docker)
+2017-04-06 12:56:57,791 p=18462 u=ejos |  TASK [docker : Restarting kubernetes service] **********************************
+2017-04-06 12:57:01,442 p=18462 u=ejos |  changed: [192.168.10.61] => (item=docker)
+2017-04-06 12:57:01,447 p=18462 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 12:57:01,448 p=18462 u=ejos |  192.168.10.61              : ok=5    changed=3    unreachable=0    failed=0   
+2017-04-06 13:00:03,021 p=18688 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 13:00:03,078 p=18688 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 13:00:04,733 p=18688 u=ejos |  ok: [192.168.10.61]
+2017-04-06 13:00:04,737 p=18688 u=ejos |  TASK [docker : Install list of Packages] ***************************************
+2017-04-06 13:00:05,814 p=18688 u=ejos |  ok: [192.168.10.61] => (item=[u'docker'])
+2017-04-06 13:00:05,818 p=18688 u=ejos |  TASK [docker : Append to group] ************************************************
+2017-04-06 13:00:06,679 p=18688 u=ejos |  failed: [192.168.10.61] (item=docker) => {"changed": true, "cmd": "usermod -aG docker ejos", "delta": "0:00:00.003832", "end": "2017-04-06 13:00:06.636626", "failed": true, "item": "docker", "rc": 6, "start": "2017-04-06 13:00:06.632794", "stderr": "usermod: el grupo «docker» no existe", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-06 13:00:07,340 p=18688 u=ejos |  changed: [192.168.10.61] => (item=dockerroot)
+2017-04-06 13:00:07,342 p=18688 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 13:00:07,342 p=18688 u=ejos |  192.168.10.61              : ok=2    changed=0    unreachable=0    failed=1   
+2017-04-06 13:01:19,823 p=18780 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 13:01:19,875 p=18780 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 13:01:25,826 p=18780 u=ejos |  ok: [192.168.10.61]
+2017-04-06 13:01:25,829 p=18780 u=ejos |  TASK [docker : Install list of Packages] ***************************************
+2017-04-06 13:01:28,475 p=18780 u=ejos |  ok: [192.168.10.61] => (item=[u'docker'])
+2017-04-06 13:01:28,480 p=18780 u=ejos |  TASK [docker : group] **********************************************************
+2017-04-06 13:01:30,166 p=18780 u=ejos |  changed: [192.168.10.61]
+2017-04-06 13:01:30,169 p=18780 u=ejos |  TASK [docker : Append to group] ************************************************
+2017-04-06 13:01:31,986 p=18780 u=ejos |  changed: [192.168.10.61] => (item=docker)
+2017-04-06 13:01:33,361 p=18780 u=ejos |  changed: [192.168.10.61] => (item=dockerroot)
+2017-04-06 13:01:33,367 p=18780 u=ejos |  TASK [docker : Enabling docker service] ****************************************
+2017-04-06 13:01:35,629 p=18780 u=ejos |  ok: [192.168.10.61] => (item=docker)
+2017-04-06 13:01:35,633 p=18780 u=ejos |  TASK [docker : user] ***********************************************************
+2017-04-06 13:01:39,474 p=18780 u=ejos |  changed: [192.168.10.61]
+2017-04-06 13:01:39,478 p=18780 u=ejos |  TASK [docker : Restarting docker service] **************************************
+2017-04-06 13:01:43,293 p=18780 u=ejos |  changed: [192.168.10.61] => (item=docker)
+2017-04-06 13:01:43,296 p=18780 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 13:01:43,296 p=18780 u=ejos |  192.168.10.61              : ok=7    changed=4    unreachable=0    failed=0   
+2017-04-06 15:13:59,845 p=22355 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 15:13:59,981 p=22355 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 15:14:04,661 p=22355 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:14:04,665 p=22355 u=ejos |  TASK [kubernetes : Install list of Packages] ***********************************
+2017-04-06 15:14:08,762 p=22355 u=ejos |  ok: [192.168.10.61] => (item=[u'kubernetes'])
+2017-04-06 15:14:08,768 p=22355 u=ejos |  TASK [kubernetes : Copy kube-dns yaml file] ************************************
+2017-04-06 15:14:11,327 p=22355 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:14:11,331 p=22355 u=ejos |  TASK [kubernetes : Copy kube-rc yaml file] *************************************
+2017-04-06 15:14:14,011 p=22355 u=ejos |  changed: [192.168.10.61]
+2017-04-06 15:14:14,014 p=22355 u=ejos |  TASK [kubernetes : Enabling kubernetes service] ********************************
+2017-04-06 15:14:15,412 p=22355 u=ejos |  ok: [192.168.10.61] => (item=kube-apiserver)
+2017-04-06 15:14:16,395 p=22355 u=ejos |  ok: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-06 15:14:17,325 p=22355 u=ejos |  ok: [192.168.10.61] => (item=kube-scheduler)
+2017-04-06 15:14:17,335 p=22355 u=ejos |  TASK [kubernetes : Restarting kubernetes service] ******************************
+2017-04-06 15:14:18,767 p=22355 u=ejos |  changed: [192.168.10.61] => (item=kube-apiserver)
+2017-04-06 15:14:19,879 p=22355 u=ejos |  changed: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-06 15:14:21,197 p=22355 u=ejos |  changed: [192.168.10.61] => (item=kube-scheduler)
+2017-04-06 15:14:21,202 p=22355 u=ejos |  TASK [kubernetes : Building kub-dns service] ***********************************
+2017-04-06 15:14:24,112 p=22355 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /etc/kubernetes/skydns-svc.yml", "delta": "0:00:01.858384", "end": "2017-04-06 15:14:24.048872", "failed": true, "rc": 1, "start": "2017-04-06 15:14:22.190488", "stderr": "The Service \"kube-dns\" is invalid: spec.clusterIP: Invalid value: \"10.254.254.254\": provided IP is already allocated", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-06 15:14:24,114 p=22355 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 15:14:24,114 p=22355 u=ejos |  192.168.10.61              : ok=6    changed=2    unreachable=0    failed=1   
+2017-04-06 15:15:00,166 p=22465 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 15:15:00,257 p=22465 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 15:15:02,275 p=22465 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:15:02,279 p=22465 u=ejos |  TASK [kubernetes : Install list of Packages] ***********************************
+2017-04-06 15:15:03,689 p=22465 u=ejos |  ok: [192.168.10.61] => (item=[u'kubernetes'])
+2017-04-06 15:15:03,694 p=22465 u=ejos |  TASK [kubernetes : Copy kube-dns yaml file] ************************************
+2017-04-06 15:15:06,219 p=22465 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:15:06,224 p=22465 u=ejos |  TASK [kubernetes : Copy kube-rc yaml file] *************************************
+2017-04-06 15:15:08,562 p=22465 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:15:08,568 p=22465 u=ejos |  TASK [kubernetes : Enabling kubernetes service] ********************************
+2017-04-06 15:15:09,865 p=22465 u=ejos |  ok: [192.168.10.61] => (item=kube-apiserver)
+2017-04-06 15:15:11,034 p=22465 u=ejos |  ok: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-06 15:15:12,097 p=22465 u=ejos |  ok: [192.168.10.61] => (item=kube-scheduler)
+2017-04-06 15:15:12,103 p=22465 u=ejos |  TASK [kubernetes : Restarting kubernetes service] ******************************
+2017-04-06 15:15:13,466 p=22465 u=ejos |  changed: [192.168.10.61] => (item=kube-apiserver)
+2017-04-06 15:15:14,508 p=22465 u=ejos |  changed: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-06 15:15:15,410 p=22465 u=ejos |  changed: [192.168.10.61] => (item=kube-scheduler)
+2017-04-06 15:15:15,416 p=22465 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 15:15:15,416 p=22465 u=ejos |  192.168.10.61              : ok=6    changed=1    unreachable=0    failed=0   
+2017-04-06 15:15:49,391 p=22582 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+No resources found.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 15:16:22,013 p=22595 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME         CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
+default       kubernetes   10.254.0.1       <none>        443/TCP         3h
+kube-system   kube-dns     10.254.254.254   <none>        53/UDP,53/TCP   2h
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 15:18:53,292 p=22644 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 15:18:53,347 p=22644 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 15:18:55,837 p=22644 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:18:55,841 p=22644 u=ejos |  TASK [kubernetes : Install list of Packages] ***********************************
+2017-04-06 15:18:57,481 p=22644 u=ejos |  ok: [192.168.10.61] => (item=[u'kubernetes'])
+2017-04-06 15:18:57,487 p=22644 u=ejos |  TASK [kubernetes : Copy kube-dns yaml file] ************************************
+2017-04-06 15:18:59,628 p=22644 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:18:59,631 p=22644 u=ejos |  TASK [kubernetes : Copy kube-rc yaml file] *************************************
+2017-04-06 15:19:01,547 p=22644 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:19:01,552 p=22644 u=ejos |  TASK [kubernetes : Enabling kubernetes service] ********************************
+2017-04-06 15:19:02,789 p=22644 u=ejos |  ok: [192.168.10.61] => (item=kube-apiserver)
+2017-04-06 15:19:03,688 p=22644 u=ejos |  ok: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-06 15:19:04,660 p=22644 u=ejos |  ok: [192.168.10.61] => (item=kube-scheduler)
+2017-04-06 15:19:04,664 p=22644 u=ejos |  TASK [kubernetes : Restarting kubernetes service] ******************************
+2017-04-06 15:19:05,923 p=22644 u=ejos |  changed: [192.168.10.61] => (item=kube-apiserver)
+2017-04-06 15:19:07,027 p=22644 u=ejos |  changed: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-06 15:19:08,231 p=22644 u=ejos |  changed: [192.168.10.61] => (item=kube-scheduler)
+2017-04-06 15:19:08,234 p=22644 u=ejos |  TASK [kubernetes : Building kub-dns service] ***********************************
+2017-04-06 15:19:09,685 p=22644 u=ejos |  changed: [192.168.10.61]
+2017-04-06 15:19:09,687 p=22644 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 15:19:09,687 p=22644 u=ejos |  192.168.10.61              : ok=7    changed=2    unreachable=0    failed=0   
+2017-04-06 15:19:29,730 p=22737 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+No resources found.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 15:20:17,248 p=22785 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+No resources found.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 15:20:19,286 p=22795 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+No resources found.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 15:20:50,431 p=22815 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 15:20:50,490 p=22815 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 15:20:52,542 p=22815 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:20:52,546 p=22815 u=ejos |  TASK [kubernetes : Building kub-rc service] ************************************
+2017-04-06 15:20:53,922 p=22815 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /etc/kubernetes/skydns-rc.yml", "delta": "0:00:00.128124", "end": "2017-04-06 15:20:53.860280", "failed": true, "rc": 1, "start": "2017-04-06 15:20:53.732156", "stderr": "Error from server (AlreadyExists): error when creating \"/etc/kubernetes/skydns-rc.yml\": replicationcontrollers \"kube-dns-v11\" already exists", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-06 15:20:53,925 p=22815 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 15:20:53,925 p=22815 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=1   
+2017-04-06 15:21:07,503 p=22836 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+No resources found.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 15:21:09,546 p=22846 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+No resources found.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 15:22:17,874 p=22862 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+No resources found.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 15:23:59,626 p=22916 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+No resources found.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 15:24:09,126 p=22930 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME         CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   10.254.0.1   <none>        443/TCP   3h
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 15:25:02,025 p=22982 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 15:25:02,108 p=22982 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 15:25:03,455 p=22982 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:25:03,459 p=22982 u=ejos |  TASK [kubernetes : Building kub-rc service] ************************************
+2017-04-06 15:25:04,496 p=22982 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /etc/kubernetes/skydns-rc.yml", "delta": "0:00:00.183560", "end": "2017-04-06 15:25:04.454346", "failed": true, "rc": 1, "start": "2017-04-06 15:25:04.270786", "stderr": "Error from server (AlreadyExists): error when creating \"/etc/kubernetes/skydns-rc.yml\": replicationcontrollers \"kube-dns-v11\" already exists", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-06 15:25:04,497 p=22982 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 15:25:04,498 p=22982 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=1   
+2017-04-06 15:37:19,235 p=23977 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 15:37:19,290 p=23977 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 15:37:24,709 p=23977 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:37:24,713 p=23977 u=ejos |  TASK [kubernetes : Building kub-rc service] ************************************
+2017-04-06 15:37:26,333 p=23977 u=ejos |  changed: [192.168.10.61]
+2017-04-06 15:37:26,336 p=23977 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 15:37:26,336 p=23977 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-06 15:37:33,956 p=24004 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME         CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   10.254.0.1   <none>        443/TCP   3h
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 15:37:40,541 p=24014 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+No resources found.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 15:47:28,323 p=24406 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 15:47:28,383 p=24406 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 15:47:31,259 p=24406 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:47:31,261 p=24406 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 15:47:31,261 p=24406 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=0   
+2017-04-06 15:47:58,991 p=24427 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 15:47:59,053 p=24427 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 15:48:01,365 p=24427 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:48:01,369 p=24427 u=ejos |  TASK [kubernetes : Replacing Kubelet argument] *********************************
+2017-04-06 15:48:02,656 p=24427 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "Destination /etc/kubernet/kubelet does not exist !", "rc": 257}
+2017-04-06 15:48:02,658 p=24427 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 15:48:02,658 p=24427 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=1   
+2017-04-06 15:48:25,012 p=24449 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 15:48:25,074 p=24449 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 15:48:27,366 p=24449 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:48:27,370 p=24449 u=ejos |  TASK [kubernetes : Replacing Kubelet argument] *********************************
+2017-04-06 15:48:28,828 p=24449 u=ejos |  changed: [192.168.10.61]
+2017-04-06 15:48:28,831 p=24449 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 15:48:28,832 p=24449 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-06 15:50:18,300 p=24518 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 15:50:18,362 p=24518 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 15:50:20,198 p=24518 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:50:20,203 p=24518 u=ejos |  TASK [kubernetes : Restarting kubernetes service] ******************************
+2017-04-06 15:50:21,439 p=24518 u=ejos |  changed: [192.168.10.61] => (item=kube-apiserver)
+2017-04-06 15:50:22,287 p=24518 u=ejos |  changed: [192.168.10.61] => (item=kube-controller-manager)
+2017-04-06 15:50:23,476 p=24518 u=ejos |  changed: [192.168.10.61] => (item=kube-scheduler)
+2017-04-06 15:50:23,483 p=24518 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 15:50:23,484 p=24518 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-06 15:54:38,162 p=24671 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 15:54:38,227 p=24671 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 15:54:41,547 p=24671 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:54:41,552 p=24671 u=ejos |  TASK [kubernetes : Copy kube-rc yaml file] *************************************
+2017-04-06 15:54:45,591 p=24671 u=ejos |  changed: [192.168.10.61]
+2017-04-06 15:54:45,595 p=24671 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 15:54:45,595 p=24671 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-06 15:55:31,131 p=24753 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 15:55:31,190 p=24753 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 15:55:33,367 p=24753 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:55:33,372 p=24753 u=ejos |  TASK [kubernetes : Copy kube-rc yaml file] *************************************
+2017-04-06 15:55:35,761 p=24753 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:55:35,765 p=24753 u=ejos |  TASK [kubernetes : Building kub-rc service] ************************************
+2017-04-06 15:55:37,315 p=24753 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /etc/kubernetes/skydns-rc.yml", "delta": "0:00:00.106500", "end": "2017-04-06 15:55:37.227757", "failed": true, "rc": 1, "start": "2017-04-06 15:55:37.121257", "stderr": "Error from server (BadRequest): error when creating \"/etc/kubernetes/skydns-rc.yml\": ReplicationController in version \"v1beta1\" cannot be handled as a ReplicationController: no kind \"ReplicationController\" is registered for version \"v1beta1\"", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-06 15:55:37,317 p=24753 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 15:55:37,318 p=24753 u=ejos |  192.168.10.61              : ok=2    changed=0    unreachable=0    failed=1   
+2017-04-06 15:57:05,139 p=24798 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 15:57:05,196 p=24798 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 15:57:08,393 p=24798 u=ejos |  ok: [192.168.10.61]
+2017-04-06 15:57:08,397 p=24798 u=ejos |  TASK [kubernetes : Copy kube-rc yaml file] *************************************
+2017-04-06 15:57:11,179 p=24798 u=ejos |  changed: [192.168.10.61]
+2017-04-06 15:57:11,182 p=24798 u=ejos |  TASK [kubernetes : Building kub-rc service] ************************************
+2017-04-06 15:57:12,323 p=24798 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /etc/kubernetes/skydns-rc.yml", "delta": "0:00:00.100405", "end": "2017-04-06 15:57:12.256283", "failed": true, "rc": 1, "start": "2017-04-06 15:57:12.155878", "stderr": "Error from server (BadRequest): error when creating \"/etc/kubernetes/skydns-rc.yml\": ReplicationController in version \"v1beta1\" cannot be handled as a ReplicationController: no kind \"ReplicationController\" is registered for version \"v1beta1\"", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-06 15:57:12,325 p=24798 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 15:57:12,325 p=24798 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=1   
+2017-04-06 16:37:17,068 p=25940 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME       READY     STATUS             RESTARTS   AGE
+webdon01   0/1       ImagePullBackOff   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 16:38:50,784 p=26037 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME       READY     STATUS             RESTARTS   AGE
+webdon01   0/1       ImagePullBackOff   0          3m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 18:52:57,106 p=28872 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 18:52:57,168 p=28872 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 18:53:00,154 p=28872 u=ejos |  ok: [192.168.10.61]
+2017-04-06 18:53:00,158 p=28872 u=ejos |  TASK [kubernetes : Copy mariadb-centos7 file] **********************************
+2017-04-06 18:53:04,568 p=28872 u=ejos |  changed: [192.168.10.61]
+2017-04-06 18:53:04,571 p=28872 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 18:53:04,572 p=28872 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-06 18:53:55,532 p=28922 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 18:53:55,591 p=28922 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 18:53:57,491 p=28922 u=ejos |  ok: [192.168.10.61]
+2017-04-06 18:53:57,495 p=28922 u=ejos |  TASK [kubernetes : Copy mariadb-centos7 file] **********************************
+2017-04-06 18:54:01,904 p=28922 u=ejos |  changed: [192.168.10.61]
+2017-04-06 18:54:01,910 p=28922 u=ejos |  TASK [kubernetes : Building mariadb service] ***********************************
+2017-04-06 18:54:03,370 p=28922 u=ejos |  changed: [192.168.10.61]
+2017-04-06 18:54:03,372 p=28922 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 18:54:03,372 p=28922 u=ejos |  192.168.10.61              : ok=3    changed=2    unreachable=0    failed=0   
+2017-04-06 18:54:10,230 p=28963 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS              RESTARTS   AGE
+apache-centos7    1/1       Running             0          1h
+mariadb-centos7   0/1       ContainerCreating   0          6s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 18:54:55,622 p=28982 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS             RESTARTS   AGE
+apache-centos7    1/1       Running            0          1h
+mariadb-centos7   0/1       CrashLoopBackOff   1          52s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 18:55:07,366 p=29029 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Error     2          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 18:55:14,888 p=29039 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS             RESTARTS   AGE
+apache-centos7    1/1       Running            0          1h
+mariadb-centos7   0/1       CrashLoopBackOff   2          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 18:55:22,923 p=29049 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS             RESTARTS   AGE
+apache-centos7    1/1       Running            0          1h
+mariadb-centos7   0/1       CrashLoopBackOff   2          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 18:56:03,567 p=29066 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+pod "mariadb-centos7" deleted
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 18:56:07,636 p=29076 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME             READY     STATUS    RESTARTS   AGE
+apache-centos7   1/1       Running   0          1h
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:01:09,151 p=29305 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 19:01:09,224 p=29305 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 19:01:13,353 p=29305 u=ejos |  ok: [192.168.10.61]
+2017-04-06 19:01:13,360 p=29305 u=ejos |  TASK [kubernetes : Copy mariadb-centos7 file] **********************************
+2017-04-06 19:01:17,465 p=29305 u=ejos |  changed: [192.168.10.61]
+2017-04-06 19:01:17,472 p=29305 u=ejos |  TASK [kubernetes : Building mariadb service] ***********************************
+2017-04-06 19:01:18,708 p=29305 u=ejos |  changed: [192.168.10.61]
+2017-04-06 19:01:18,710 p=29305 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 19:01:18,711 p=29305 u=ejos |  192.168.10.61              : ok=3    changed=2    unreachable=0    failed=0   
+2017-04-06 19:01:25,078 p=29352 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          7s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:01:29,409 p=29362 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          11s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:01:36,888 p=29372 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          18s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:01:43,873 p=29384 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          25s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:01:54,180 p=29396 u=ejos |  ERROR! Extranous options or arguments
+2017-04-06 19:02:05,400 p=29404 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          47s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:08,204 p=29415 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          50s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:11,332 p=29426 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          53s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:14,185 p=29437 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          56s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:17,278 p=29448 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          59s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:20,103 p=29459 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:22,868 p=29470 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:25,738 p=29481 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:28,518 p=29492 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:31,325 p=29503 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:34,149 p=29514 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:36,970 p=29525 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:40,089 p=29568 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:43,510 p=29610 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:46,865 p=29664 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:49,935 p=29709 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:53,028 p=29760 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:56,034 p=29813 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:02:58,955 p=29853 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:01,807 p=29885 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:04,658 p=29896 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:07,569 p=29928 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:10,889 p=29958 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:14,321 p=29995 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:17,573 p=30016 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:20,615 p=30044 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:23,776 p=30057 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:26,797 p=30068 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:29,759 p=30079 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:32,922 p=30090 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:35,703 p=30101 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:38,496 p=30112 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:41,554 p=30126 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:44,468 p=30138 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:47,394 p=30149 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:50,289 p=30160 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:53,249 p=30171 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:03:56,170 p=30182 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:04:04,910 p=30192 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+pod "mariadb-centos7" deleted
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:04:32,008 p=30205 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 19:04:32,067 p=30205 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 19:04:34,328 p=30205 u=ejos |  ok: [192.168.10.61]
+2017-04-06 19:04:34,333 p=30205 u=ejos |  TASK [kubernetes : Copy mariadb-centos7 file] **********************************
+2017-04-06 19:04:39,133 p=30205 u=ejos |  changed: [192.168.10.61]
+2017-04-06 19:04:39,137 p=30205 u=ejos |  TASK [kubernetes : Building mariadb service] ***********************************
+2017-04-06 19:04:41,902 p=30205 u=ejos |  changed: [192.168.10.61]
+2017-04-06 19:04:41,904 p=30205 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 19:04:41,904 p=30205 u=ejos |  192.168.10.61              : ok=3    changed=2    unreachable=0    failed=0   
+2017-04-06 19:04:47,825 p=30257 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          6s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:04:50,600 p=30268 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          9s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:04:53,455 p=30279 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          12s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:04:56,277 p=30290 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          15s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:04:59,144 p=30301 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          18s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:05:02,048 p=30353 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          21s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:05:04,864 p=30364 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          23s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:05:07,709 p=30375 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          26s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:05:10,573 p=30386 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          29s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:05:45,837 p=30403 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:05:48,612 p=30415 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:05:51,429 p=30427 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:05:54,653 p=30438 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:05:57,470 p=30449 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:00,290 p=30460 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:03,136 p=30473 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:05,980 p=30484 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:09,053 p=30495 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:11,881 p=30506 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:14,728 p=30517 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:17,566 p=30528 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:20,460 p=30540 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:23,272 p=30551 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:26,193 p=30562 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:29,250 p=30573 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:32,336 p=30584 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:35,305 p=30595 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:38,188 p=30607 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:06:41,169 p=30620 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME              READY     STATUS    RESTARTS   AGE
+apache-centos7    1/1       Running   0          1h
+mariadb-centos7   0/1       Pending   0          2m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:09:36,644 p=30711 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+pod "mariadb-centos7" deleted
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-06 19:09:50,171 p=30727 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 19:09:50,241 p=30727 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 19:09:52,474 p=30727 u=ejos |  ok: [192.168.10.61]
+2017-04-06 19:09:52,478 p=30727 u=ejos |  TASK [kubernetes : Copy mariadb-centos7 file] **********************************
+2017-04-06 19:09:52,514 p=30727 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "Unable to find 'mariadb-centos7.json' in expected paths."}
+2017-04-06 19:09:52,516 p=30727 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 19:09:52,516 p=30727 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=1   
+2017-04-06 19:10:13,243 p=30777 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-06 19:10:13,301 p=30777 u=ejos |  TASK [setup] *******************************************************************
+2017-04-06 19:10:15,496 p=30777 u=ejos |  ok: [192.168.10.61]
+2017-04-06 19:10:15,501 p=30777 u=ejos |  TASK [kubernetes : Copy mariadb-centos7 file] **********************************
+2017-04-06 19:10:20,768 p=30777 u=ejos |  changed: [192.168.10.61]
+2017-04-06 19:10:20,774 p=30777 u=ejos |  TASK [kubernetes : Building mariadb service] ***********************************
+2017-04-06 19:10:22,489 p=30777 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/mariadb-centos7.yml", "delta": "0:00:00.121939", "end": "2017-04-06 19:10:22.442600", "failed": true, "rc": 1, "start": "2017-04-06 19:10:22.320661", "stderr": "error: error validating \"/srv/mariadb-centos7.yml\": error validating data: [found invalid field containerPort for v1.Pod, found invalid field env for v1.Pod, found invalid field labels for v1.Pod, found invalid field name for v1.Pod, found invalid field volumes for v1.Pod, found invalid field ports for v1.Pod, found invalid field volumeMounts for v1.Pod, found invalid field containers for v1.Pod, found invalid field image for v1.Pod, found invalid field emptyDir for v1.Pod, found invalid field mountPath for v1.Pod, found invalid field value for v1.Pod]; if you choose to ignore these errors, turn validation off with --validate=false", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-06 19:10:22,491 p=30777 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-06 19:10:22,491 p=30777 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=1   
+2017-04-08 10:09:59,726 p=23300 u=ejos |  192.168.10.61 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2017-04-08 10:39:55,071 p=24121 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+Complementos cargados:fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.gtdinternet.com
+ * epel: mirror.globo.com
+ * extras: mirror.gtdinternet.com
+ * updates: mirror.gtdinternet.com
+============================= N/S matched: facter ==============================
+[1mfacter(B[m.x86_64 : Command and ruby library for gathering system information
+
+  Nombre y resumen que coinciden con [1m y sólo (B[m, use "buscar todo" para todo.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 10:41:03,397 p=24251 u=ejos |  192.168.10.61 | FAILED! => {
+    "changed": false, 
+    "cmd": "--puppet --json", 
+    "failed": true, 
+    "msg": "[Errno 2] No existe el fichero o el directorio", 
+    "rc": 2
+}
+2017-04-08 10:42:44,799 p=24295 u=ejos |  ERROR! Extranous options or arguments
+2017-04-08 10:43:21,560 p=24301 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "off [fixed]", 
+                "netns_local": "off [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "on [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "off [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "off [fixed]", 
+                "tx_lockless": "off [fixed]", 
+                "tx_mpls_segmentation": "off [fixed]", 
+                "tx_nocache_copy": "off", 
+                "tx_scatter_gather": "on", 
+                "tx_scatter_gather_fraglist": "off [fixed]", 
+                "tx_sctp_segmentation": "off [fixed]", 
+                "tx_sit_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "off [fixed]"
+            }, 
+            "ipv4": {
+                "address": "192.168.10.61", 
+                "broadcast": "192.168.10.255", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.10.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::f816:3eff:fee6:a14b", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "fa:16:3e:e6:a1:4b", 
+            "module": "virtio_net", 
+            "mtu": 1454, 
+            "pciid": "virtio0", 
+            "promisc": false, 
+            "type": "ether"
+        }
+    }, 
+    "changed": false
+}
+2017-04-08 10:45:38,994 p=24396 u=ejos |  ERROR! this task 'setup' has extra params, which is only allowed in the following modules: command, win_command, shell, win_shell, script, include, include_vars, add_host, group_by, set_fact, raw, meta
+2017-04-08 10:46:36,613 p=24406 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:46:58,456 p=24424 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:48:49,341 p=24468 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:48:56,754 p=24486 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:49:28,387 p=24502 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:49:36,023 p=24516 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "off [fixed]", 
+                "netns_local": "off [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "on [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "off [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "off [fixed]", 
+                "tx_lockless": "off [fixed]", 
+                "tx_mpls_segmentation": "off [fixed]", 
+                "tx_nocache_copy": "off", 
+                "tx_scatter_gather": "on", 
+                "tx_scatter_gather_fraglist": "off [fixed]", 
+                "tx_sctp_segmentation": "off [fixed]", 
+                "tx_sit_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "off [fixed]"
+            }, 
+            "ipv4": {
+                "address": "192.168.10.61", 
+                "broadcast": "192.168.10.255", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.10.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::f816:3eff:fee6:a14b", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "fa:16:3e:e6:a1:4b", 
+            "module": "virtio_net", 
+            "mtu": 1454, 
+            "pciid": "virtio0", 
+            "promisc": false, 
+            "type": "ether"
+        }
+    }, 
+    "changed": false
+}
+2017-04-08 10:49:51,858 p=24534 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "off [fixed]", 
+                "netns_local": "off [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "on [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "off [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "off [fixed]", 
+                "tx_lockless": "off [fixed]", 
+                "tx_mpls_segmentation": "off [fixed]", 
+                "tx_nocache_copy": "off", 
+                "tx_scatter_gather": "on", 
+                "tx_scatter_gather_fraglist": "off [fixed]", 
+                "tx_sctp_segmentation": "off [fixed]", 
+                "tx_sit_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "off [fixed]"
+            }, 
+            "ipv4": {
+                "address": "192.168.10.61", 
+                "broadcast": "192.168.10.255", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.10.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::f816:3eff:fee6:a14b", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "fa:16:3e:e6:a1:4b", 
+            "module": "virtio_net", 
+            "mtu": 1454, 
+            "pciid": "virtio0", 
+            "promisc": false, 
+            "type": "ether"
+        }
+    }, 
+    "changed": false
+}
+2017-04-08 10:50:10,247 p=24588 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:50:27,187 p=24607 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:50:34,597 p=24622 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:50:41,149 p=24636 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:50:53,132 p=24650 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:51:00,010 p=24664 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:51:46,175 p=24685 u=ejos |  ERROR! Missing target hosts
+2017-04-08 10:53:26,576 p=24718 u=ejos |  192.168.10.61 | FAILED! => {
+    "failed": true, 
+    "msg": "the field 'args' has an invalid value, which appears to include a variable that is undefined. The error was: list object has no element Undefined"
+}
+2017-04-08 10:53:49,605 p=24728 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:54:10,587 p=24748 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:54:32,464 p=24762 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:54:43,005 p=24776 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 10:55:52,004 p=24911 u=ejos |  ERROR! Incorrect options passed
+2017-04-08 10:57:27,090 p=24935 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "172.17.0.1", 
+            "192.168.10.61"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::14ce:b2ff:fe38:e75", 
+            "fe80::42:74ff:fe6c:1f0a", 
+            "fe80::f816:3eff:fee6:a14b"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.10.0-514.6.1.el7.x86_64", 
+            "console": "ttyS0", 
+            "crashkernel": "auto", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "UUID=274dcd15-0cff-48db-a109-1fc89109e5e0"
+        }, 
+        "ansible_date_time": {
+            "date": "2017-04-08", 
+            "day": "08", 
+            "epoch": "1491659846", 
+            "hour": "10", 
+            "iso8601": "2017-04-08T13:57:26Z", 
+            "iso8601_basic": "20170408T105726928377", 
+            "iso8601_basic_short": "20170408T105726", 
+            "iso8601_micro": "2017-04-08T13:57:26.928460Z", 
+            "minute": "57", 
+            "month": "04", 
+            "second": "26", 
+            "time": "10:57:26", 
+            "tz": "CLST", 
+            "tz_offset": "-0300", 
+            "weekday": "sábado", 
+            "weekday_number": "6", 
+            "weeknumber": "14", 
+            "year": "2017"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.10.61", 
+            "alias": "eth0", 
+            "broadcast": "192.168.10.255", 
+            "gateway": "192.168.10.1", 
+            "interface": "eth0", 
+            "macaddress": "fa:16:3e:e6:a1:4b", 
+            "mtu": 1454, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.10.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_distribution": "CentOS", 
+        "ansible_distribution_major_version": "7", 
+        "ansible_distribution_release": "Core", 
+        "ansible_distribution_version": "7.3.1611", 
+        "ansible_dns": {
+            "nameservers": [
+                "8.8.8.8"
+            ], 
+            "search": [
+                "localdomain"
+            ]
+        }, 
+        "ansible_docker0": {
+            "active": true, 
+            "device": "docker0", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "off [fixed]", 
+                "netns_local": "on [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "off [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "off [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "off [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [requested on]", 
+                "tx_gre_segmentation": "on", 
+                "tx_gso_robust": "off [requested on]", 
+                "tx_ipip_segmentation": "on", 
+                "tx_lockless": "on [fixed]", 
+                "tx_mpls_segmentation": "on", 
+                "tx_nocache_copy": "off", 
+                "tx_scatter_gather": "on", 
+                "tx_scatter_gather_fraglist": "on", 
+                "tx_sctp_segmentation": "on", 
+                "tx_sit_segmentation": "on", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_segmentation": "on", 
+                "tx_vlan_offload": "on", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "off [fixed]"
+            }, 
+            "id": "8000.0242746c1f0a", 
+            "interfaces": [
+                "vethcdcd821"
+            ], 
+            "ipv4": {
+                "address": "172.17.0.1", 
+                "broadcast": "global", 
+                "netmask": "255.255.0.0", 
+                "network": "172.17.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::42:74ff:fe6c:1f0a", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "02:42:74:6c:1f:0a", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "stp": false, 
+            "type": "bridge"
+        }, 
+        "ansible_domain": "", 
+        "ansible_env": {
+            "HOME": "/root", 
+            "LANG": "es_CL.UTF-8", 
+            "LOGNAME": "root", 
+            "LS_COLORS": "rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:", 
+            "MAIL": "/var/mail/ejos", 
+            "PATH": "/sbin:/bin:/usr/sbin:/usr/bin", 
+            "PWD": "/home/ejos", 
+            "SHELL": "/bin/bash", 
+            "SHLVL": "1", 
+            "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-dkcdgrcfgbyixogvcnycsbgwddwvyzjj; /usr/bin/python /home/ejos/.ansible/tmp/ansible-tmp-1491659845.62-144823659525332/setup.py; rm -rf \"/home/ejos/.ansible/tmp/ansible-tmp-1491659845.62-144823659525332/\" > /dev/null 2>&1", 
+            "SUDO_GID": "1000", 
+            "SUDO_UID": "1000", 
+            "SUDO_USER": "ejos", 
+            "TERM": "xterm-256color", 
+            "USER": "root", 
+            "USERNAME": "root", 
+            "_": "/usr/bin/python"
+        }, 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "off [fixed]", 
+                "netns_local": "off [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "on [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "off [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "off [fixed]", 
+                "tx_lockless": "off [fixed]", 
+                "tx_mpls_segmentation": "off [fixed]", 
+                "tx_nocache_copy": "off", 
+                "tx_scatter_gather": "on", 
+                "tx_scatter_gather_fraglist": "off [fixed]", 
+                "tx_sctp_segmentation": "off [fixed]", 
+                "tx_sit_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "off [fixed]"
+            }, 
+            "ipv4": {
+                "address": "192.168.10.61", 
+                "broadcast": "192.168.10.255", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.10.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::f816:3eff:fee6:a14b", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "fa:16:3e:e6:a1:4b", 
+            "module": "virtio_net", 
+            "mtu": 1454, 
+            "pciid": "virtio0", 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fips": false, 
+        "ansible_fqdn": "host-192-168-10-61", 
+        "ansible_gather_subset": [
+            "network"
+        ], 
+        "ansible_hostname": "host-192-168-10-61", 
+        "ansible_interfaces": [
+            "vethcdcd821", 
+            "docker0", 
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.10.0-514.6.1.el7.x86_64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "on [fixed]", 
+                "netns_local": "on [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "off [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on [fixed]", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "on [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "off [fixed]", 
+                "tx_lockless": "on [fixed]", 
+                "tx_mpls_segmentation": "off [fixed]", 
+                "tx_nocache_copy": "off [fixed]", 
+                "tx_scatter_gather": "on [fixed]", 
+                "tx_scatter_gather_fraglist": "on [fixed]", 
+                "tx_sctp_segmentation": "on", 
+                "tx_sit_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "on [fixed]"
+            }, 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "broadcast": "host", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "type": "loopback"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_machine_id": "2485a8058a9548ee94bbcdb0cec568a7", 
+        "ansible_nodename": "host-192-168-10-61", 
+        "ansible_os_family": "RedHat", 
+        "ansible_pkg_mgr": "yum", 
+        "ansible_python": {
+            "executable": "/usr/bin/python", 
+            "has_sslcontext": true, 
+            "type": "CPython", 
+            "version": {
+                "major": 2, 
+                "micro": 5, 
+                "minor": 7, 
+                "releaselevel": "final", 
+                "serial": 0
+            }, 
+            "version_info": [
+                2, 
+                7, 
+                5, 
+                "final", 
+                0
+            ]
+        }, 
+        "ansible_python_version": "2.7.5", 
+        "ansible_selinux": {
+            "status": "disabled"
+        }, 
+        "ansible_service_mgr": "systemd", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDYsxE9WK3gMKd779ptzCINPz2TLhGMA3eTNH0n3IC6M7S0NMyrIAtn7dvPZIqym/C5mQRDUueYwLJYe9xHf8Q8=", 
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIE6QPJSkHeerEhTv5rWJVf5+HzRUVDRdmqqOi06uhjwt", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQCuAilnYBp4bZAAlHorVsKJkgH+fZd4WI+CPmLgXAUIQJO35HBUMM/x3I+P7TnkXxP9PTVRWc4TPCW6J1J56wVUzTRc3YqYAlCY7EAUTFYnkxdpcDpfGiyeshqIeLSG/6aOVRbdSNVxuMFtE7mly5SD1JWB8QJGxtnQ8HI991M8K0l32xUiPhj6eIpUzh+7d8MehuwEe36jb8pntCznoEwAIvOJKWnbsMlByzMW6HhhG5laKy2Qs1bMmHvMvtgTJf+a5/m6sKp/+WIvCAopygKFJSW4NqMRxU7ChKmEMqs/kZRPZMEM+IE70YtGxWXT8OqOAkmWg1FgDNXiMdB+8jEt", 
+        "ansible_system": "Linux", 
+        "ansible_system_capabilities": [
+            "cap_chown", 
+            "cap_dac_override", 
+            "cap_dac_read_search", 
+            "cap_fowner", 
+            "cap_fsetid", 
+            "cap_kill", 
+            "cap_setgid", 
+            "cap_setuid", 
+            "cap_setpcap", 
+            "cap_linux_immutable", 
+            "cap_net_bind_service", 
+            "cap_net_broadcast", 
+            "cap_net_admin", 
+            "cap_net_raw", 
+            "cap_ipc_lock", 
+            "cap_ipc_owner", 
+            "cap_sys_module", 
+            "cap_sys_rawio", 
+            "cap_sys_chroot", 
+            "cap_sys_ptrace", 
+            "cap_sys_pacct", 
+            "cap_sys_admin", 
+            "cap_sys_boot", 
+            "cap_sys_nice", 
+            "cap_sys_resource", 
+            "cap_sys_time", 
+            "cap_sys_tty_config", 
+            "cap_mknod", 
+            "cap_lease", 
+            "cap_audit_write", 
+            "cap_audit_control", 
+            "cap_setfcap", 
+            "cap_mac_override", 
+            "cap_mac_admin", 
+            "cap_syslog", 
+            "35", 
+            "36+ep"
+        ], 
+        "ansible_system_capabilities_enforced": "True", 
+        "ansible_user_dir": "/root", 
+        "ansible_user_gecos": "root", 
+        "ansible_user_gid": 0, 
+        "ansible_user_id": "root", 
+        "ansible_user_shell": "/bin/bash", 
+        "ansible_user_uid": 0, 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_vethcdcd821": {
+            "active": true, 
+            "device": "vethcdcd821", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "off [fixed]", 
+                "netns_local": "off [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "off [fixed]", 
+                "rx_vlan_offload": "on", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "on", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "on", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "on", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "on", 
+                "tx_lockless": "on [fixed]", 
+                "tx_mpls_segmentation": "on", 
+                "tx_nocache_copy": "off", 
+                "tx_scatter_gather": "on", 
+                "tx_scatter_gather_fraglist": "on", 
+                "tx_sctp_segmentation": "on", 
+                "tx_sit_segmentation": "on", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_segmentation": "on", 
+                "tx_vlan_offload": "on", 
+                "tx_vlan_stag_hw_insert": "on", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "off [fixed]"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::14ce:b2ff:fe38:e75", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "16:ce:b2:38:0e:75", 
+            "mtu": 1500, 
+            "promisc": true, 
+            "speed": 10000, 
+            "type": "ether"
+        }, 
+        "module_setup": true
+    }, 
+    "changed": false
+}
+2017-04-08 10:58:41,088 p=24963 u=ejos |   [ERROR]: User interrupted execution
+
+2017-04-08 11:02:22,168 p=25102 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "172.17.0.1", 
+            "192.168.10.61"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::14ce:b2ff:fe38:e75", 
+            "fe80::42:74ff:fe6c:1f0a", 
+            "fe80::f816:3eff:fee6:a14b"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "04/01/2014", 
+        "ansible_bios_version": "Ubuntu-1.8.2-1ubuntu1", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/vmlinuz-3.10.0-514.6.1.el7.x86_64", 
+            "console": "ttyS0", 
+            "crashkernel": "auto", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "UUID=274dcd15-0cff-48db-a109-1fc89109e5e0"
+        }, 
+        "ansible_date_time": {
+            "date": "2017-04-08", 
+            "day": "08", 
+            "epoch": "1491660141", 
+            "hour": "11", 
+            "iso8601": "2017-04-08T14:02:21Z", 
+            "iso8601_basic": "20170408T110221602862", 
+            "iso8601_basic_short": "20170408T110221", 
+            "iso8601_micro": "2017-04-08T14:02:21.602919Z", 
+            "minute": "02", 
+            "month": "04", 
+            "second": "21", 
+            "time": "11:02:21", 
+            "tz": "CLST", 
+            "tz_offset": "-0300", 
+            "weekday": "sábado", 
+            "weekday_number": "6", 
+            "weeknumber": "14", 
+            "year": "2017"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.10.61", 
+            "alias": "eth0", 
+            "broadcast": "192.168.10.255", 
+            "gateway": "192.168.10.1", 
+            "interface": "eth0", 
+            "macaddress": "fa:16:3e:e6:a1:4b", 
+            "mtu": 1454, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.10.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "vda": {
+                "holders": [], 
+                "host": "SCSI storage controller: Red Hat, Inc Virtio block device", 
+                "model": null, 
+                "partitions": {
+                    "vda1": {
+                        "holders": [], 
+                        "sectors": "524288", 
+                        "sectorsize": 512, 
+                        "size": "256.00 MB", 
+                        "start": "2048", 
+                        "uuid": "d39640af-5526-405c-9445-4ae9f567c46d"
+                    }, 
+                    "vda2": {
+                        "holders": [], 
+                        "sectors": "104330864", 
+                        "sectorsize": 512, 
+                        "size": "49.75 GB", 
+                        "start": "526336", 
+                        "uuid": "274dcd15-0cff-48db-a109-1fc89109e5e0"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "sas_address": null, 
+                "sas_device_handle": null, 
+                "scheduler_mode": "", 
+                "sectors": "104857600", 
+                "sectorsize": "512", 
+                "size": "50.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }, 
+            "vdb": {
+                "holders": [], 
+                "host": "SCSI storage controller: Red Hat, Inc Virtio block device", 
+                "model": null, 
+                "partitions": {}, 
+                "removable": "0", 
+                "rotational": "1", 
+                "sas_address": null, 
+                "sas_device_handle": null, 
+                "scheduler_mode": "", 
+                "sectors": "8388608", 
+                "sectorsize": "512", 
+                "size": "4.00 GB", 
+                "support_discard": "0", 
+                "vendor": "0x1af4"
+            }
+        }, 
+        "ansible_distribution": "CentOS", 
+        "ansible_distribution_major_version": "7", 
+        "ansible_distribution_release": "Core", 
+        "ansible_distribution_version": "7.3.1611", 
+        "ansible_dns": {
+            "nameservers": [
+                "8.8.8.8"
+            ], 
+            "search": [
+                "localdomain"
+            ]
+        }, 
+        "ansible_docker0": {
+            "active": true, 
+            "device": "docker0", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "off [fixed]", 
+                "netns_local": "on [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "off [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "off [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "off [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [requested on]", 
+                "tx_gre_segmentation": "on", 
+                "tx_gso_robust": "off [requested on]", 
+                "tx_ipip_segmentation": "on", 
+                "tx_lockless": "on [fixed]", 
+                "tx_mpls_segmentation": "on", 
+                "tx_nocache_copy": "off", 
+                "tx_scatter_gather": "on", 
+                "tx_scatter_gather_fraglist": "on", 
+                "tx_sctp_segmentation": "on", 
+                "tx_sit_segmentation": "on", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_segmentation": "on", 
+                "tx_vlan_offload": "on", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "off [fixed]"
+            }, 
+            "id": "8000.0242746c1f0a", 
+            "interfaces": [
+                "vethcdcd821"
+            ], 
+            "ipv4": {
+                "address": "172.17.0.1", 
+                "broadcast": "global", 
+                "netmask": "255.255.0.0", 
+                "network": "172.17.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::42:74ff:fe6c:1f0a", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "02:42:74:6c:1f:0a", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "stp": false, 
+            "type": "bridge"
+        }, 
+        "ansible_domain": "", 
+        "ansible_env": {
+            "HOME": "/root", 
+            "LANG": "es_CL.UTF-8", 
+            "LOGNAME": "root", 
+            "LS_COLORS": "rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:", 
+            "MAIL": "/var/mail/ejos", 
+            "PATH": "/sbin:/bin:/usr/sbin:/usr/bin", 
+            "PWD": "/home/ejos", 
+            "SHELL": "/bin/bash", 
+            "SHLVL": "1", 
+            "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-zeieamzzyxiafrnfbdoqdfrtlqjahghd; /usr/bin/python /home/ejos/.ansible/tmp/ansible-tmp-1491660138.29-110396975805013/setup.py; rm -rf \"/home/ejos/.ansible/tmp/ansible-tmp-1491660138.29-110396975805013/\" > /dev/null 2>&1", 
+            "SUDO_GID": "1000", 
+            "SUDO_UID": "1000", 
+            "SUDO_USER": "ejos", 
+            "TERM": "xterm-256color", 
+            "USER": "root", 
+            "USERNAME": "root", 
+            "_": "/usr/bin/python"
+        }, 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "off [fixed]", 
+                "netns_local": "off [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "on [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "off [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "off [fixed]", 
+                "tx_lockless": "off [fixed]", 
+                "tx_mpls_segmentation": "off [fixed]", 
+                "tx_nocache_copy": "off", 
+                "tx_scatter_gather": "on", 
+                "tx_scatter_gather_fraglist": "off [fixed]", 
+                "tx_sctp_segmentation": "off [fixed]", 
+                "tx_sit_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "off [fixed]"
+            }, 
+            "ipv4": {
+                "address": "192.168.10.61", 
+                "broadcast": "192.168.10.255", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.10.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::f816:3eff:fee6:a14b", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "fa:16:3e:e6:a1:4b", 
+            "module": "virtio_net", 
+            "mtu": 1454, 
+            "pciid": "virtio0", 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fips": false, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "host-192-168-10-61", 
+        "ansible_gather_subset": [
+            "hardware", 
+            "network", 
+            "virtual"
+        ], 
+        "ansible_hostname": "host-192-168-10-61", 
+        "ansible_interfaces": [
+            "vethcdcd821", 
+            "docker0", 
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.10.0-514.6.1.el7.x86_64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "on [fixed]", 
+                "netns_local": "on [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "off [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on [fixed]", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "on [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "off [fixed]", 
+                "tx_lockless": "on [fixed]", 
+                "tx_mpls_segmentation": "off [fixed]", 
+                "tx_nocache_copy": "off [fixed]", 
+                "tx_scatter_gather": "on [fixed]", 
+                "tx_scatter_gather_fraglist": "on [fixed]", 
+                "tx_sctp_segmentation": "on", 
+                "tx_sit_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "on [fixed]"
+            }, 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "broadcast": "host", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "type": "loopback"
+        }, 
+        "ansible_lvm": {
+            "lvs": {}, 
+            "vgs": {}
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_machine_id": "2485a8058a9548ee94bbcdb0cec568a7", 
+        "ansible_memfree_mb": 139, 
+        "ansible_memory_mb": {
+            "nocache": {
+                "free": 3174, 
+                "used": 616
+            }, 
+            "real": {
+                "free": 139, 
+                "total": 3790, 
+                "used": 3651
+            }, 
+            "swap": {
+                "cached": 0, 
+                "free": 4095, 
+                "total": 4095, 
+                "used": 0
+            }
+        }, 
+        "ansible_memtotal_mb": 3790, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/vda2", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,data=ordered", 
+                "size_available": 31159095296, 
+                "size_total": 52444831744, 
+                "uuid": "274dcd15-0cff-48db-a109-1fc89109e5e0"
+            }, 
+            {
+                "device": "/dev/vda1", 
+                "fstype": "ext4", 
+                "mount": "/boot", 
+                "options": "rw,relatime,data=ordered", 
+                "size_available": 90330112, 
+                "size_total": 251567104, 
+                "uuid": "d39640af-5526-405c-9445-4ae9f567c46d"
+            }
+        ], 
+        "ansible_nodename": "host-192-168-10-61", 
+        "ansible_os_family": "RedHat", 
+        "ansible_pkg_mgr": "yum", 
+        "ansible_processor": [
+            "GenuineIntel", 
+            "Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz", 
+            "GenuineIntel", 
+            "Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz", 
+            "GenuineIntel", 
+            "Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz", 
+            "GenuineIntel", 
+            "Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz"
+        ], 
+        "ansible_processor_cores": 1, 
+        "ansible_processor_count": 4, 
+        "ansible_processor_threads_per_core": 1, 
+        "ansible_processor_vcpus": 4, 
+        "ansible_product_name": "OpenStack Nova", 
+        "ansible_product_serial": "098893cb-5f37-df0a-4388-48fc58b2eb83", 
+        "ansible_product_uuid": "1AB1558F-79B3-4DBF-BCAC-3291FDC81A9D", 
+        "ansible_product_version": "13.1.2", 
+        "ansible_python": {
+            "executable": "/usr/bin/python", 
+            "has_sslcontext": true, 
+            "type": "CPython", 
+            "version": {
+                "major": 2, 
+                "micro": 5, 
+                "minor": 7, 
+                "releaselevel": "final", 
+                "serial": 0
+            }, 
+            "version_info": [
+                2, 
+                7, 
+                5, 
+                "final", 
+                0
+            ]
+        }, 
+        "ansible_python_version": "2.7.5", 
+        "ansible_selinux": {
+            "status": "disabled"
+        }, 
+        "ansible_service_mgr": "systemd", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDYsxE9WK3gMKd779ptzCINPz2TLhGMA3eTNH0n3IC6M7S0NMyrIAtn7dvPZIqym/C5mQRDUueYwLJYe9xHf8Q8=", 
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIE6QPJSkHeerEhTv5rWJVf5+HzRUVDRdmqqOi06uhjwt", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQCuAilnYBp4bZAAlHorVsKJkgH+fZd4WI+CPmLgXAUIQJO35HBUMM/x3I+P7TnkXxP9PTVRWc4TPCW6J1J56wVUzTRc3YqYAlCY7EAUTFYnkxdpcDpfGiyeshqIeLSG/6aOVRbdSNVxuMFtE7mly5SD1JWB8QJGxtnQ8HI991M8K0l32xUiPhj6eIpUzh+7d8MehuwEe36jb8pntCznoEwAIvOJKWnbsMlByzMW6HhhG5laKy2Qs1bMmHvMvtgTJf+a5/m6sKp/+WIvCAopygKFJSW4NqMRxU7ChKmEMqs/kZRPZMEM+IE70YtGxWXT8OqOAkmWg1FgDNXiMdB+8jEt", 
+        "ansible_swapfree_mb": 4095, 
+        "ansible_swaptotal_mb": 4095, 
+        "ansible_system": "Linux", 
+        "ansible_system_capabilities": [
+            "cap_chown", 
+            "cap_dac_override", 
+            "cap_dac_read_search", 
+            "cap_fowner", 
+            "cap_fsetid", 
+            "cap_kill", 
+            "cap_setgid", 
+            "cap_setuid", 
+            "cap_setpcap", 
+            "cap_linux_immutable", 
+            "cap_net_bind_service", 
+            "cap_net_broadcast", 
+            "cap_net_admin", 
+            "cap_net_raw", 
+            "cap_ipc_lock", 
+            "cap_ipc_owner", 
+            "cap_sys_module", 
+            "cap_sys_rawio", 
+            "cap_sys_chroot", 
+            "cap_sys_ptrace", 
+            "cap_sys_pacct", 
+            "cap_sys_admin", 
+            "cap_sys_boot", 
+            "cap_sys_nice", 
+            "cap_sys_resource", 
+            "cap_sys_time", 
+            "cap_sys_tty_config", 
+            "cap_mknod", 
+            "cap_lease", 
+            "cap_audit_write", 
+            "cap_audit_control", 
+            "cap_setfcap", 
+            "cap_mac_override", 
+            "cap_mac_admin", 
+            "cap_syslog", 
+            "35", 
+            "36+ep"
+        ], 
+        "ansible_system_capabilities_enforced": "True", 
+        "ansible_system_vendor": "OpenStack Foundation", 
+        "ansible_uptime_seconds": 427955, 
+        "ansible_user_dir": "/root", 
+        "ansible_user_gecos": "root", 
+        "ansible_user_gid": 0, 
+        "ansible_user_id": "root", 
+        "ansible_user_shell": "/bin/bash", 
+        "ansible_user_uid": 0, 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_vethcdcd821": {
+            "active": true, 
+            "device": "vethcdcd821", 
+            "features": {
+                "busy_poll": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "off [fixed]", 
+                "netns_local": "off [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on", 
+                "rx_fcs": "off [fixed]", 
+                "rx_vlan_filter": "off [fixed]", 
+                "rx_vlan_offload": "on", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "on", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "on", 
+                "tx_checksumming": "on", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "on", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipip_segmentation": "on", 
+                "tx_lockless": "on [fixed]", 
+                "tx_mpls_segmentation": "on", 
+                "tx_nocache_copy": "off", 
+                "tx_scatter_gather": "on", 
+                "tx_scatter_gather_fraglist": "on", 
+                "tx_sctp_segmentation": "on", 
+                "tx_sit_segmentation": "on", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_udp_tnl_segmentation": "on", 
+                "tx_vlan_offload": "on", 
+                "tx_vlan_stag_hw_insert": "on", 
+                "udp_fragmentation_offload": "on", 
+                "vlan_challenged": "off [fixed]"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::14ce:b2ff:fe38:e75", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "16:ce:b2:38:0e:75", 
+            "mtu": 1500, 
+            "promisc": true, 
+            "speed": 10000, 
+            "type": "ether"
+        }, 
+        "ansible_virtualization_role": "host", 
+        "ansible_virtualization_type": "kvm", 
+        "module_setup": true
+    }, 
+    "changed": false
+}
+2017-04-08 11:03:27,716 p=25174 u=ejos |  ERROR! this task 'setup' has extra params, which is only allowed in the following modules: command, win_command, shell, win_shell, script, include, include_vars, add_host, group_by, set_fact, raw, meta
+2017-04-08 11:04:03,590 p=25179 u=ejos |  ERROR! Extranous options or arguments
+2017-04-08 11:04:18,326 p=25185 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_default_ipv4": {
+            "address": "192.168.10.61", 
+            "alias": "eth0", 
+            "broadcast": "192.168.10.255", 
+            "gateway": "192.168.10.1", 
+            "interface": "eth0", 
+            "macaddress": "fa:16:3e:e6:a1:4b", 
+            "mtu": 1454, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.10.0", 
+            "type": "ether"
+        }
+    }, 
+    "changed": false
+}
+2017-04-08 11:04:26,745 p=25203 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 11:04:44,047 p=25217 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 11:06:29,890 p=25283 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 11:06:52,647 p=25302 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 11:07:02,094 p=25316 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_default_ipv4": {
+            "address": "192.168.10.61", 
+            "alias": "eth0", 
+            "broadcast": "192.168.10.255", 
+            "gateway": "192.168.10.1", 
+            "interface": "eth0", 
+            "macaddress": "fa:16:3e:e6:a1:4b", 
+            "mtu": 1454, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.10.0", 
+            "type": "ether"
+        }
+    }, 
+    "changed": false
+}
+2017-04-08 11:07:23,535 p=25337 u=ejos |  192.168.10.61 | SUCCESS => {
+    "ansible_facts": {}, 
+    "changed": false
+}
+2017-04-08 11:11:00,193 p=25458 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 11:11:00,248 p=25458 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 11:11:02,542 p=25458 u=ejos |  ok: [192.168.10.61]
+2017-04-08 11:11:02,546 p=25458 u=ejos |  TASK [etcd : Install list of Packages] *****************************************
+2017-04-08 11:11:03,807 p=25458 u=ejos |  ok: [192.168.10.61] => (item=[u'ntp', u'etcd'])
+2017-04-08 11:11:03,850 p=25458 u=ejos |  TASK [etcd : Copy etcd config file] ********************************************
+2017-04-08 11:11:05,687 p=25458 u=ejos |  ok: [192.168.10.61]
+2017-04-08 11:11:05,690 p=25458 u=ejos |  TASK [etcd : Make sure ntpd service is enabled] ********************************
+2017-04-08 11:11:08,263 p=25458 u=ejos |  ok: [192.168.10.61]
+2017-04-08 11:11:08,266 p=25458 u=ejos |  TASK [etcd : reload service ntpd, in all cases] ********************************
+2017-04-08 11:11:09,136 p=25458 u=ejos |  changed: [192.168.10.61]
+2017-04-08 11:11:09,140 p=25458 u=ejos |  TASK [etcd : Make sure etcd service is enabled] ********************************
+2017-04-08 11:11:09,910 p=25458 u=ejos |  ok: [192.168.10.61]
+2017-04-08 11:11:09,916 p=25458 u=ejos |  TASK [etcd : reload service etcd, in all cases] ********************************
+2017-04-08 11:11:11,821 p=25458 u=ejos |  changed: [192.168.10.61]
+2017-04-08 11:11:11,824 p=25458 u=ejos |  TASK [etcd : reload service etcd, in all cases] ********************************
+2017-04-08 11:11:13,021 p=25458 u=ejos |  changed: [192.168.10.61]
+2017-04-08 11:11:13,024 p=25458 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 11:11:13,024 p=25458 u=ejos |  192.168.10.61              : ok=8    changed=3    unreachable=0    failed=0   
+2017-04-08 11:12:31,224 p=25541 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+Complementos cargados:fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.gtdinternet.com
+ * epel: mirror.globo.com
+ * extras: mirror.gtdinternet.com
+ * updates: mirror.gtdinternet.com
+============================= N/S matched: flannel =============================
+[1mflannel(B[m.x86_64 : Etcd address management agent for overlay networks
+
+  Nombre y resumen que coinciden con [1m y sólo (B[m, use "buscar todo" para todo.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 11:28:32,858 p=26619 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 11:28:32,920 p=26619 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 11:28:35,349 p=26619 u=ejos |  ok: [192.168.10.61]
+2017-04-08 11:28:35,355 p=26619 u=ejos |  TASK [flammel : Install list of Packages] **************************************
+2017-04-08 11:29:01,026 p=26619 u=ejos |  failed: [192.168.10.61] (item=[u'flammel']) => {"changed": false, "failed": true, "item": ["flammel"], "msg": "No package matching 'flammel' found available, installed or updated", "rc": 126, "results": ["No package matching 'flammel' found available, installed or updated"]}
+2017-04-08 11:29:01,027 p=26619 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 11:29:01,028 p=26619 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=1   
+2017-04-08 11:40:47,363 p=27001 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 11:40:47,433 p=27001 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 11:40:49,111 p=27001 u=ejos |  ok: [192.168.10.61]
+2017-04-08 11:40:49,115 p=27001 u=ejos |  TASK [flannel : Install list of Packages] **************************************
+2017-04-08 11:41:06,604 p=27001 u=ejos |  changed: [192.168.10.61] => (item=[u'flannel'])
+2017-04-08 11:41:06,607 p=27001 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 11:41:06,607 p=27001 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-08 11:42:32,778 p=27097 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+# Flanneld configuration options  
+
+# etcd url location.  Point this to the server where etcd runs
+FLANNEL_ETCD_ENDPOINTS="http://127.0.0.1:2379"
+
+# etcd config key.  This is the configuration key that flannel queries
+# For address range assignment
+FLANNEL_ETCD_PREFIX="/atomic.io/network"
+
+# Any additional options that you want to pass
+#FLANNEL_OPTIONS=""
+ 
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 11:45:26,234 p=27198 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+# Flanneld configuration options  
+
+# etcd url location.  Point this to the server where etcd runs
+FLANNEL_ETCD_ENDPOINTS="http://127.0.0.1:2379"
+
+# etcd config key.  This is the configuration key that flannel queries
+# For address range assignment
+FLANNEL_ETCD_PREFIX="/atomic.io/network"
+
+# Any additional options that you want to pass
+#FLANNEL_OPTIONS=""
+ 
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 11:56:12,024 p=27668 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 11:56:12,089 p=27668 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 11:56:15,679 p=27668 u=ejos |  ok: [192.168.10.61]
+2017-04-08 11:56:15,683 p=27668 u=ejos |  TASK [flannel : Install list of Packages] **************************************
+2017-04-08 11:56:16,998 p=27668 u=ejos |  ok: [192.168.10.61] => (item=[u'flannel'])
+2017-04-08 11:56:17,002 p=27668 u=ejos |  TASK [flannel : Copy etcd config file] *****************************************
+2017-04-08 11:56:19,153 p=27668 u=ejos |  ok: [192.168.10.61]
+2017-04-08 11:56:19,157 p=27668 u=ejos |  TASK [flannel : Replacing Flannel argument] ************************************
+2017-04-08 11:56:19,258 p=27668 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"failed": true, "msg": "template error while templating string: unexpected '}'. String: FLANNEL_ETCD_ENDPOINTS=\"http://{{ ansible_default_ipv4.address }:2379\""}
+2017-04-08 11:56:19,259 p=27668 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 11:56:19,259 p=27668 u=ejos |  192.168.10.61              : ok=3    changed=0    unreachable=0    failed=1   
+2017-04-08 12:01:04,972 p=28059 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 12:01:05,034 p=28059 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 12:01:07,158 p=28059 u=ejos |  ok: [192.168.10.61]
+2017-04-08 12:01:07,163 p=28059 u=ejos |  TASK [flannel : Install list of Packages] **************************************
+2017-04-08 12:01:08,418 p=28059 u=ejos |  ok: [192.168.10.61] => (item=[u'flannel'])
+2017-04-08 12:01:08,421 p=28059 u=ejos |  TASK [flannel : Replacing Flannel argument] ************************************
+2017-04-08 12:01:09,653 p=28059 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "Destination /etc/sysconfig/flannel does not exist !", "rc": 257}
+2017-04-08 12:01:09,654 p=28059 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 12:01:09,656 p=28059 u=ejos |  192.168.10.61              : ok=2    changed=0    unreachable=0    failed=1   
+2017-04-08 12:01:36,441 p=28101 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 12:01:36,513 p=28101 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 12:01:37,985 p=28101 u=ejos |  ok: [192.168.10.61]
+2017-04-08 12:01:37,993 p=28101 u=ejos |  TASK [flannel : Install list of Packages] **************************************
+2017-04-08 12:01:39,312 p=28101 u=ejos |  ok: [192.168.10.61] => (item=[u'flannel'])
+2017-04-08 12:01:39,317 p=28101 u=ejos |  TASK [flannel : Replacing Flannel argument] ************************************
+2017-04-08 12:01:40,312 p=28101 u=ejos |  changed: [192.168.10.61]
+2017-04-08 12:01:40,315 p=28101 u=ejos |  TASK [flannel : Insert Flannel argument] ***************************************
+2017-04-08 12:01:41,310 p=28101 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "unsupported parameter for module: path"}
+2017-04-08 12:01:41,312 p=28101 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 12:01:41,313 p=28101 u=ejos |  192.168.10.61              : ok=3    changed=1    unreachable=0    failed=1   
+2017-04-08 12:02:59,130 p=28140 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 12:02:59,190 p=28140 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 12:03:01,805 p=28140 u=ejos |  ok: [192.168.10.61]
+2017-04-08 12:03:01,809 p=28140 u=ejos |  TASK [flannel : Insert Flannel argument] ***************************************
+2017-04-08 12:03:02,904 p=28140 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "unsupported parameter for module: path"}
+2017-04-08 12:03:02,906 p=28140 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 12:03:02,906 p=28140 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=1   
+2017-04-08 12:03:16,503 p=28167 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+# Flanneld configuration options  
+
+# etcd url location.  Point this to the server where etcd runs
+FLANNEL_ETCD_ENDPOINTS="http://192.168.10.61:2379"
+
+# etcd config key.  This is the configuration key that flannel queries
+# For address range assignment
+FLANNEL_ETCD_PREFIX="/atomic.io/network"
+
+# Any additional options that you want to pass
+#FLANNEL_OPTIONS=""
+ 
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 12:04:08,239 p=28188 u=ejos |   [WARNING]: module line* not found in /usr/lib/python2.7/site-packages/ansible/modules:/usr/lib/python2.7/site-
+packages/ansible/modules/extras:/usr/lib/python2.7/site-packages/ansible/modules/core:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/commands:/usr/lib/python2.7/site-packages/ansible/modules/extras/monitoring:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/identity:/usr/lib/python2.7/site-packages/ansible/modules/extras/univention:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/network:/usr/lib/python2.7/site-packages/ansible/modules/extras/storage:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/web_infrastructure:/usr/lib/python2.7/site-packages/ansible/modules/extras/cloud:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/remote_management:/usr/lib/python2.7/site-packages/ansible/modules/extras/messaging:/usr/lib/python2.7
+/site-packages/ansible/modules/extras/notification:/usr/lib/python2.7/site-packages/ansible/modules/extras/system:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/clustering:/usr/lib/python2.7/site-packages/ansible/modules/extras/database:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/packaging:/usr/lib/python2.7/site-packages/ansible/modules/extras/files:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/source_control:/usr/lib/python2.7/site-packages/ansible/modules/extras/identity/opendj:/usr/lib/python2.7
+/site-packages/ansible/modules/extras/network/f5:/usr/lib/python2.7/site-packages/ansible/modules/extras/network/a10:/usr/lib/python2.7
+/site-packages/ansible/modules/extras/network/asa:/usr/lib/python2.7/site-packages/ansible/modules/extras/network/citrix:/usr/lib/python2.7
+/site-packages/ansible/modules/extras/network/exoscale:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/network/netconf:/usr/lib/python2.7/site-packages/ansible/modules/extras/network/illumos:/usr/lib/python2.7
+/site-packages/ansible/modules/extras/storage/netapp:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/cloud/softlayer:/usr/lib/python2.7/site-packages/ansible/modules/extras/cloud/atomic:/usr/lib/python2.7
+/site-packages/ansible/modules/extras/cloud/amazon:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/cloud/profitbricks:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/cloud/centurylink:/usr/lib/python2.7/site-packages/ansible/modules/extras/cloud/misc:/usr/lib/python2.7
+/site-packages/ansible/modules/extras/cloud/rackspace:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/cloud/vmware:/usr/lib/python2.7/site-packages/ansible/modules/extras/cloud/openstack:/usr/lib/python2.7
+/site-packages/ansible/modules/extras/cloud/ovirt:/usr/lib/python2.7/site-packages/ansible/modules/extras/cloud/azure:/usr/lib/python2.7
+/site-packages/ansible/modules/extras/cloud/ovh:/usr/lib/python2.7/site-packages/ansible/modules/extras/cloud/cloudstack:/usr/lib/python2.7
+/site-packages/ansible/modules/extras/cloud/google:/usr/lib/python2.7/site-packages/ansible/modules/extras/cloud/lxd:/usr/lib/python2.7
+/site-packages/ansible/modules/extras/cloud/smartos:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/cloud/webfaction:/usr/lib/python2.7/site-packages/ansible/modules/extras/cloud/lxc:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/remote_management/ipmi:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/database/vertica:/usr/lib/python2.7/site-packages/ansible/modules/extras/database/misc:/usr/lib/python2.7
+/site-packages/ansible/modules/extras/database/postgresql:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/database/mssql:/usr/lib/python2.7/site-packages/ansible/modules/extras/database/influxdb:/usr/lib/python2.7
+/site-packages/ansible/modules/extras/database/mysql:/usr/lib/python2.7/site-
+packages/ansible/modules/extras/packaging/os:/usr/lib/python2.7/site-packages/ansible/modules/extras/packaging/language:/usr/lib/python2.7
+/site-packages/ansible/modules/core/commands:/usr/lib/python2.7/site-packages/ansible/modules/core/inventory:/usr/lib/python2.7/site-
+packages/ansible/modules/core/network:/usr/lib/python2.7/site-packages/ansible/modules/core/web_infrastructure:/usr/lib/python2.7/site-
+packages/ansible/modules/core/cloud:/usr/lib/python2.7/site-packages/ansible/modules/core/system:/usr/lib/python2.7/site-
+packages/ansible/modules/core/database:/usr/lib/python2.7/site-packages/ansible/modules/core/packaging:/usr/lib/python2.7/site-
+packages/ansible/modules/core/utilities:/usr/lib/python2.7/site-packages/ansible/modules/core/files:/usr/lib/python2.7/site-
+packages/ansible/modules/core/source_control:/usr/lib/python2.7/site-packages/ansible/modules/core/network/dellos10:/usr/lib/python2.7
+/site-packages/ansible/modules/core/network/eos:/usr/lib/python2.7/site-packages/ansible/modules/core/network/junos:/usr/lib/python2.7
+/site-packages/ansible/modules/core/network/netvisor:/usr/lib/python2.7/site-packages/ansible/modules/core/network/sros:/usr/lib/python2.7
+/site-packages/ansible/modules/core/network/cumulus:/usr/lib/python2.7/site-packages/ansible/modules/core/network/iosxr:/usr/lib/python2.7
+/site-packages/ansible/modules/core/network/dellos6:/usr/lib/python2.7/site-
+packages/ansible/modules/core/network/dellos9:/usr/lib/python2.7/site-packages/ansible/modules/core/network/nxos:/usr/lib/python2.7/site-
+packages/ansible/modules/core/network/openswitch:/usr/lib/python2.7/site-packages/ansible/modules/core/network/ios:/usr/lib/python2.7/site-
+packages/ansible/modules/core/network/basics:/usr/lib/python2.7/site-packages/ansible/modules/core/network/vyos:/usr/lib/python2.7/site-
+packages/ansible/modules/core/cloud/amazon:/usr/lib/python2.7/site-packages/ansible/modules/core/cloud/rackspace:/usr/lib/python2.7/site-
+packages/ansible/modules/core/cloud/linode:/usr/lib/python2.7/site-packages/ansible/modules/core/cloud/vmware:/usr/lib/python2.7/site-
+packages/ansible/modules/core/cloud/openstack:/usr/lib/python2.7/site-packages/ansible/modules/core/cloud/azure:/usr/lib/python2.7/site-
+packages/ansible/modules/core/cloud/google:/usr/lib/python2.7/site-packages/ansible/modules/core/cloud/docker:/usr/lib/python2.7/site-
+packages/ansible/modules/core/cloud/digital_ocean:/usr/lib/python2.7/site-
+packages/ansible/modules/core/database/postgresql:/usr/lib/python2.7/site-packages/ansible/modules/core/database/mysql:/usr/lib/python2.7
+/site-packages/ansible/modules/core/packaging/os:/usr/lib/python2.7/site-
+packages/ansible/modules/core/packaging/language:/usr/lib/python2.7/site-packages/ansible/modules/core/utilities/logic:/usr/lib/python2.7
+/site-packages/ansible/modules/core/utilities/helper:/usr/lib/python2.7/site-packages/ansible/modules/extras/windows:/usr/lib/python2.7
+/site-packages/ansible/modules/core/windows
+
+2017-04-08 12:04:44,329 p=28201 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+# Flanneld configuration options  
+
+# etcd url location.  Point this to the server where etcd runs
+FLANNEL_ETCD_ENDPOINTS="http://192.168.10.61:2379"
+
+# etcd config key.  This is the configuration key that flannel queries
+# For address range assignment
+FLANNEL_ETCD_PREFIX="/atomic.io/network"
+
+# Any additional options that you want to pass
+#FLANNEL_OPTIONS=""
+ 
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 12:04:48,218 p=28216 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 12:04:48,280 p=28216 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 12:04:49,749 p=28216 u=ejos |  ok: [192.168.10.61]
+2017-04-08 12:04:49,753 p=28216 u=ejos |  TASK [flannel : Insert Flannel argument] ***************************************
+2017-04-08 12:04:50,769 p=28216 u=ejos |  changed: [192.168.10.61]
+2017-04-08 12:04:50,771 p=28216 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 12:04:50,771 p=28216 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-08 12:04:53,973 p=28237 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+# Flanneld configuration options  
+
+# etcd url location.  Point this to the server where etcd runs
+FLANNEL_ETCD_ENDPOINTS="http://192.168.10.61:2379"
+
+# etcd config key.  This is the configuration key that flannel queries
+# For address range assignment
+FLANNEL_ETCD_PREFIX="/atomic.io/network"
+
+# Any additional options that you want to pass
+#FLANNEL_OPTIONS=""
+ 
+FLANNEL_ETCD_KEY="/flannel/network"
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 12:05:35,326 p=28289 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 12:05:35,387 p=28289 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 12:05:37,422 p=28289 u=ejos |  ok: [192.168.10.61]
+2017-04-08 12:05:37,426 p=28289 u=ejos |  TASK [flannel : Install list of Packages] **************************************
+2017-04-08 12:05:39,044 p=28289 u=ejos |  ok: [192.168.10.61] => (item=[u'flannel'])
+2017-04-08 12:05:39,047 p=28289 u=ejos |  TASK [flannel : Replacing Flannel argument] ************************************
+2017-04-08 12:05:40,494 p=28289 u=ejos |  ok: [192.168.10.61]
+2017-04-08 12:05:40,498 p=28289 u=ejos |  TASK [flannel : Insert Flannel argument] ***************************************
+2017-04-08 12:05:42,434 p=28289 u=ejos |  ok: [192.168.10.61]
+2017-04-08 12:05:42,439 p=28289 u=ejos |  TASK [flannel : Make sure flannel service is enabled] **************************
+2017-04-08 12:05:43,540 p=28289 u=ejos |  changed: [192.168.10.61]
+2017-04-08 12:05:43,544 p=28289 u=ejos |  TASK [flannel : reload service flanneld, in all cases] *************************
+2017-04-08 12:07:18,255 p=28289 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "Unable to start service flanneld: Job for flanneld.service failed because a timeout was exceeded. See \"systemctl status flanneld.service\" and \"journalctl -xe\" for details.\n"}
+2017-04-08 12:07:18,257 p=28289 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 12:07:18,257 p=28289 u=ejos |  192.168.10.61              : ok=5    changed=1    unreachable=0    failed=1   
+2017-04-08 12:07:43,431 p=28398 u=ejos |  192.168.10.61 | FAILED | rc=3 >>
+● flanneld.service - Flanneld overlay address etcd agent
+   Loaded: loaded (/usr/lib/systemd/system/flanneld.service; enabled; vendor preset: disabled)
+   Active: activating (auto-restart) (Result: timeout) since sáb 2017-04-08 12:07:17 CLST; 25s ago
+  Process: 11303 ExecStart=/usr/bin/flanneld-start $FLANNEL_OPTIONS (code=exited, status=0/SUCCESS)
+ Main PID: 11303 (code=exited, status=0/SUCCESS)
+   Memory: 0B
+   CGroup: /system.slice/flanneld.service
+
+abr 08 12:07:17 host-192-168-10-61 systemd[1]: [1;31mFailed to start Flanneld over....[0m
+abr 08 12:07:17 host-192-168-10-61 systemd[1]: [1;39mUnit flanneld.service entered....[0m
+abr 08 12:07:17 host-192-168-10-61 systemd[1]: [1;39mflanneld.service failed.[0m
+abr 08 12:07:17 host-192-168-10-61 systemd[1]: flanneld.service holdoff time....
+Hint: Some lines were ellipsized, use -l to show in full.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 12:08:43,870 p=28410 u=ejos |   [ERROR]: User interrupted execution
+

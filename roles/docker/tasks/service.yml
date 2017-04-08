@@ -1,0 +1,19 @@
+---
+- name: Enabling docker service
+  systemd: name={{ item }} enabled=yes
+  with_items:
+      - docker
+
+- user:
+    name: docker
+    uid: 1040
+    group: dockerroot
+
+- name: Restarting docker service
+  systemd: name={{ item }} state=restarted
+  with_items:
+      - docker
+
+- name: Run docker images
+  shell: name={{ item }} state=restarted
+
