@@ -8,14 +8,6 @@
   tags:
     - replace_kube_api_serv_addr
 
-- name: Replacing Kubelet argument
-  replace:
-    dest: /etc/kubernetes/kubelet
-    regexp: 'KUBELET_ARGS=""'
-    replace: 'KUBELET_ARGS="--cluster-dns=10.254.254.254 --cluster-domain=cluster.local"'
-  tags:
-    - replace_kubelet_arg
-
 - name: Replacing Kubelet address
   replace:
     dest: /etc/kubernetes/kubelet
@@ -65,5 +57,3 @@
       - kube-scheduler
   tags:
     - restart_kubernetes_service
-
-- include kubectl.yml

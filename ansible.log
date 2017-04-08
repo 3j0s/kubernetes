@@ -4237,3 +4237,59 @@ NAME        STATUS    AGE
 Shared connection to 192.168.10.61 closed.
 
 
+2017-04-08 16:07:09,036 p=1908 u=ejos |  ERROR! A malformed block was encountered.
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/kubernetes/tasks/service.yml': line 69, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- include kubectl.yml
+  ^ here
+
+2017-04-08 16:08:28,833 p=1952 u=ejos |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/kubernetes/tasks/service.yml': line 69, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+  - include kubectl.yml
+  ^ here
+
+2017-04-08 16:08:55,831 p=1975 u=ejos |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/kubernetes/tasks/kubectl.yml': line 3, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Copy skydns svc yaml file
+      ^ here
+
+2017-04-08 16:09:42,108 p=1993 u=ejos |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/ejos/Ansible/kubernetes/roles/kubernetes/tasks/kubectl.yml': line 2, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+--
+- name: Copy skydns svc yaml file
+      ^ here
+
+2017-04-08 16:10:15,654 p=2061 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 16:10:15,715 p=2061 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 16:10:19,654 p=2061 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:10:19,658 p=2061 u=ejos |  TASK [kubernetes : Copy skydns svc yaml file] **********************************
+2017-04-08 16:10:23,466 p=2061 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:10:23,470 p=2061 u=ejos |  TASK [kubernetes : Building skydns svc yaml file] ******************************
+2017-04-08 16:10:25,207 p=2061 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /etc/kubernetes/skydns-svc.yml", "delta": "0:00:00.410405", "end": "2017-04-08 16:10:25.130739", "failed": true, "rc": 1, "start": "2017-04-08 16:10:24.720334", "stderr": "The Service \"kube-dns\" is invalid: spec.clusterIP: Invalid value: \"10.254.254.254\": provided IP is already allocated", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-08 16:10:25,209 p=2061 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 16:10:25,210 p=2061 u=ejos |  192.168.10.61              : ok=2    changed=0    unreachable=0    failed=1   
