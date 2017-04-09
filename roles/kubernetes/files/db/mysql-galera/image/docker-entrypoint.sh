@@ -72,7 +72,7 @@ EOSQL
       fi
 
     # Add my data
-    if [ -n "$DATA_PATH" ]; then
+    if [ "$DATA_PATH" ]; then
       if [ "$DATA_STRUCTURE" ]; then
          echo " SOURCE "$DATA_PATH/$DATA_STRUCTURE" " >> "$tempSqlFile"
       fi

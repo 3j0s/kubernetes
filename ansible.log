@@ -4886,3 +4886,25 @@ The offending line appears to be:
 2017-04-09 19:44:47,577 p=2714 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/mysql-galera/pxc-local-volume.yaml --validate=false", "delta": "0:00:00.096031", "end": "2017-04-09 19:44:47.541853", "failed": true, "rc": 1, "start": "2017-04-09 19:44:47.445822", "stderr": "error: the path \"/srv/mysql-galera/pxc-local-volume.yaml\" does not exist", "stdout": "", "stdout_lines": [], "warnings": []}
 2017-04-09 19:44:47,579 p=2714 u=ejos |  PLAY RECAP *********************************************************************
 2017-04-09 19:44:47,579 p=2714 u=ejos |  192.168.10.61              : ok=3    changed=2    unreachable=0    failed=1   
+2017-04-09 19:46:23,142 p=3061 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-09 19:46:23,195 p=3061 u=ejos |  TASK [setup] *******************************************************************
+2017-04-09 19:46:25,758 p=3061 u=ejos |  ok: [192.168.10.61]
+2017-04-09 19:46:25,763 p=3061 u=ejos |  TASK [kubernetes : Sync MySql Galera Service] **********************************
+2017-04-09 19:46:48,745 p=3061 u=ejos |  ok: [192.168.10.61]
+2017-04-09 19:46:48,751 p=3061 u=ejos |  TASK [kubernetes : Building MySql Galera Service] ******************************
+2017-04-09 19:46:50,468 p=3061 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/mysql-galera/pxc-cluster-service.yaml --validate=false", "delta": "0:00:00.217074", "end": "2017-04-09 19:46:50.414345", "failed": true, "rc": 1, "start": "2017-04-09 19:46:50.197271", "stderr": "Error from server (AlreadyExists): error when creating \"/srv/mysql-galera/pxc-cluster-service.yaml\": services \"pxc-cluster\" already exists", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-09 19:46:50,470 p=3061 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-09 19:46:50,470 p=3061 u=ejos |  192.168.10.61              : ok=2    changed=0    unreachable=0    failed=1   
+2017-04-09 19:47:23,312 p=3247 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-09 19:47:23,369 p=3247 u=ejos |  TASK [setup] *******************************************************************
+2017-04-09 19:47:25,445 p=3247 u=ejos |  ok: [192.168.10.61]
+2017-04-09 19:47:25,453 p=3247 u=ejos |  TASK [kubernetes : Sync MySql Galera Service] **********************************
+2017-04-09 19:47:48,694 p=3247 u=ejos |  ok: [192.168.10.61]
+2017-04-09 19:47:48,698 p=3247 u=ejos |  TASK [kubernetes : Building MySql Galera Service] ******************************
+2017-04-09 19:47:49,942 p=3247 u=ejos |  changed: [192.168.10.61]
+2017-04-09 19:47:49,946 p=3247 u=ejos |  TASK [kubernetes : Building MySql Galera Local Volume] *************************
+2017-04-09 19:47:51,057 p=3247 u=ejos |  changed: [192.168.10.61]
+2017-04-09 19:47:51,062 p=3247 u=ejos |  TASK [kubernetes : Building MySql Galera Service] ******************************
+2017-04-09 19:47:52,072 p=3247 u=ejos |  changed: [192.168.10.61]
+2017-04-09 19:47:52,077 p=3247 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-09 19:47:52,077 p=3247 u=ejos |  192.168.10.61              : ok=5    changed=3    unreachable=0    failed=0   
