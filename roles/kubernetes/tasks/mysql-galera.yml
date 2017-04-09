@@ -11,6 +11,11 @@
   tags:
     - build_db_mysql-galera_cluster_service
 
+- name: Building MySql Galera Local Volume
+  shell: kubectl create -f /srv/mysql-galera/pxc-local-volume.yaml --validate=false
+  tags:
+    - build_db_mysql-galera_local_volume
+
 - name: Building MySql Galera Service
   shell: kubectl create -f /srv/mysql-galera/pxc-node1.yaml --validate=false
   tags:
