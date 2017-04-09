@@ -55,4 +55,4 @@ spec:
             - name: MYSQL_PASSWORD
               value: mysql
             - name: MYSQL_ROOT_PASSWORD
-              value: c-krit 
+              value: falp
