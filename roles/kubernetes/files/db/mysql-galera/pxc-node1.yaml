@@ -42,6 +42,20 @@ spec:
             - containerPort: 4567
             - containerPort: 4568
           env:
+            - name: MYSQL_DATABASE
+              value: "falp"
+            - name: MYSQL_USER
+              value: "falp"
+            - name: MYSQL_PASSWORD
+              value: "falp"
+            - name: DATA_PATH
+              value: "/home/ejos"
+            - name: DATA_STRUCTURE
+              value: "db_Falp_Estructura_1704041603.sql"
+            - name: DATA_FILE
+              value: "db_Falp_Datos_1704041603.sql"
+            - name: DATA_TRIGGERS
+              value: "db_Falp_Triggers_1704041603.sql"
             - name: GALERA_CLUSTER
               value: "true"
             - name: WSREP_CLUSTER_ADDRESS

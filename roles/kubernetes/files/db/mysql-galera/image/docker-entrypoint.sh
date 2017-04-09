@@ -70,6 +70,18 @@ EOSQL
       if [ "$MYSQL_DATABASE" ]; then
         echo "GRANT ALL ON \`$MYSQL_DATABASE\`.* TO '$MYSQL_USER'@'%' ;" >> "$tempSqlFile"
       fi
+
+    # Add my data
+    if [ -n "$DATA_PATH" ]; then
+      if [ "$DATA_STRUCTURE" ]; then
+         echo " SOURCE "$DATA_PATH/$DATA_STRUCTURE" " >> "$tempSqlFile"
+      fi
+      if [ "$DATA_FILE" ]; then
+         echo " SOURCE "$DATA_PATH/$DATA_FILE" " >> "$tempSqlFile"
+      fi
+      if [ "$DATA_TRIGGERS" ]; then
+         echo " SOURCE "$DATA_PATH/$DATA_TRIGGERS" " >> "$tempSqlFile"
+      fi
     fi
 
     # Add SST (Single State Transfer) user if Clustering is turned on
