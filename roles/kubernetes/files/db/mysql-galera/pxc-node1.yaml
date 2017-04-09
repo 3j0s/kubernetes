@@ -42,7 +42,7 @@ spec:
             - containerPort: 4567
             - containerPort: 4568
           env:
-            - name: DATA_PATH
+            - name: DATA
               value: "true"
             - name: DATA_PATH
               value: "/home/ejos"

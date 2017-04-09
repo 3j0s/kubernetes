@@ -72,6 +72,20 @@ EOSQL
       fi
     fi
 
+    # Add SST (Single State Transfer) user if Clustering is turned on
+    if [ -n "$GALERA_CLUSTER" ]; then
+    # this is the Single State Transfer user (SST, initial dump or xtrabackup user)
+      WSREP_SST_USER=${WSREP_SST_USER:-"sst"}
+      if [ -z "$WSREP_SST_PASSWORD" ]; then
+        echo >&2 'error: Galera cluster is enabled and WSREP_SST_PASSWORD is not set'
+        echo >&2 '  Did you forget to add -e WSREP_SST__PASSWORD=... ?'
+        exit 1
+      fi
+      # add single state transfer (SST) user privileges
+      echo "CREATE USER '${WSREP_SST_USER}'@'localhost' IDENTIFIED BY '${WSREP_SST_PASSWORD}';" >> "$tempSqlFile"
+      echo "GRANT RELOAD, LOCK TABLES, REPLICATION CLIENT ON *.* TO '${WSREP_SST_USER}'@'localhost';" >> "$tempSqlFile"
+    fi
+
     # Add my data
     if [ -n "$DATA" ]; then
       echo "CREATE DATABASE IF NOT EXISTS \`$MY_DATABASE\` ;" >> "$tempSqlFile"
@@ -87,27 +101,14 @@ EOSQL
          echo " SOURCE "$DATA_PATH/$DATA_TRIGGERS" " >> "$tempSqlFile"
       fi
     fi
-
-    # Add SST (Single State Transfer) user if Clustering is turned on
-    if [ -n "$GALERA_CLUSTER" ]; then
-    # this is the Single State Transfer user (SST, initial dump or xtrabackup user)
-      WSREP_SST_USER=${WSREP_SST_USER:-"sst"}
-      if [ -z "$WSREP_SST_PASSWORD" ]; then
-        echo >&2 'error: Galera cluster is enabled and WSREP_SST_PASSWORD is not set'
-        echo >&2 '  Did you forget to add -e WSREP_SST__PASSWORD=... ?'
-        exit 1
-      fi
-      # add single state transfer (SST) user privileges
-      echo "CREATE USER '${WSREP_SST_USER}'@'localhost' IDENTIFIED BY '${WSREP_SST_PASSWORD}';" >> "$tempSqlFile"
-      echo "GRANT RELOAD, LOCK TABLES, REPLICATION CLIENT ON *.* TO '${WSREP_SST_USER}'@'localhost';" >> "$tempSqlFile"
-    fi
-
+     
     echo 'FLUSH PRIVILEGES ;' >> "$tempSqlFile"
     
     # Add the SQL file to mysqld's command line args
     set -- "$@" --init-file="$tempSqlFile"
   fi
-  
+
+ 
   chown -R mysql:mysql "$DATADIR"
 fi
 
