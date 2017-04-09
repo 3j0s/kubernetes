@@ -4908,3 +4908,27 @@ The offending line appears to be:
 2017-04-09 19:47:52,072 p=3247 u=ejos |  changed: [192.168.10.61]
 2017-04-09 19:47:52,077 p=3247 u=ejos |  PLAY RECAP *********************************************************************
 2017-04-09 19:47:52,077 p=3247 u=ejos |  192.168.10.61              : ok=5    changed=3    unreachable=0    failed=0   
+2017-04-09 19:58:15,423 p=3955 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-09 19:58:15,482 p=3955 u=ejos |  TASK [setup] *******************************************************************
+2017-04-09 19:58:17,446 p=3955 u=ejos |  ok: [192.168.10.61]
+2017-04-09 19:58:17,454 p=3955 u=ejos |  TASK [kubernetes : Sync MySql Galera Service] **********************************
+2017-04-09 19:58:38,207 p=3955 u=ejos |  changed: [192.168.10.61]
+2017-04-09 19:58:38,211 p=3955 u=ejos |  TASK [kubernetes : Building MySql Galera Service] ******************************
+2017-04-09 19:58:39,386 p=3955 u=ejos |  changed: [192.168.10.61]
+2017-04-09 19:58:39,392 p=3955 u=ejos |  TASK [kubernetes : Building MySql Galera Local Volume] *************************
+2017-04-09 19:58:40,710 p=3955 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/mysql-galera/pxc-local-volumes.yaml --validate=false", "delta": "0:00:00.230319", "end": "2017-04-09 19:58:40.658763", "failed": true, "rc": 1, "start": "2017-04-09 19:58:40.428444", "stderr": "Error from server (AlreadyExists): error when creating \"/srv/mysql-galera/pxc-local-volumes.yaml\": persistentvolumes \"local-pxc-1\" already exists\nError from server (AlreadyExists): error when creating \"/srv/mysql-galera/pxc-local-volumes.yaml\": persistentvolumes \"local-pxc-2\" already exists", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-09 19:58:40,711 p=3955 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-09 19:58:40,711 p=3955 u=ejos |  192.168.10.61              : ok=3    changed=2    unreachable=0    failed=1   
+2017-04-09 19:59:12,474 p=4109 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-09 19:59:12,530 p=4109 u=ejos |  TASK [setup] *******************************************************************
+2017-04-09 19:59:14,377 p=4109 u=ejos |  ok: [192.168.10.61]
+2017-04-09 19:59:14,384 p=4109 u=ejos |  TASK [kubernetes : Sync MySql Galera Service] **********************************
+2017-04-09 19:59:37,049 p=4109 u=ejos |  ok: [192.168.10.61]
+2017-04-09 19:59:37,055 p=4109 u=ejos |  TASK [kubernetes : Building MySql Galera Service] ******************************
+2017-04-09 19:59:38,308 p=4109 u=ejos |  changed: [192.168.10.61]
+2017-04-09 19:59:38,313 p=4109 u=ejos |  TASK [kubernetes : Building MySql Galera Local Volume] *************************
+2017-04-09 19:59:39,422 p=4109 u=ejos |  changed: [192.168.10.61]
+2017-04-09 19:59:39,427 p=4109 u=ejos |  TASK [kubernetes : Building MySql Galera Service] ******************************
+2017-04-09 19:59:40,629 p=4109 u=ejos |  changed: [192.168.10.61]
+2017-04-09 19:59:40,631 p=4109 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-09 19:59:40,631 p=4109 u=ejos |  192.168.10.61              : ok=5    changed=3    unreachable=0    failed=0   

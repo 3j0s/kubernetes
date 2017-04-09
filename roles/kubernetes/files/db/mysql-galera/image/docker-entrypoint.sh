@@ -73,6 +73,9 @@ EOSQL
 
     # Add my data
     if [ "$DATA_PATH" ]; then
+      echo "CREATE DATABASE IF NOT EXISTS \`$MY_DATABASE\` ;" >> "$tempSqlFile"
+      echo "CREATE USER '$MY_USER'@'%' IDENTIFIED BY '$MY_PASSWORD' ;" >> "$tempSqlFile"
+      echo "GRANT ALL ON \`$MY_DATABASE\`.* TO '$MY_USER'@'%' ;" >> "$tempSqlFile"
       if [ "$DATA_STRUCTURE" ]; then
          echo " SOURCE "$DATA_PATH/$DATA_STRUCTURE" " >> "$tempSqlFile"
       fi

@@ -42,14 +42,14 @@ spec:
             - containerPort: 4567
             - containerPort: 4568
           env:
-            - name: MYSQL_DATABASE
-              value: "falp"
-            - name: MYSQL_USER
-              value: "falp"
-            - name: MYSQL_PASSWORD
-              value: "falp"
             - name: DATA_PATH
               value: "/home/ejos"
+            - name: MY_DATABASE
+              value: "falp"
+            - name: MY_USER
+              value: "falp"
+            - name: MY_PASSWORD
+              value: "falp"
             - name: DATA_STRUCTURE
               value: "db_Falp_Estructura_1704041603.sql"
             - name: DATA_FILE
