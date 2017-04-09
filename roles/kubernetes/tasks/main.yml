@@ -3,4 +3,4 @@
 #  - include: service.yml
 #  - include: skydns.yml
 #  - include: web.yml
-  - include: db.yml
+  - include: mysql-galera.yml

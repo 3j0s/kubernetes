@@ -1,0 +1,17 @@
+---
+- name: Copy MySql Galera File
+  sincronize: 
+    src: db/mysql-galera 
+    dest: rsync://srv
+  tags:
+    - rsync_db_mysql-galera
+
+- name: Building MySql Galera Service
+  shell: kubectl create -f /srv/mysql-galera/pxc-cluster-service.yaml 
+  tags:
+    - build_db_mysql-galera_cluster_service
+
+- name: Building MySql Galera Service
+  shell: kubectl create -f /srv/mysql-galera/pxc-node1.yaml 
+  tags:
+    - build_db_mysql-galera_replication_controllers
