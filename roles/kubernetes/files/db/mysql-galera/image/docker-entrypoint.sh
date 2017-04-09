@@ -86,22 +86,22 @@ EOSQL
       echo "GRANT RELOAD, LOCK TABLES, REPLICATION CLIENT ON *.* TO '${WSREP_SST_USER}'@'localhost';" >> "$tempSqlFile"
     fi
 
-    # Add my data
-    if [ -n "$DATA" ]; then
-      echo "CREATE DATABASE IF NOT EXISTS \`$MY_DATABASE\` ;" >> "$tempSqlFile"
-      echo "CREATE USER '$MY_USER'@'%' IDENTIFIED BY '$MY_PASSWORD' ;" >> "$tempSqlFile"
-      echo "GRANT ALL ON \`$MY_DATABASE\`.* TO '$MY_USER'@'%' ;" >> "$tempSqlFile"
-      if [ "$DATA_STRUCTURE" ]; then
-         echo " SOURCE "$DATA_PATH/$DATA_STRUCTURE" " >> "$tempSqlFile"
-      fi
-      if [ "$DATA_FILE" ]; then
-         echo " SOURCE "$DATA_PATH/$DATA_FILE" " >> "$tempSqlFile"
-      fi
-      if [ "$DATA_TRIGGERS" ]; then
-         echo " SOURCE "$DATA_PATH/$DATA_TRIGGERS" " >> "$tempSqlFile"
-      fi
+# Add my data
+    echo "CREATE DATABASE IF NOT EXISTS \`$MY_DATABASE\` ;" >> "$tempSqlFile"
+    echo "CREATE USER '$MY_USER'@'%' IDENTIFIED BY '$MY_PASSWORD' ;" >> "$tempSqlFile"
+    echo "GRANT ALL ON \`$MY_DATABASE\`.* TO '$MY_USER'@'%' ;" >> "$tempSqlFile"
+    if [ "$DATA_STRUCTURE" ]; then
+      echo " SOURCE "$DATA_PATH/$DATA_STRUCTURE" " >> "$tempSqlFile"
     fi
-     
+    if [ "$DATA_FILE" ]; then
+      echo " SOURCE "$DATA_PATH/$DATA_FILE" " >> "$tempSqlFile"
+    fi
+    if [ "$DATA_TRIGGERS" ]; then
+      echo " SOURCE "$DATA_PATH/$DATA_TRIGGERS" " >> "$tempSqlFile"
+    fi
+
+## Till here
+
     echo 'FLUSH PRIVILEGES ;' >> "$tempSqlFile"
     
     # Add the SQL file to mysqld's command line args

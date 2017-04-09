@@ -42,22 +42,6 @@ spec:
             - containerPort: 4567
             - containerPort: 4568
           env:
-            - name: DATA
-              value: "true"
-            - name: DATA_PATH
-              value: "/home/ejos"
-            - name: MY_DATABASE
-              value: "falp"
-            - name: MY_USER
-              value: "falp"
-            - name: MY_PASSWORD
-              value: "falp"
-            - name: DATA_STRUCTURE
-              value: "db_Falp_Estructura_1704041603.sql"
-            - name: DATA_FILE
-              value: "db_Falp_Datos_1704041603.sql"
-            - name: DATA_TRIGGERS
-              value: "db_Falp_Triggers_1704041603.sql"
             - name: GALERA_CLUSTER
               value: "true"
             - name: WSREP_CLUSTER_ADDRESS
@@ -72,3 +56,19 @@ spec:
               value: mysql
             - name: MYSQL_ROOT_PASSWORD
               value: falp
+            - name: DATA
+              value: "true"
+            - name: DATA_PATH
+              value: /home/ejos
+            - name: MY_DATABASE
+              value: "falp"
+            - name: MY_USER
+              value: "falp"
+            - name: MY_PASSWORD
+              value: "falp"
+            - name: DATA_STRUCTURE
+              value: "db_Falp_Estructura_1704041603.sql"
+            - name: DATA_FILE
+              value: "db_Falp_Datos_1704041603.sql"
+            - name: DATA_TRIGGERS
+              value: "db_Falp_Triggers_1704041603.sql"
