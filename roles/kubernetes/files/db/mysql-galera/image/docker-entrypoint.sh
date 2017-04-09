@@ -70,9 +70,10 @@ EOSQL
       if [ "$MYSQL_DATABASE" ]; then
         echo "GRANT ALL ON \`$MYSQL_DATABASE\`.* TO '$MYSQL_USER'@'%' ;" >> "$tempSqlFile"
       fi
+    fi
 
     # Add my data
-    if [ "$DATA_PATH" ]; then
+    if [ -n "$DATA" ]; then
       echo "CREATE DATABASE IF NOT EXISTS \`$MY_DATABASE\` ;" >> "$tempSqlFile"
       echo "CREATE USER '$MY_USER'@'%' IDENTIFIED BY '$MY_PASSWORD' ;" >> "$tempSqlFile"
       echo "GRANT ALL ON \`$MY_DATABASE\`.* TO '$MY_USER'@'%' ;" >> "$tempSqlFile"
