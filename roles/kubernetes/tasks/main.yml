@@ -1,4 +1,6 @@
 ---
-  - include: install.yml
-  - include: service.yml
-  - include: kubectl.yml
+#  - include: install.yml
+#  - include: service.yml
+#  - include: skydns.yml
+#  - include: web.yml
+  - include: db.yml

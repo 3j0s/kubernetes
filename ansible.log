@@ -4371,3 +4371,367 @@ Shared connection to 192.168.10.61 closed.
 2017-04-08 16:30:46,919 p=3048 u=ejos |  ok: [192.168.10.61]
 2017-04-08 16:30:46,921 p=3048 u=ejos |  PLAY RECAP *********************************************************************
 2017-04-08 16:30:46,921 p=3048 u=ejos |  192.168.10.61              : ok=4    changed=1    unreachable=0    failed=0   
+2017-04-08 16:51:18,710 p=3968 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 16:51:18,773 p=3968 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 16:51:21,987 p=3968 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:51:21,992 p=3968 u=ejos |  TASK [kubernetes : Copy WebDon01 file] *****************************************
+2017-04-08 16:51:22,019 p=3968 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "Unable to find 'webdon01.yml' in expected paths."}
+2017-04-08 16:51:22,021 p=3968 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 16:51:22,021 p=3968 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=1   
+2017-04-08 16:52:19,824 p=4021 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 16:52:19,888 p=4021 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 16:52:22,038 p=4021 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:52:22,043 p=4021 u=ejos |  TASK [kubernetes : Copy WebDon01 file] *****************************************
+2017-04-08 16:52:22,082 p=4021 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "Unable to find 'webdon01.yml' in expected paths."}
+2017-04-08 16:52:22,083 p=4021 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 16:52:22,083 p=4021 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=1   
+2017-04-08 16:53:19,090 p=4045 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 16:53:19,163 p=4045 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 16:53:20,911 p=4045 u=ejos |  ok: [192.168.10.61]
+2017-04-08 16:53:20,915 p=4045 u=ejos |  TASK [kubernetes : Copy WebDon01 file] *****************************************
+2017-04-08 16:53:24,390 p=4045 u=ejos |  changed: [192.168.10.61]
+2017-04-08 16:53:24,395 p=4045 u=ejos |  TASK [kubernetes : Building webdon01 service] **********************************
+2017-04-08 16:53:25,508 p=4045 u=ejos |  changed: [192.168.10.61]
+2017-04-08 16:53:25,510 p=4045 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 16:53:25,510 p=4045 u=ejos |  192.168.10.61              : ok=3    changed=2    unreachable=0    failed=0   
+2017-04-08 16:54:02,728 p=4102 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS             RESTARTS   AGE
+default       webdon01             1/1       Running            0          37s
+kube-system   kube-dns-v11-2mq50   3/4       CrashLoopBackOff   18         33m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 16:54:27,729 p=4114 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS             RESTARTS   AGE
+default       webdon01             1/1       Running            0          1m
+kube-system   kube-dns-v11-2mq50   3/4       CrashLoopBackOff   18         33m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 17:03:33,465 p=4364 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 17:03:33,531 p=4364 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 17:03:35,390 p=4364 u=ejos |  ok: [192.168.10.61]
+2017-04-08 17:03:35,394 p=4364 u=ejos |  TASK [kubernetes : Copy skydns rc yaml file] ***********************************
+2017-04-08 17:03:38,544 p=4364 u=ejos |  ok: [192.168.10.61]
+2017-04-08 17:03:38,547 p=4364 u=ejos |  TASK [kubernetes : Building skydns rc service] *********************************
+2017-04-08 17:03:39,524 p=4364 u=ejos |  changed: [192.168.10.61]
+2017-04-08 17:03:39,527 p=4364 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 17:03:39,527 p=4364 u=ejos |  192.168.10.61              : ok=3    changed=1    unreachable=0    failed=0   
+2017-04-08 17:03:53,801 p=4413 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAME        STATUS    AGE
+127.0.0.1   Ready     2d
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 17:04:05,150 p=4423 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE   NAME         CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+default     kubernetes   10.254.0.1   <none>        443/TCP   2d
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 17:04:49,112 p=4476 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 17:04:49,180 p=4476 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 17:04:50,853 p=4476 u=ejos |  ok: [192.168.10.61]
+2017-04-08 17:04:50,858 p=4476 u=ejos |  TASK [kubernetes : Copy skydns svc yaml file] **********************************
+2017-04-08 17:04:53,372 p=4476 u=ejos |  ok: [192.168.10.61]
+2017-04-08 17:04:53,378 p=4476 u=ejos |  TASK [kubernetes : Building skydns svc yaml file] ******************************
+2017-04-08 17:04:54,440 p=4476 u=ejos |  changed: [192.168.10.61]
+2017-04-08 17:04:54,442 p=4476 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 17:04:54,443 p=4476 u=ejos |  192.168.10.61              : ok=3    changed=1    unreachable=0    failed=0   
+2017-04-08 17:05:07,470 p=4555 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME         CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
+default       kubernetes   10.254.0.1       <none>        443/TCP         2d
+kube-system   kube-dns     10.254.254.254   <none>        53/UDP,53/TCP   13s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 17:05:21,674 p=4565 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 17:05:21,740 p=4565 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 17:05:23,397 p=4565 u=ejos |  ok: [192.168.10.61]
+2017-04-08 17:05:23,401 p=4565 u=ejos |  TASK [kubernetes : Copy skydns rc yaml file] ***********************************
+2017-04-08 17:05:25,942 p=4565 u=ejos |  ok: [192.168.10.61]
+2017-04-08 17:05:25,948 p=4565 u=ejos |  TASK [kubernetes : Building skydns rc service] *********************************
+2017-04-08 17:05:26,885 p=4565 u=ejos |  changed: [192.168.10.61]
+2017-04-08 17:05:26,888 p=4565 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 17:05:26,889 p=4565 u=ejos |  192.168.10.61              : ok=3    changed=1    unreachable=0    failed=0   
+2017-04-08 17:05:43,225 p=4607 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS              RESTARTS   AGE
+kube-system   kube-dns-v11-t74h9   0/4       ContainerCreating   0          17s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 17:06:01,839 p=4617 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS    RESTARTS   AGE
+kube-system   kube-dns-v11-t74h9   3/4       Running   0          35s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 17:06:05,749 p=4627 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS    RESTARTS   AGE
+kube-system   kube-dns-v11-t74h9   3/4       Running   0          39s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 17:06:12,544 p=4638 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS    RESTARTS   AGE
+kube-system   kube-dns-v11-t74h9   3/4       Running   0          46s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 17:06:27,934 p=4650 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS    RESTARTS   AGE
+kube-system   kube-dns-v11-t74h9   4/4       Running   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 17:06:59,928 p=4662 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS    RESTARTS   AGE
+kube-system   kube-dns-v11-t74h9   4/4       Running   0          1m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 18:16:10,896 p=6558 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 18:16:10,950 p=6558 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 18:16:14,812 p=6558 u=ejos |  ok: [192.168.10.61]
+2017-04-08 18:16:14,820 p=6558 u=ejos |  TASK [kubernetes : Copy web-db file] *******************************************
+2017-04-08 18:16:14,857 p=6558 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "Unable to find 'web_db.json' in expected paths."}
+2017-04-08 18:16:14,858 p=6558 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 18:16:14,859 p=6558 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=1   
+2017-04-08 18:18:19,552 p=6629 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 18:18:19,608 p=6629 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 18:18:25,221 p=6629 u=ejos |  ok: [192.168.10.61]
+2017-04-08 18:18:25,226 p=6629 u=ejos |  TASK [kubernetes : Copy web-db file] *******************************************
+2017-04-08 18:18:33,329 p=6629 u=ejos |  changed: [192.168.10.61]
+2017-04-08 18:18:33,335 p=6629 u=ejos |  TASK [kubernetes : Building web-db pod] ****************************************
+2017-04-08 18:18:34,516 p=6629 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/web-db.json", "delta": "0:00:00.126085", "end": "2017-04-08 18:18:34.480121", "failed": true, "rc": 1, "start": "2017-04-08 18:18:34.354036", "stderr": "error: error validating \"/srv/web-db.json\": error validating data: found invalid field id for v1.Pod; if you choose to ignore these errors, turn validation off with --validate=false", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-08 18:18:34,518 p=6629 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 18:18:34,518 p=6629 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=1   
+2017-04-08 18:23:54,483 p=6796 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 18:23:54,534 p=6796 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 18:24:00,465 p=6796 u=ejos |  ok: [192.168.10.61]
+2017-04-08 18:24:00,471 p=6796 u=ejos |  TASK [kubernetes : Copy web-db file] *******************************************
+2017-04-08 18:24:03,623 p=6796 u=ejos |  ok: [192.168.10.61]
+2017-04-08 18:24:03,630 p=6796 u=ejos |  TASK [kubernetes : Building web-db pod] ****************************************
+2017-04-08 18:24:04,670 p=6796 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f --validate=false /srv/web-db.json", "delta": "0:00:00.095208", "end": "2017-04-08 18:24:04.633786", "failed": true, "rc": 1, "start": "2017-04-08 18:24:04.538578", "stderr": "error: Unexpected args: [/srv/web-db.json]\nSee 'kubectl create -h' for help and examples.", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-08 18:24:04,672 p=6796 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 18:24:04,672 p=6796 u=ejos |  192.168.10.61              : ok=2    changed=0    unreachable=0    failed=1   
+2017-04-08 18:26:40,776 p=6969 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 18:26:40,830 p=6969 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 18:26:45,072 p=6969 u=ejos |  ok: [192.168.10.61]
+2017-04-08 18:26:45,077 p=6969 u=ejos |  TASK [kubernetes : Copy web-db file] *******************************************
+2017-04-08 18:26:50,151 p=6969 u=ejos |  ok: [192.168.10.61]
+2017-04-08 18:26:50,156 p=6969 u=ejos |  TASK [kubernetes : Building web-db pod] ****************************************
+2017-04-08 18:26:51,391 p=6969 u=ejos |  changed: [192.168.10.61]
+2017-04-08 18:26:51,394 p=6969 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 18:26:51,395 p=6969 u=ejos |  192.168.10.61              : ok=3    changed=1    unreachable=0    failed=0   
+2017-04-08 18:26:58,704 p=7012 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS              RESTARTS   AGE
+default       webdon01-dbdon01     0/2       ContainerCreating   0          7s
+kube-system   kube-dns-v11-lsxc7   3/4       CrashLoopBackOff    7          18m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 18:27:04,086 p=7022 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS              RESTARTS   AGE
+default       webdon01-dbdon01     0/2       ContainerCreating   0          13s
+kube-system   kube-dns-v11-lsxc7   3/4       CrashLoopBackOff    7          18m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 18:27:21,816 p=7032 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS             RESTARTS   AGE
+default       webdon01-dbdon01     0/2       ErrImagePull       0          30s
+kube-system   kube-dns-v11-lsxc7   3/4       CrashLoopBackOff   7          18m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 18:27:35,865 p=7048 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS             RESTARTS   AGE
+default       webdon01-dbdon01     0/2       ErrImagePull       0          44s
+kube-system   kube-dns-v11-lsxc7   3/4       CrashLoopBackOff   7          18m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 19:02:48,989 p=8352 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 19:02:49,039 p=8352 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 19:02:51,579 p=8352 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:02:51,584 p=8352 u=ejos |  TASK [kubernetes : Copy web file] **********************************************
+2017-04-08 19:02:56,987 p=8352 u=ejos |  changed: [192.168.10.61]
+2017-04-08 19:02:56,991 p=8352 u=ejos |  TASK [kubernetes : Building web pod] *******************************************
+2017-04-08 19:02:58,103 p=8352 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/web.yaml", "delta": "0:00:00.110635", "end": "2017-04-08 19:02:58.071159", "failed": true, "rc": 1, "start": "2017-04-08 19:02:57.960524", "stderr": "error: the path \"/srv/web.yaml\" does not exist", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-08 19:02:58,105 p=8352 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 19:02:58,106 p=8352 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=1   
+2017-04-08 19:05:50,330 p=8572 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 19:05:50,389 p=8572 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 19:05:53,175 p=8572 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:05:53,183 p=8572 u=ejos |  TASK [kubernetes : Copy web file] **********************************************
+2017-04-08 19:05:57,681 p=8572 u=ejos |  changed: [192.168.10.61]
+2017-04-08 19:05:57,686 p=8572 u=ejos |  TASK [kubernetes : Building web pod] *******************************************
+2017-04-08 19:05:59,172 p=8572 u=ejos |  changed: [192.168.10.61]
+2017-04-08 19:05:59,176 p=8572 u=ejos |  TASK [kubernetes : Copy db file] ***********************************************
+2017-04-08 19:06:03,084 p=8572 u=ejos |  changed: [192.168.10.61]
+2017-04-08 19:06:03,089 p=8572 u=ejos |  TASK [kubernetes : Building db pod] ********************************************
+2017-04-08 19:06:05,934 p=8572 u=ejos |  changed: [192.168.10.61]
+2017-04-08 19:06:05,937 p=8572 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 19:06:05,937 p=8572 u=ejos |  192.168.10.61              : ok=5    changed=4    unreachable=0    failed=0   
+2017-04-08 19:06:11,728 p=8647 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS              RESTARTS   AGE
+default       dbdon01-2c4lm        0/1       Pending             0          6s
+default       dbdon01-qqb78        0/1       Pending             0          6s
+default       webdon01-0ww8t       0/1       ContainerCreating   0          12s
+default       webdon01-9gj91       0/1       ContainerCreating   0          12s
+default       webdon01-dbdon01     0/2       ImagePullBackOff    0          39m
+kube-system   kube-dns-v11-lsxc7   4/4       Running             18         57m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 19:06:57,018 p=8660 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS             RESTARTS   AGE
+default       dbdon01-2c4lm        0/1       ImagePullBackOff   0          51s
+default       dbdon01-qqb78        0/1       ErrImagePull       0          51s
+default       webdon01-0ww8t       0/1       ImagePullBackOff   0          57s
+default       webdon01-9gj91       0/1       ErrImagePull       0          57s
+kube-system   kube-dns-v11-lsxc7   3/4       Running            19         58m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 19:08:37,901 p=8682 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS             RESTARTS   AGE
+kube-system   kube-dns-v11-lsxc7   3/4       CrashLoopBackOff   19         59m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 19:09:42,950 p=8793 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+Client Version: version.Info{Major:"1", Minor:"5", GitVersion:"v1.5.2", GitCommit:"c55cf2b7d8bfeb947f77453415d775d7f71c89c2", GitTreeState:"clean", BuildDate:"2017-03-07T00:03:00Z", GoVersion:"go1.7.4", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"5", GitVersion:"v1.5.2", GitCommit:"c55cf2b7d8bfeb947f77453415d775d7f71c89c2", GitTreeState:"clean", BuildDate:"2017-03-07T00:03:00Z", GoVersion:"go1.7.4", Compiler:"gc", Platform:"linux/amd64"}
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 19:15:50,832 p=9167 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 19:15:50,889 p=9167 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 19:15:52,554 p=9167 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:15:52,561 p=9167 u=ejos |  TASK [kubernetes : Replacing Kubelet argument] *********************************
+2017-04-08 19:15:55,042 p=9167 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:15:55,044 p=9167 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 19:15:55,044 p=9167 u=ejos |  192.168.10.61              : ok=2    changed=0    unreachable=0    failed=0   
+2017-04-08 19:17:02,498 p=9197 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 19:17:02,557 p=9197 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 19:17:04,574 p=9197 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:17:04,578 p=9197 u=ejos |  TASK [kubernetes : Replacing Kubelet argument] *********************************
+2017-04-08 19:17:05,910 p=9197 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:17:05,913 p=9197 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 19:17:05,913 p=9197 u=ejos |  192.168.10.61              : ok=2    changed=0    unreachable=0    failed=0   
+2017-04-08 19:17:31,331 p=9224 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 19:17:31,386 p=9224 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 19:17:33,192 p=9224 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:17:33,196 p=9224 u=ejos |  TASK [kubernetes : Replacing Kubelet argument] *********************************
+2017-04-08 19:17:34,557 p=9224 u=ejos |  changed: [192.168.10.61]
+2017-04-08 19:17:34,559 p=9224 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 19:17:34,560 p=9224 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-08 19:18:01,827 p=9251 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 19:18:01,886 p=9251 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 19:18:03,229 p=9251 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:18:03,234 p=9251 u=ejos |  TASK [kubernetes : Replacing Kubelet argument] *********************************
+2017-04-08 19:18:04,109 p=9251 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:18:04,113 p=9251 u=ejos |  TASK [kubernetes : Enabling kubelet service] ***********************************
+2017-04-08 19:18:08,064 p=9251 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:18:08,068 p=9251 u=ejos |  TASK [kubernetes : Restart kubelet service] ************************************
+2017-04-08 19:18:08,986 p=9251 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:18:08,989 p=9251 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 19:18:08,990 p=9251 u=ejos |  192.168.10.61              : ok=4    changed=0    unreachable=0    failed=0   
+2017-04-08 19:18:14,486 p=9286 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 19:18:14,544 p=9286 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 19:18:18,301 p=9286 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:18:18,306 p=9286 u=ejos |  TASK [kubernetes : Copy skydns rc yaml file] ***********************************
+2017-04-08 19:18:18,341 p=9286 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "Unable to find 'skydns-rc.yml' in expected paths."}
+2017-04-08 19:18:18,344 p=9286 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 19:18:18,344 p=9286 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=1   
+2017-04-08 19:18:57,975 p=9307 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 19:18:58,035 p=9307 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 19:18:59,470 p=9307 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:18:59,474 p=9307 u=ejos |  TASK [kubernetes : Copy skydns rc yaml file] ***********************************
+2017-04-08 19:19:01,885 p=9307 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:19:01,890 p=9307 u=ejos |  TASK [kubernetes : Building skydns rc service] *********************************
+2017-04-08 19:19:03,536 p=9307 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/skydns-rc.yml", "delta": "0:00:00.138041", "end": "2017-04-08 19:19:03.510583", "failed": true, "rc": 1, "start": "2017-04-08 19:19:03.372542", "stderr": "Error from server (AlreadyExists): error when creating \"/srv/skydns-rc.yml\": replicationcontrollers \"kube-dns-v11\" already exists", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-08 19:19:03,538 p=9307 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 19:19:03,539 p=9307 u=ejos |  192.168.10.61              : ok=2    changed=0    unreachable=0    failed=1   
+2017-04-08 19:19:31,159 p=9348 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 19:19:31,212 p=9348 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 19:19:33,254 p=9348 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:19:33,258 p=9348 u=ejos |  TASK [kubernetes : Copy skydns rc yaml file] ***********************************
+2017-04-08 19:19:38,351 p=9348 u=ejos |  ok: [192.168.10.61]
+2017-04-08 19:19:38,355 p=9348 u=ejos |  TASK [kubernetes : Building skydns rc service] *********************************
+2017-04-08 19:19:40,247 p=9348 u=ejos |  changed: [192.168.10.61]
+2017-04-08 19:19:40,250 p=9348 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 19:19:40,250 p=9348 u=ejos |  192.168.10.61              : ok=3    changed=1    unreachable=0    failed=0   
+2017-04-08 19:19:48,893 p=9395 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS              RESTARTS   AGE
+kube-system   kube-dns-v11-qjb10   0/4       ContainerCreating   0          8s
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 20:18:23,652 p=10795 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+NAMESPACE     NAME                 READY     STATUS    RESTARTS   AGE
+kube-system   kube-dns-v11-qjb10   4/4       Running   19         58m
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 20:19:04,368 p=10814 u=ejos |  192.168.10.61 | SUCCESS | rc=0 >>
+No resources found.
+Shared connection to 192.168.10.61 closed.
+
+
+2017-04-08 20:34:51,577 p=11327 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 20:34:51,630 p=11327 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 20:34:53,455 p=11327 u=ejos |  ok: [192.168.10.61]
+2017-04-08 20:34:53,469 p=11327 u=ejos |  TASK [kubernetes : Copy db file] ***********************************************
+2017-04-08 20:34:56,380 p=11327 u=ejos |  changed: [192.168.10.61]
+2017-04-08 20:34:56,385 p=11327 u=ejos |  TASK [kubernetes : Building db pod] ********************************************
+2017-04-08 20:34:57,552 p=11327 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/mariadb-pod.yml", "delta": "0:00:00.200639", "end": "2017-04-08 20:34:57.529278", "failed": true, "rc": 1, "start": "2017-04-08 20:34:57.328639", "stderr": "error: error validating \"/srv/mariadb-pod.yml\": error validating data: [found invalid field volumeMounts for v1.Pod, found invalid field env for v1.Pod, found invalid field name for v1.Pod, found invalid field ports for v1.Pod, found invalid field value for v1.Pod, found invalid field containers for v1.Pod, found invalid field containerPort for v1.Pod, found invalid field labels for v1.Pod, found invalid field mountPath for v1.Pod, found invalid field image for v1.Pod, found invalid field volumes for v1.Pod, found invalid field emptyDir for v1.Pod]; if you choose to ignore these errors, turn validation off with --validate=false", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-08 20:34:57,554 p=11327 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 20:34:57,554 p=11327 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=1   
+2017-04-08 20:38:47,315 p=11442 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 20:38:47,366 p=11442 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 20:38:52,341 p=11442 u=ejos |  ok: [192.168.10.61]
+2017-04-08 20:38:52,345 p=11442 u=ejos |  TASK [kubernetes : Copy db file] ***********************************************
+2017-04-08 20:38:55,159 p=11442 u=ejos |  ok: [192.168.10.61]
+2017-04-08 20:38:55,165 p=11442 u=ejos |  TASK [kubernetes : Building db pod] ********************************************
+2017-04-08 20:38:56,307 p=11442 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/mariadb-pod.yml --validate=false", "delta": "0:00:00.101182", "end": "2017-04-08 20:38:56.280536", "failed": true, "rc": 1, "start": "2017-04-08 20:38:56.179354", "stderr": "The Pod \"\" is invalid: \n* metadata.name: Required value: name or generateName is required\n* spec.containers: Required value", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-08 20:38:56,309 p=11442 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 20:38:56,310 p=11442 u=ejos |  192.168.10.61              : ok=2    changed=0    unreachable=0    failed=1   
+2017-04-08 20:40:57,906 p=11532 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 20:40:57,962 p=11532 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 20:41:00,686 p=11532 u=ejos |  ok: [192.168.10.61]
+2017-04-08 20:41:00,690 p=11532 u=ejos |  TASK [kubernetes : Copy db file] ***********************************************
+2017-04-08 20:41:06,933 p=11532 u=ejos |  changed: [192.168.10.61]
+2017-04-08 20:41:06,937 p=11532 u=ejos |  TASK [kubernetes : Building db pod] ********************************************
+2017-04-08 20:41:08,938 p=11532 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/mariadb-pod.yml --validate=false", "delta": "0:00:00.102083", "end": "2017-04-08 20:41:08.916032", "failed": true, "rc": 1, "start": "2017-04-08 20:41:08.813949", "stderr": "The Pod \"\" is invalid: \n* metadata.name: Required value: name or generateName is required\n* spec.containers: Required value", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-08 20:41:08,941 p=11532 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 20:41:08,941 p=11532 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=1   
+2017-04-08 20:45:01,673 p=11724 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 20:45:01,722 p=11724 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 20:45:03,791 p=11724 u=ejos |  ok: [192.168.10.61]
+2017-04-08 20:45:03,796 p=11724 u=ejos |  TASK [kubernetes : Copy db file] ***********************************************
+2017-04-08 20:45:08,495 p=11724 u=ejos |  changed: [192.168.10.61]
+2017-04-08 20:45:08,499 p=11724 u=ejos |  TASK [kubernetes : Building db pod] ********************************************
+2017-04-08 20:45:10,234 p=11724 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/mariadb-pod.yml --validate=false", "delta": "0:00:00.107741", "end": "2017-04-08 20:45:10.213391", "failed": true, "rc": 1, "start": "2017-04-08 20:45:10.105650", "stderr": "The Pod \"\" is invalid: \n* metadata.name: Required value: name or generateName is required\n* spec.containers: Required value", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-08 20:45:10,237 p=11724 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 20:45:10,237 p=11724 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=1   
+2017-04-08 20:45:19,680 p=11770 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 20:45:19,735 p=11770 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 20:45:23,083 p=11770 u=ejos |  ok: [192.168.10.61]
+2017-04-08 20:45:23,088 p=11770 u=ejos |  TASK [kubernetes : Copy db file] ***********************************************
+2017-04-08 20:45:29,065 p=11770 u=ejos |  changed: [192.168.10.61]
+2017-04-08 20:45:29,069 p=11770 u=ejos |  TASK [kubernetes : Building db pod] ********************************************
+2017-04-08 20:45:31,016 p=11770 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/mariadb-pod.yml --validate=false", "delta": "0:00:00.100550", "end": "2017-04-08 20:45:30.872157", "failed": true, "rc": 1, "start": "2017-04-08 20:45:30.771607", "stderr": "The Pod \"\" is invalid: \n* metadata.name: Required value: name or generateName is required\n* spec.containers: Required value", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-08 20:45:31,018 p=11770 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 20:45:31,018 p=11770 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=1   
+2017-04-08 20:45:52,989 p=11818 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-08 20:45:53,044 p=11818 u=ejos |  TASK [setup] *******************************************************************
+2017-04-08 20:45:55,096 p=11818 u=ejos |  ok: [192.168.10.61]
+2017-04-08 20:45:55,101 p=11818 u=ejos |  TASK [kubernetes : Copy db file] ***********************************************
+2017-04-08 20:46:01,766 p=11818 u=ejos |  changed: [192.168.10.61]
+2017-04-08 20:46:01,770 p=11818 u=ejos |  TASK [kubernetes : Building db pod] ********************************************
+2017-04-08 20:46:03,317 p=11818 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/mariadb-pod.yml --validate=false", "delta": "0:00:00.102548", "end": "2017-04-08 20:46:03.295027", "failed": true, "rc": 1, "start": "2017-04-08 20:46:03.192479", "stderr": "The Pod \"\" is invalid: \n* metadata.name: Required value: name or generateName is required\n* spec.containers: Required value", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-08 20:46:03,318 p=11818 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-08 20:46:03,319 p=11818 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=1   
