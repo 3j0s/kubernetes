@@ -1,0 +1,10 @@
+---
+- name: Copy db file
+  copy: src=db/mariadb-pod.yml dest=/srv
+  tags:
+    - copy_db
+
+- name: Building db pod
+  shell: kubectl create -f /srv/mariadb-pod.yml --validate=false
+  tags:
+    - build_db

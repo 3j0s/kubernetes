@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dbdon01
+  namespace: default
+spec:
+  containers:
+  - image: dbdon01
+    imagePullPolicy: IfNotPresent
+    name: dbdon01
+  restartPolicy: Always

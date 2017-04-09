@@ -1,0 +1,68 @@
+---
+- name: Copy skydns svc yaml file
+  copy: src=skydns-svc.yml dest=/srv
+  tags:
+    - copy_skydns_svc
+
+- name: Building skydns svc yaml file
+  shell: kubectl create -f /srv/skydns-svc.yml
+  tags:
+    - build_skydns_svc
+
+- name: Copy skydns rc yaml file
+  copy: src=skydns-rc.yml dest=/srv
+  tags:
+    - copy_skydns_rc
+
+- name: Building skydns rc service
+  shell: kubectl create -f /srv/skydns-rc.yml
+  tags:
+    - build_skydns_rc
+
+- name: Replacing Kubelet argument
+  replace:
+    dest: /etc/kubernetes/kubelet
+    regexp: 'KUBELET_ARGS=""'
+    replace: 'KUBELET_ARGS="--cluster-dns=10.254.254.254 --cluster-domain=cluster.local"'
+  tags:
+    - replace_kubelet_arg
+
+- name: Enabling kubelet service
+  systemd: name=kubelet enabled=yes
+  tags:
+    - enable_kubelet
+
+- name: Restart kubelet service
+  systemd: name=kubelet enabled=yes
+  tags:
+    - restart_kubelet
+
+- name: Copy WebDon01 file
+  copy: src=webdon01.yaml dest=/srv
+  tags:
+    - copy_webdon01
+
+- name: Building webdon01 service
+  shell: kubectl create -f /srv/webdon01.yaml
+  tags:
+    - build_webdon01
+
+- name: Copy apache-centos7 file
+  copy: src=apache-centos7.json dest=/srv
+  tags:
+    - copy_apache_json
+
+- name: Building httpd service
+  shell: kubectl create -f /srv/apache-centos7.json
+  tags:
+    - build_apache_json
+
+- name: Copy mariadb-centos7 file
+  copy: src=mariadb-centos7.yml dest=/srv
+  tags:
+    - copy_mariadb_json
+
+- name: Building mariadb service
+  shell: kubectl create -f /srv/mariadb-centos7.yml
+  tags:
+    - build_mariadb_json

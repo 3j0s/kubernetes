@@ -1,0 +1,38 @@
+---
+- name: Copy skydns svc yaml file
+  copy: src=dns/skydns-svc.yml dest=/srv
+  tags:
+    - copy_skydns_svc
+
+- name: Building skydns svc yaml file
+  shell: kubectl create -f /srv/skydns-svc.yml
+  tags:
+    - build_skydns_svc
+
+- name: Copy skydns rc yaml file
+  copy: src=dns/skydns-rc.yml dest=/srv
+  tags:
+    - copy_skydns_rc
+
+- name: Building skydns rc service
+  shell: kubectl create -f /srv/skydns-rc.yml
+  tags:
+    - build_skydns_rc
+
+- name: Replacing Kubelet argument
+  replace:
+    dest: /etc/kubernetes/kubelet
+    regexp: 'KUBELET_ARGS="--cluster-dns=10.254.254.254 --cluster-domain=cluster.local"'
+    replace: 'KUBELET_ARGS=" --masquerade-all  --cluster-dns=10.254.254.254 --cluster-domain=cluster.local"'
+  tags:
+    - replace_kubelet_arg
+
+- name: Enabling kubelet service
+  systemd: name=kubelet enabled=yes
+  tags:
+    - enable_kubelet
+
+- name: Restart kubelet service
+  systemd: name=kubelet enabled=yes
+  tags:
+    - restart_kubelet

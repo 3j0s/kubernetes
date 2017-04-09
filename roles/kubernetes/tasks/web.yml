@@ -1,0 +1,10 @@
+---
+- name: Copy web file
+  copy: src=web.yaml dest=/srv
+  tags:
+    - copy_web
+
+- name: Building web pod
+  shell: kubectl create -f /srv/web.yaml
+  tags:
+    - build_web

@@ -1,0 +1,35 @@
+{
+   "id":"webdon01-dbdon01",
+   "kind": "Pod",
+   "apiVersion": "v1",
+   "metadata": {
+      "name": "webdon01-dbdon01",
+      "labels": {
+         "name": "webdon01-dbdon01"
+      }
+   },
+   "spec": {
+      "containers": [
+         {
+            "name": "webdon01",
+            "image": "webdon01",
+            "ports": [
+               {
+                  "hostPort": 85,
+                  "containerPort": 80
+               }
+            ]
+         },
+         {
+            "name": "dbdon01",
+            "image": "dbdon01",
+            "ports": [
+               {
+                  "hostPort": 3306,
+                  "containerPort": 3306
+               }
+            ]
+         }
+      ]
+   }
+}
