@@ -4875,3 +4875,14 @@ The offending line appears to be:
 2017-04-09 14:30:31,064 p=27191 u=ejos |  changed: [192.168.10.61]
 2017-04-09 14:30:31,066 p=27191 u=ejos |  PLAY RECAP *********************************************************************
 2017-04-09 14:30:31,067 p=27191 u=ejos |  192.168.10.61              : ok=4    changed=3    unreachable=0    failed=0   
+2017-04-09 19:44:15,493 p=2714 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-09 19:44:15,548 p=2714 u=ejos |  TASK [setup] *******************************************************************
+2017-04-09 19:44:18,413 p=2714 u=ejos |  ok: [192.168.10.61]
+2017-04-09 19:44:18,417 p=2714 u=ejos |  TASK [kubernetes : Sync MySql Galera Service] **********************************
+2017-04-09 19:44:45,214 p=2714 u=ejos |  changed: [192.168.10.61]
+2017-04-09 19:44:45,217 p=2714 u=ejos |  TASK [kubernetes : Building MySql Galera Service] ******************************
+2017-04-09 19:44:46,569 p=2714 u=ejos |  changed: [192.168.10.61]
+2017-04-09 19:44:46,573 p=2714 u=ejos |  TASK [kubernetes : Building MySql Galera Local Volume] *************************
+2017-04-09 19:44:47,577 p=2714 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": true, "cmd": "kubectl create -f /srv/mysql-galera/pxc-local-volume.yaml --validate=false", "delta": "0:00:00.096031", "end": "2017-04-09 19:44:47.541853", "failed": true, "rc": 1, "start": "2017-04-09 19:44:47.445822", "stderr": "error: the path \"/srv/mysql-galera/pxc-local-volume.yaml\" does not exist", "stdout": "", "stdout_lines": [], "warnings": []}
+2017-04-09 19:44:47,579 p=2714 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-09 19:44:47,579 p=2714 u=ejos |  192.168.10.61              : ok=3    changed=2    unreachable=0    failed=1   
