@@ -34,7 +34,7 @@ spec:
         - resources:
             limits: 
               cpu: 0.3
-          image: capttofu/percona_xtradb_cluster_5_6:beta
+          image: centos:latest
           name: pxc-node1
           ports:
             - containerPort: 3306
