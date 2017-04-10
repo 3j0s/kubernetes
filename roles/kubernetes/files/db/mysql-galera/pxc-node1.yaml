@@ -34,7 +34,7 @@ spec:
         - resources:
             limits: 
               cpu: 0.3
-          image: centos:latest
+          image: mariadb-galera
           name: pxc-node1
           ports:
             - containerPort: 3306
