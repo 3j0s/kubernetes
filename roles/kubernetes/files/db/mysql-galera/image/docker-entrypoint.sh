@@ -58,6 +58,15 @@ if [ "$1" = 'mysqld' ]; then
 DELETE FROM mysql.user ;
 CREATE USER 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}' ;
 GRANT ALL ON *.* TO 'root'@'%' WITH GRANT OPTION ;
+
+# Add my data
+CREATE DATABASE IF NOT EXISTS '${MY_DATABASE}' ;
+CREATE USER '${MY_USER}'@'%' IDENTIFIED BY '${MY_PASSWORD}' ;
+GRANT ALL ON '${MY_DATABASE}'.* TO '${MY_USER}'@'%' ;
+SOURCE '${DATA_PATH}/${DATA_STRUCTURE}' ;
+SOURCE '${DATA_PATH}/${DATA_FILE}' ;
+SOURCE '${DATA_PATH}/${DATA_TRIGGERS}' ;
+## Till here
 EOSQL
     
     if [ "$MYSQL_DATABASE" ]; then
@@ -85,22 +94,6 @@ EOSQL
       echo "CREATE USER '${WSREP_SST_USER}'@'localhost' IDENTIFIED BY '${WSREP_SST_PASSWORD}';" >> "$tempSqlFile"
       echo "GRANT RELOAD, LOCK TABLES, REPLICATION CLIENT ON *.* TO '${WSREP_SST_USER}'@'localhost';" >> "$tempSqlFile"
     fi
-
-# Add my data
-    echo "CREATE DATABASE IF NOT EXISTS \`$MY_DATABASE\` ;" >> "$tempSqlFile"
-    echo "CREATE USER '$MY_USER'@'%' IDENTIFIED BY '$MY_PASSWORD' ;" >> "$tempSqlFile"
-    echo "GRANT ALL ON \`$MY_DATABASE\`.* TO '$MY_USER'@'%' ;" >> "$tempSqlFile"
-    if [ "$DATA_STRUCTURE" ]; then
-      echo " SOURCE "$DATA_PATH/$DATA_STRUCTURE" " >> "$tempSqlFile"
-    fi
-    if [ "$DATA_FILE" ]; then
-      echo " SOURCE "$DATA_PATH/$DATA_FILE" " >> "$tempSqlFile"
-    fi
-    if [ "$DATA_TRIGGERS" ]; then
-      echo " SOURCE "$DATA_PATH/$DATA_TRIGGERS" " >> "$tempSqlFile"
-    fi
-
-## Till here
 
     echo 'FLUSH PRIVILEGES ;' >> "$tempSqlFile"
     
