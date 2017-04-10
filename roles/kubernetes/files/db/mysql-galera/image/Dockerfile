@@ -35,8 +35,8 @@ VOLUME /var/lib/mysql
 COPY my.cnf /etc/mysql/my.cnf
 COPY cluster.cnf /etc/mysql/conf.d/cluster.cnf
 
-COPY docker-entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+COPY docker-entrypoint-new-version.sh /entrypoint-new-version.sh
+ENTRYPOINT ["/entrypoint-new-version.sh"]
 
 EXPOSE 3306 4444 4567 4568
 CMD ["mysqld"]
