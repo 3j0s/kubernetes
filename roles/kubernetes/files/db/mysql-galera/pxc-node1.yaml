@@ -34,7 +34,7 @@ spec:
         - resources:
             limits: 
               cpu: 0.3
-          image: ejos/mariadb-galera
+          image: ejos/mariadb-galera:v2
           name: pxc-node1
           ports:
             - containerPort: 3306
