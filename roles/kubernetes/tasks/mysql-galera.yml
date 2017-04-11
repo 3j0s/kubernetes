@@ -6,6 +6,12 @@
   tags:
     - rsync_db_mysql-galera
 
+- file:
+    path: /srv/mysql-galera/image/docker-entrypoint.sh
+    owner: root
+    group: root
+    mode: 0755
+
 - name: Building MySql Galera Service
   shell: kubectl create -f /srv/mysql-galera/pxc-cluster-service.yaml --validate=false
   tags:
