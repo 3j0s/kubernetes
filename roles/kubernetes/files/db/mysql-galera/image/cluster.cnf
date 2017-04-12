@@ -1,4 +1,4 @@
-[mysqld]
+[galera]
 
 wsrep_provider=/usr/lib64/galera/libgalera_smm.so
 wsrep_cluster_address=gcomm://
@@ -6,7 +6,13 @@ binlog_format=ROW
 default_storage_engine=InnoDB
 innodb_autoinc_lock_mode=2
 
-wsrep_sst_method=xtrabackup-v2
+wsrep_sst_method=rsync
 wsrep_node_address=127.0.0.1
 wsrep_cluster_name=galera_kubernetes
 wsrep_sst_auth=sstuser:changethis
+wsrep_slave_threads            = 4
+innodb-flush-log-at-trx-commit = 2
+wsrep_on                       = ON
+
+# MYISAM REPLICATION SUPPORT #
+wsrep_replicate_myisam         = ON
