@@ -5432,3 +5432,84 @@ The offending line appears to be:
 2017-04-12 11:12:40,283 p=6438 u=ejos |  changed: [192.168.10.61]
 2017-04-12 11:12:40,286 p=6438 u=ejos |  PLAY RECAP *********************************************************************
 2017-04-12 11:12:40,286 p=6438 u=ejos |  192.168.10.61              : ok=6    changed=3    unreachable=0    failed=0   
+2017-04-12 11:39:43,248 p=7512 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-12 11:39:43,297 p=7512 u=ejos |  TASK [setup] *******************************************************************
+2017-04-12 11:39:44,399 p=7512 u=ejos |  ok: [192.168.10.61]
+2017-04-12 11:39:44,405 p=7512 u=ejos |  TASK [kubernetes : Sync MySql Galera Service] **********************************
+2017-04-12 11:39:58,995 p=7512 u=ejos |  changed: [192.168.10.61]
+2017-04-12 11:39:58,999 p=7512 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-12 11:39:58,999 p=7512 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-12 11:56:47,454 p=8357 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-12 11:56:47,506 p=8357 u=ejos |  TASK [setup] *******************************************************************
+2017-04-12 11:56:48,605 p=8357 u=ejos |  ok: [192.168.10.61]
+2017-04-12 11:56:48,609 p=8357 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-12 11:56:48,610 p=8357 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=0   
+2017-04-12 11:57:14,050 p=8384 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-12 11:57:14,110 p=8384 u=ejos |  TASK [setup] *******************************************************************
+2017-04-12 11:57:15,098 p=8384 u=ejos |  ok: [192.168.10.61]
+2017-04-12 11:57:15,104 p=8384 u=ejos |  TASK [master : Sync MySql Galera Service] **************************************
+2017-04-12 11:57:17,218 p=8384 u=ejos |  changed: [192.168.10.61]
+2017-04-12 11:57:17,221 p=8384 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-12 11:57:17,222 p=8384 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-12 11:58:23,348 p=8434 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-12 11:58:23,410 p=8434 u=ejos |  TASK [setup] *******************************************************************
+2017-04-12 11:58:24,498 p=8434 u=ejos |  ok: [192.168.10.61]
+2017-04-12 11:58:24,502 p=8434 u=ejos |  TASK [master : Sync MySql Galera Service] **************************************
+2017-04-12 11:58:26,647 p=8434 u=ejos |  changed: [192.168.10.61]
+2017-04-12 11:58:26,651 p=8434 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-12 11:58:26,651 p=8434 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-12 12:15:28,935 p=9048 u=ejos |  [DEPRECATION WARNING]: Included file '/home/ejos/Ansible/kubernetes/mysql-galera.yml' not found, however since this include is not explicitly marked 
+as 'static: yes', we will try and include it dynamically later. In the future, this will be an error unless 'static: no' is used on the include task.
+ If you do not want missing includes to be considered dynamic, use 'static: yes' on the include or set the global ansible.cfg options to make all 
+inclues static for tasks and/or handlers.
+This feature will be removed in a future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2017-04-12 12:15:28,984 p=9048 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-12 12:15:29,037 p=9048 u=ejos |  TASK [setup] *******************************************************************
+2017-04-12 12:15:30,139 p=9048 u=ejos |  ok: [192.168.10.61]
+2017-04-12 12:15:30,145 p=9048 u=ejos |  TASK [kubernetes : include] ****************************************************
+2017-04-12 12:15:30,165 p=9048 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"failed": true, "reason": "the file_name '/home/ejos/Ansible/kubernetes/mysql-galera.yml' does not exist, or is not readable"}
+2017-04-12 12:15:30,167 p=9048 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-12 12:15:30,167 p=9048 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=1   
+2017-04-12 12:16:31,040 p=9131 u=ejos |  [DEPRECATION WARNING]: Included file '/home/ejos/Ansible/kubernetes/mysql-galera.yml' not found, however since this include is not explicitly marked 
+as 'static: yes', we will try and include it dynamically later. In the future, this will be an error unless 'static: no' is used on the include task.
+ If you do not want missing includes to be considered dynamic, use 'static: yes' on the include or set the global ansible.cfg options to make all 
+inclues static for tasks and/or handlers.
+This feature will be removed in a future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2017-04-12 12:16:31,092 p=9131 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-12 12:16:31,150 p=9131 u=ejos |  TASK [setup] *******************************************************************
+2017-04-12 12:16:32,234 p=9131 u=ejos |  ok: [192.168.10.61]
+2017-04-12 12:16:32,239 p=9131 u=ejos |  TASK [master : Sync Image MariaDB Galera Service] ******************************
+2017-04-12 12:16:38,010 p=9131 u=ejos |  changed: [192.168.10.61]
+2017-04-12 12:16:38,016 p=9131 u=ejos |  TASK [kubernetes : include] ****************************************************
+2017-04-12 12:16:38,045 p=9131 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"failed": true, "reason": "the file_name '/home/ejos/Ansible/kubernetes/mysql-galera.yml' does not exist, or is not readable"}
+2017-04-12 12:16:38,047 p=9131 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-12 12:16:38,047 p=9131 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=1   
+2017-04-12 12:17:26,997 p=9292 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-12 12:17:27,052 p=9292 u=ejos |  TASK [setup] *******************************************************************
+2017-04-12 12:17:27,986 p=9292 u=ejos |  ok: [192.168.10.61]
+2017-04-12 12:17:27,990 p=9292 u=ejos |  TASK [master : Sync Image MariaDB Galera Service] ******************************
+2017-04-12 12:17:32,745 p=9292 u=ejos |  ok: [192.168.10.61]
+2017-04-12 12:17:32,748 p=9292 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-12 12:17:32,748 p=9292 u=ejos |  192.168.10.61              : ok=2    changed=0    unreachable=0    failed=0   
+2017-04-12 12:17:58,193 p=9361 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-12 12:17:58,249 p=9361 u=ejos |  TASK [setup] *******************************************************************
+2017-04-12 12:17:59,174 p=9361 u=ejos |  ok: [192.168.10.61]
+2017-04-12 12:17:59,178 p=9361 u=ejos |  TASK [kubernetes : Sync MySql Galera Service] **********************************
+2017-04-12 12:17:59,209 p=9361 u=ejos |  fatal: [192.168.10.61]: FAILED! => {"changed": false, "failed": true, "msg": "Unable to find 'mariadb-galera' in expected paths."}
+2017-04-12 12:17:59,210 p=9361 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-12 12:17:59,210 p=9361 u=ejos |  192.168.10.61              : ok=1    changed=0    unreachable=0    failed=1   
+2017-04-12 12:19:35,177 p=9501 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-12 12:19:35,242 p=9501 u=ejos |  TASK [setup] *******************************************************************
+2017-04-12 12:19:36,356 p=9501 u=ejos |  ok: [192.168.10.61]
+2017-04-12 12:19:36,363 p=9501 u=ejos |  TASK [kubernetes : Sync MySql Galera Service] **********************************
+2017-04-12 12:19:41,183 p=9501 u=ejos |  changed: [192.168.10.61]
+2017-04-12 12:19:41,187 p=9501 u=ejos |  TASK [kubernetes : Building MySql Galera Service] ******************************
+2017-04-12 12:19:41,927 p=9501 u=ejos |  changed: [192.168.10.61]
+2017-04-12 12:19:41,931 p=9501 u=ejos |  TASK [kubernetes : Building MySql Galera Local Volume] *************************
+2017-04-12 12:19:42,513 p=9501 u=ejos |  changed: [192.168.10.61]
+2017-04-12 12:19:42,517 p=9501 u=ejos |  TASK [kubernetes : Building MySql Galera Service] ******************************
+2017-04-12 12:19:43,201 p=9501 u=ejos |  changed: [192.168.10.61]
+2017-04-12 12:19:43,203 p=9501 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-12 12:19:43,204 p=9501 u=ejos |  192.168.10.61              : ok=5    changed=4    unreachable=0    failed=0   

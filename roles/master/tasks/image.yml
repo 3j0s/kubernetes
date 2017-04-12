@@ -1,0 +1,13 @@
+---
+- name: Sync Image MariaDB Galera Service
+  copy:
+    src: images
+    dest: /srv
+  tags:
+    - rsync_img_build_mariadb-galera
+
+- file:
+    path: /srv/images/docker-entrypoint.sh
+    owner: root
+    group: root
+    mode: 0755

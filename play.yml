@@ -4,6 +4,7 @@
   pre_tasks:
     - shell: echo "Initializing Kubernetes Support.."
   roles:
+    - { role: master, tags: ['master']}
     - { role: docker, tags: ['docker']}
     - { role: etcd, tags: ['etcd']}
     - { role: kubernetes, tags: ['kubernetes'] }

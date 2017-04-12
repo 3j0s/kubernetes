@@ -85,3 +85,4 @@ slow-query-log-file            = /dev/stdout
 log-queries-not-using-indexes  = 1
 slow-query-log                 = 1
 
+!includedir /etc/my.cnf.d
