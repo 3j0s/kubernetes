@@ -20,9 +20,7 @@ RUN  yum -y update && yum clean all && yum -y install epel-release && \
      yum -y install MariaDB-server MariaDB-client galera less which socat pwgen && yum clean all && \
      mkdir /docker-entrypoint-initdb.d
 
-COPY my.cnf /etc/mysql/my.cnf
-COPY cluster.cnf /etc/mysql/conf.d/cluster.cnf
-COPY server.cnf /etc/mysql/conf.d/server.cnf
+COPY server.cnf /etc/my.cnf.d/server.cnf
 
 # Add this line for systemd problem
 
