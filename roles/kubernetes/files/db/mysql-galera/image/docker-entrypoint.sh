@@ -33,6 +33,7 @@ fi
 
 # if the command passed is 'mysqld' via CMD, then begin processing. 
 if [ "$1" = 'mysqld' ]; then
+
   # read DATADIR from the MySQL config
   DATADIR="$("$@" --verbose --help 2>/dev/null | awk '$1 == "datadir" { print $2; exit }')"
  
@@ -45,11 +46,6 @@ if [ "$1" = 'mysqld' ]; then
       echo >&2 '  Did you forget to add -e MYSQL_ROOT_PASSWORD=... ?'
       exit 1
     fi
-
-# Add this two line, 'cause i don't see why it doesn't builded before
-    mkdir -p "$DATADIR"
-    chown -R mysql:mysql "$DATADIR"
-#Till here
 
     # mysql_install_db installs system tables
     echo 'Running mysql_install_db ...'
@@ -108,9 +104,7 @@ EOSQL
     # Add the SQL file to mysqld's command line args
     set -- "$@" --init-file="$tempSqlFile"
   fi
-
  
-  chown -R mysql:mysql "$DATADIR"
 fi
 
 # if cluster is turned on, then procede to build cluster setting strings
