@@ -93,9 +93,6 @@ EOSQL
 	echo "CREATE DATABASE IF NOT EXISTS '${MY_DATABASE}' ;"
 	echo "CREATE USER '${MY_USER}'@'%' IDENTIFIED BY '${MY_PASSWORD}' ;"
 	echo "GRANT ALL ON '${MY_DATABASE}'.* TO '${MY_USER}'@'%' ;"
-	echo "SOURCE '${DATA_PATH}/${DATA_STRUCTURE}' ;"
-	echo "SOURCE '${DATA_PATH}/${DATA_FILE}' ;"
-	echo "SOURCE '${DATA_PATH}/${DATA_TRIGGERS}' ;"
     fi
 ## Till here
 

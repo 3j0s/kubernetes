@@ -1,5 +1,4 @@
-#FROM centos:latest
-FROM ejos/centos
+FROM centos:latest
 MAINTAINER edward.josette@gmail.com
 
 ENV MARIADB_MAJOR=10.1
@@ -17,7 +16,8 @@ RUN  chown -R mysql:mysql /var/lib/mysql
 # Install required packages and MariaDB Vendor Repo
 RUN  yum -y update && yum clean all && yum -y install epel-release && \
      rpm --import https://yum.mariadb.org/RPM-GPG-KEY-MariaDB && \
-     yum -y install MariaDB-server MariaDB-client galera less which socat pwgen && yum clean all && \
+     yum -y install MariaDB-server MariaDB-client galera less which socat pwgen && \
+     yum -y install openssh-server openssh-clients && yum clean all && \
      mkdir /docker-entrypoint-initdb.d
 
 COPY server.cnf /etc/my.cnf.d/server.cnf
