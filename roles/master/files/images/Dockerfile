@@ -19,7 +19,7 @@ RUN  yum -y update && yum clean all && \
      rpm --import https://yum.mariadb.org/RPM-GPG-KEY-MariaDB && \
      yum -y install bind-utils pwgen psmisc hostname less which socat && \
      yum -y install --setopt=tsflags=nodocs MariaDB-server MariaDB-client galera && \
-     yum -y erase vim-minimal && \
+     yum -y erase vim-minimal net-tools && \
      yum -y install openssh-server openssh-clients && yum clean all && \
      mkdir /docker-entrypoint-initdb.d
 
