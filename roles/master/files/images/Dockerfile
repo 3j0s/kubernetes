@@ -1,7 +1,8 @@
-FROM centos:latest
-MAINTAINER edward.josette@gmail.com
+FROM centos:centos7
+LABEL MAINTAINER edward.josette@gmail.com
 
 ENV MARIADB_MAJOR=10.1
+ENV container=docker
 
 # MariaDB Repo
 COPY MariaDB.repo /etc/yum.repos.d/MariaDB.repo
@@ -9,14 +10,16 @@ COPY MariaDB.repo /etc/yum.repos.d/MariaDB.repo
 RUN groupadd -g 250 -r mysql && useradd -u 250 -r -g mysql mysql && \
     mkdir -p /var/lib/mysql
 
-VOLUME /var/lib/mysql
 
 RUN  chown -R mysql:mysql /var/lib/mysql
 
 # Install required packages and MariaDB Vendor Repo
-RUN  yum -y update && yum clean all && yum -y install epel-release && \
+RUN  yum -y update && yum clean all && \
+     yum -y install --setopt=tsflags=nodocs epel-release && \
      rpm --import https://yum.mariadb.org/RPM-GPG-KEY-MariaDB && \
-     yum -y install MariaDB-server MariaDB-client galera less which socat pwgen && \
+     yum -y install bind-utils pwgen psmisc hostname less which socat && \
+     yum -y install --setopt=tsflags=nodocs MariaDB-server MariaDB-client galera && \
+     yum -y erase vim-minimal && \
      yum -y install openssh-server openssh-clients && yum clean all && \
      mkdir /docker-entrypoint-initdb.d
 
@@ -35,6 +38,7 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 # Without this, init won't start the enabled services and exec'ing and starting
 # them reports "Failed to get D-Bus connection: Operation not permitted".
+VOLUME /var/lib/mysql
 VOLUME /run /tmp
 VOLUME [ “/sys/fs/cgroup” ]
 
@@ -45,5 +49,5 @@ COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-EXPOSE 3306 4444 4567 4568
+EXPOSE 3306 4444 4567 4568 22
 CMD ["mysqld"]

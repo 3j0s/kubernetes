@@ -116,12 +116,12 @@ if [ -n "$GALERA_CLUSTER" ]; then
   fi
 
   # user/password for SST user
-  sed -i -e "s|^wsrep_sst_auth=sstuser:changethis|wsrep_sst_auth=${WSREP_SST_USER}:${WSREP_SST_PASSWORD}|" /etc/mysql/conf.d/cluster.cnf
+  sed -i -e "s|^wsrep_sst_auth=sstuser:changethis|wsrep_sst_auth=${WSREP_SST_USER}:${WSREP_SST_PASSWORD}|" /etc/my.cnf.d/server.cnf
 
   # set nodes own address
   WSREP_NODE_ADDRESS=`ip addr show | grep -E '^[ ]*inet' | grep -m1 global | awk '{ print $2 }' | sed -e 's/\/.*//'`
   if [ -n "$WSREP_NODE_ADDRESS" ]; then
-    sed -i -e "s|^wsrep_node_address=.*$|wsrep_node_address=${WSREP_NODE_ADDRESS}|" /etc/mysql/conf.d/cluster.cnf
+    sed -i -e "s|^wsrep_node_address=.*$|wsrep_node_address=${WSREP_NODE_ADDRESS}|" /etc/my.cnf.d/server.cnf
   fi
   
   # if the string is not defined or it only is 'gcomm://', this means bootstrap
@@ -162,12 +162,12 @@ if [ -n "$GALERA_CLUSTER" ]; then
   # cluster address string (wsrep_cluster_address) in the cluster
   # configuration file, cluster.cnf
   if [ -n "$WSREP_CLUSTER_ADDRESS" -a "$WSREP_CLUSTER_ADDRESS" != "gcomm://" ]; then
-    sed -i -e "s|^wsrep_cluster_address=gcomm://|wsrep_cluster_address=${WSREP_CLUSTER_ADDRESS}|" /etc/mysql/conf.d/cluster.cnf
+    sed -i -e "s|^wsrep_cluster_address=gcomm://|wsrep_cluster_address=${WSREP_CLUSTER_ADDRESS}|" /etc/my.cnf.d/server.cnf
   fi
 fi
 
 # random server ID needed
-sed -i -e "s/^server\-id=.*$/server-id=${RANDOM}/" /etc/mysql/my.cnf
+sed -i -e "s/^server\-id=.*$/server-id=${RANDOM}/" /etc/my.cnf.d/server.cnf
 
 #Add user mysql to root profile
 
