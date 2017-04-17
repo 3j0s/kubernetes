@@ -5641,3 +5641,12 @@ deprecation_warnings=False in ansible.cfg.
 2017-04-16 18:51:19,743 p=15913 u=ejos |  changed: [192.168.10.61]
 2017-04-16 18:51:19,745 p=15913 u=ejos |  PLAY RECAP *********************************************************************
 2017-04-16 18:51:19,745 p=15913 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-17 09:46:46,213 p=26783 u=ejos |  192.168.10.61 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.10.61 port 22: Connection timed out\r\n", 
+    "unreachable": true
+}
+2017-04-17 09:47:02,551 p=26916 u=ejos |  192.168.10.61 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}

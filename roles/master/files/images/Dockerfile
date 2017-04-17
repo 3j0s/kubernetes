@@ -16,6 +16,7 @@ RUN  chown -R mysql:mysql /var/lib/mysql
 # Install required packages and MariaDB Vendor Repo
 RUN  yum -y update && yum clean all && \
      yum -y install --setopt=tsflags=nodocs epel-release && \
+     yum -y swap -- remove systemd-container -- install systemd systemd-libs && \
      rpm --import https://yum.mariadb.org/RPM-GPG-KEY-MariaDB && \
      yum -y install bind-utils pwgen psmisc hostname less which socat && \
      yum -y install --setopt=tsflags=nodocs MariaDB-server MariaDB-client galera && \
