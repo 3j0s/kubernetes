@@ -90,9 +90,9 @@ EOSQL
 
 # Add my data
     if [ -n "$DATA" ]; then
-	echo "CREATE DATABASE IF NOT EXISTS '${MY_DATABASE}' ;"
-	echo "CREATE USER '${MY_USER}'@'%' IDENTIFIED BY '${MY_PASSWORD}' ;"
-	echo "GRANT ALL ON '${MY_DATABASE}'.* TO '${MY_USER}'@'%' ;"
+	echo "CREATE DATABASE IF NOT EXISTS '${MY_DATABASE}' ;" >> "$tempSqlFile"
+	echo "CREATE USER '${MY_USER}'@'%' IDENTIFIED BY '${MY_PASSWORD}' ;" >> "$tempSqlFile"
+	echo "GRANT ALL ON '${MY_DATABASE}'.* TO '${MY_USER}'@'%' ;" >> "$tempSqlFile"
     fi
 ## Till here
 
