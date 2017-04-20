@@ -1,54 +1,42 @@
-FROM centos:centos7
-LABEL MAINTAINER edward.josette@gmail.com
+FROM ubuntu:trusty
 
-ENV MARIADB_MAJOR=10.1
-ENV container=docker
+# add our user and group first to make sure their IDs get assigned 
+# consistently, regardless of whatever dependencies get added
+RUN groupadd -r mysql && useradd -r -g mysql mysql
 
-# MariaDB Repo
-COPY MariaDB.repo /etc/yum.repos.d/MariaDB.repo
+ENV PERCONA_XTRADB_VERSION 5.6
+ENV MYSQL_VERSION 5.6
+ENV TERM linux
 
-RUN groupadd -g 250 -r mysql && useradd -u 250 -r -g mysql mysql && \
-    mkdir -p /var/lib/mysql
+RUN apt-get update && apt-get install -y openssh-server
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y perl --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
+RUN apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
 
-RUN  chown -R mysql:mysql /var/lib/mysql
+RUN echo "deb http://repo.percona.com/apt trusty main" > /etc/apt/sources.list.d/percona.list
+RUN echo "deb-src http://repo.percona.com/apt trusty main" >> /etc/apt/sources.list.d/percona.list
 
-# Install required packages and MariaDB Vendor Repo
-RUN  yum -y update && yum clean all && \
-     yum -y install --setopt=tsflags=nodocs epel-release && \
-     yum -y swap -- remove systemd-container -- install systemd systemd-libs && \
-     rpm --import https://yum.mariadb.org/RPM-GPG-KEY-MariaDB && \
-     yum -y install bind-utils pwgen psmisc hostname less which socat && \
-     yum -y install --setopt=tsflags=nodocs MariaDB-server MariaDB-client galera && \
-     yum -y install vim-minimal net-tools && \
-     yum -y install openssh-server openssh-clients && yum clean all && \
-     mkdir /docker-entrypoint-initdb.d
+# the "/var/lib/mysql" stuff here is because the mysql-server
+# postinst doesn't have an explicit way to disable the 
+# mysql_install_db codepath besides having a database already
+# "configured" (ie, stuff in /var/lib/mysql/mysql)
+# also, we set debconf keys to make APT a little quieter
+RUN { \
+                echo percona-server-server-5.6 percona-server-server/data-dir select ''; \
+                echo percona-server-server-5.6 percona-server-server/root_password password ''; \
+        } | debconf-set-selections \
+        && apt-get update && DEBIAN_FRONTEND=nointeractive apt-get install -y --force-yes percona-xtradb-cluster-client-"${MYSQL_VERSION}" \ 
+           percona-xtradb-cluster-common-"${MYSQL_VERSION}" percona-xtradb-cluster-server-"${MYSQL_VERSION}" \
+        && rm -rf /var/lib/apt/lists/* \
+        && rm -rf /var/lib/mysql && mkdir -p /var/lib/mysql && chown -R mysql:mysql /var/lib/mysql 
 
-COPY server.cnf /etc/my.cnf.d/server.cnf
-
-# Add this line for systemd problem
-
-RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
-rm -f /lib/systemd/system/multi-user.target.wants/*;\
-rm -f /etc/systemd/system/*.wants/*;\
-rm -f /lib/systemd/system/local-fs.target.wants/*; \
-rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
-rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
-rm -f /lib/systemd/system/basic.target.wants/*;\
-rm -f /lib/systemd/system/anaconda.target.wants/*;
-
-# Without this, init won't start the enabled services and exec'ing and starting
-# them reports "Failed to get D-Bus connection: Operation not permitted".
 VOLUME /var/lib/mysql
-VOLUME /run /tmp
-VOLUME [ “/sys/fs/cgroup” ]
 
-RUN systemctl enable mariadb.service
-# Till here
+COPY my.cnf /etc/mysql/my.cnf
+COPY cluster.cnf /etc/mysql/conf.d/cluster.cnf
 
-COPY docker-entrypoint.sh /docker-entrypoint.sh
-RUN chmod +x /docker-entrypoint.sh
-ENTRYPOINT ["/docker-entrypoint.sh"]
+COPY docker-entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 3306 4444 4567 4568 22
 CMD ["mysqld"]
