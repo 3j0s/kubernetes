@@ -1,10 +1,11 @@
 [galera]
 
-wsrep_provider=/usr/lib64/galera/libgalera_smm.so
+wsrep_provider=/usr/lib/galera/libgalera_smm.so
 wsrep_cluster_address=gcomm://
 binlog_format=ROW
 default_storage_engine=InnoDB
 innodb_autoinc_lock_mode=2
+bind-address=0.0.0.0
 
 wsrep_sst_method=rsync
 wsrep_node_address=127.0.0.1
