@@ -89,7 +89,7 @@ EOSQL
     fi
 
 # Add my data
-    if [ '${DATA}' = true ]; then
+    if [ -n "${DATA}" ]; then
 	echo "" >> "$tempSqlFile"
 	echo "CREATE DATABASE IF NOT EXISTS ${MY_DATABASE} ;" >> "$tempSqlFile"
 	echo "CREATE USER '${MY_USER}'@'%' IDENTIFIED BY '${MY_PASSWORD}' ;" >> "$tempSqlFile"

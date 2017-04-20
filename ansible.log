@@ -5671,3 +5671,19 @@ deprecation_warnings=False in ansible.cfg.
 2017-04-20 15:20:21,433 p=21088 u=ejos |  changed: [192.168.10.61]
 2017-04-20 15:20:21,437 p=21088 u=ejos |  PLAY RECAP *********************************************************************
 2017-04-20 15:20:21,438 p=21088 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-20 16:15:54,287 p=22486 u=ejos |  PLAY [masters] *****************************************************************
+2017-04-20 16:15:54,354 p=22486 u=ejos |  TASK [setup] *******************************************************************
+2017-04-20 16:15:56,252 p=22486 u=ejos |  ok: [192.168.10.61]
+2017-04-20 16:15:56,257 p=22486 u=ejos |  TASK [master : Sync Image MariaDB Galera Service] ******************************
+2017-04-20 16:16:01,304 p=22486 u=ejos |  changed: [192.168.10.61]
+2017-04-20 16:16:01,309 p=22486 u=ejos |  PLAY RECAP *********************************************************************
+2017-04-20 16:16:01,310 p=22486 u=ejos |  192.168.10.61              : ok=2    changed=1    unreachable=0    failed=0   
+2017-04-20 16:31:58,032 p=22919 u=ejos |  192.168.10.61 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.10.61 port 22: Connection timed out\r\n", 
+    "unreachable": true
+}
+2017-04-20 16:48:57,008 p=23637 u=ejos |  192.168.10.61 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
