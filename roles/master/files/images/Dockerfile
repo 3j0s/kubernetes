@@ -13,9 +13,14 @@ RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24
 
 
 RUN add-apt-repository 'deb http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.1/ubuntu xenial main' && \
-    apt-get update && \ 
-    apt-get install -y mariadb-server rsync tree net-tools && \
-   && rm -rf /var/lib/mysql && mkdir -p /var/lib/mysql && chown -R mysql:mysql /var/lib/mysql 
+    apt-get update &&  apt-get install rsync tree net-tools
+
+RUN { \
+     echo mariadb-server mariadb-server/root_password password ''; \
+     echo mariadb-server mariadb-server/root_password_again password ''; \
+   } | debconf-set-selections \
+    && DEBIAN_FRONTEND=nointeractive apt-get install -y mariadb-server && \
+    rm -rf /var/lib/mysql && mkdir -p /var/lib/mysql && chown -R mysql:mysql /var/lib/mysql 
 
 VOLUME /var/lib/mysql
 
