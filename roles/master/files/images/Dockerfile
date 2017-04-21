@@ -6,20 +6,23 @@ RUN groupadd -r mysql && useradd -r -g mysql mysql
 
 ENV MYSQL_VERSION 5.6
 ENV TERM linux
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y openssh-server python-software-properties
+RUN apt-get update && apt-get install -y openssh-server \
+		   python-software-properties software-properties-common \
+		   dialog apt-utils rsync tree net-tools less sudo
 
 RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
 
 
 RUN add-apt-repository 'deb http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.1/ubuntu xenial main' && \
-    apt-get update &&  apt-get install rsync tree net-tools
+    apt-get update
 
 RUN { \
      echo mariadb-server mariadb-server/root_password password ''; \
      echo mariadb-server mariadb-server/root_password_again password ''; \
    } | debconf-set-selections \
-    && DEBIAN_FRONTEND=nointeractive apt-get install -y mariadb-server && \
+    && apt-get install -y mariadb-server && \
     rm -rf /var/lib/mysql && mkdir -p /var/lib/mysql && chown -R mysql:mysql /var/lib/mysql 
 
 VOLUME /var/lib/mysql
