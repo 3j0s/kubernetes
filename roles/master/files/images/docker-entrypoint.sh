@@ -28,18 +28,18 @@ if [ -z "$NUM_NODES" ]; then
 fi
 
 if [ "${1:0:1}" = '-' ]; then
-  set -- mysqld "$@"
+  set -- my.cnf.d "$@"
 fi
 
-# if the command passed is 'mysqld' via CMD, then begin processing. 
-if [ "$1" = 'mysqld' ]; then
+# if the command passed is 'my.cnf.dd' via CMD, then begin processing. 
+if [ "$1" = '/sbin/init' ]; then
 
   # read DATADIR from the MySQL config
   DATADIR="$("$@" --verbose --help 2>/dev/null | awk '$1 == "datadir" { print $2; exit }')"
  
-  # only check if system tables not created from mysql_install_db and permissions 
+  # only check if system tables not created from my.cnf.d_install_db and permissions 
   # set with initial SQL script before proceding to build SQL script
-  if [ ! -d "$DATADIR/mysql" ]; then
+  if [ ! -d "$DATADIR/my.cnf.d" ]; then
   # fail if user didn't supply a root password  
     if [ -z "$MYSQL_ROOT_PASSWORD" -a -z "$MYSQL_ALLOW_EMPTY_PASSWORD" ]; then
       echo >&2 'error: database is uninitialized and MYSQL_ROOT_PASSWORD not set'
@@ -47,10 +47,10 @@ if [ "$1" = 'mysqld' ]; then
       exit 1
     fi
 
-    # mysql_install_db installs system tables
-    echo 'Running mysql_install_db ...'
+    # my.cnf.d_install_db installs system tables
+    echo 'Running my.cnf.d_install_db ...'
         mysql_install_db --datadir="$DATADIR"
-        echo 'Finished mysql_install_db'
+        echo 'Finished my.cnf.d_install_db'
     
     # this script will be run once when MySQL first starts to set up
     # prior to creating system tables and will ensure proper user permissions 
@@ -90,18 +90,15 @@ EOSQL
 
 # Add my data
     if [ -n "$DATA" ]; then
-	echo "CREATE DATABASE IF NOT EXISTS '${MY_DATABASE}' ;"
+	echo "CREATE DATABASE IF NOT EXISTS ${MY_DATABASE} ;"
 	echo "CREATE USER '${MY_USER}'@'%' IDENTIFIED BY '${MY_PASSWORD}' ;"
-	echo "GRANT ALL ON '${MY_DATABASE}'.* TO '${MY_USER}'@'%' ;"
-	echo "SOURCE '${DATA_PATH}/${DATA_STRUCTURE}' ;"
-	echo "SOURCE '${DATA_PATH}/${DATA_FILE}' ;"
-	echo "SOURCE '${DATA_PATH}/${DATA_TRIGGERS}' ;"
+	echo "GRANT ALL ON ${MY_DATABASE}.* TO '${MY_USER}'@'%' ;"
     fi
 ## Till here
 
     echo 'FLUSH PRIVILEGES ;' >> "$tempSqlFile"
     
-    # Add the SQL file to mysqld's command line args
+    # Add the SQL file to my.cnf.dd's command line args
     set -- "$@" --init-file="$tempSqlFile"
   fi
  
@@ -119,12 +116,12 @@ if [ -n "$GALERA_CLUSTER" ]; then
   fi
 
   # user/password for SST user
-  sed -i -e "s|^wsrep_sst_auth=sstuser:changethis|wsrep_sst_auth=${WSREP_SST_USER}:${WSREP_SST_PASSWORD}|" /etc/mysql/conf.d/cluster.cnf
+  sed -i -e "s|^wsrep_sst_auth=sstuser:changethis|wsrep_sst_auth=${WSREP_SST_USER}:${WSREP_SST_PASSWORD}|" /etc/my.cnf.d/cluster.cnf
 
   # set nodes own address
   WSREP_NODE_ADDRESS=`ip addr show | grep -E '^[ ]*inet' | grep -m1 global | awk '{ print $2 }' | sed -e 's/\/.*//'`
   if [ -n "$WSREP_NODE_ADDRESS" ]; then
-    sed -i -e "s|^wsrep_node_address=.*$|wsrep_node_address=${WSREP_NODE_ADDRESS}|" /etc/mysql/conf.d/cluster.cnf
+    sed -i -e "s|^wsrep_node_address=.*$|wsrep_node_address=${WSREP_NODE_ADDRESS}|" /etc/my.cnf.d/cluster.cnf
   fi
   
   # if the string is not defined or it only is 'gcomm://', this means bootstrap
@@ -165,14 +162,14 @@ if [ -n "$GALERA_CLUSTER" ]; then
   # cluster address string (wsrep_cluster_address) in the cluster
   # configuration file, cluster.cnf
   if [ -n "$WSREP_CLUSTER_ADDRESS" -a "$WSREP_CLUSTER_ADDRESS" != "gcomm://" ]; then
-    sed -i -e "s|^wsrep_cluster_address=gcomm://|wsrep_cluster_address=${WSREP_CLUSTER_ADDRESS}|" /etc/mysql/conf.d/cluster.cnf
+    sed -i -e "s|^wsrep_cluster_address=gcomm://|wsrep_cluster_address=${WSREP_CLUSTER_ADDRESS}|" /etc/my.cnf.d/cluster.cnf
   fi
 fi
 
 # random server ID needed
-sed -i -e "s/^server\-id=.*$/server-id=${RANDOM}/" /etc/mysql/my.cnf
+sed -i -e "s/^server\-id=.*$/server-id=${RANDOM}/" /etc/my.cnf.d/server.cnf
 
-#Add user mysql to root profile
+#Add user my.cnf.d to root profile
 
 cat > /root/.my.cnf <<-EOSQL
 [client]
@@ -180,5 +177,5 @@ cat > /root/.my.cnf <<-EOSQL
      password=${MYSQL_PASSWORD}
 EOSQL
 # Till here my add
-# finally, start mysql 
+# finally, start my.cnf.d 
 exec "$@"
